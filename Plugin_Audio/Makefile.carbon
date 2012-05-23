@@ -1,0 +1,43 @@
+
+TARGET   = ../Release/MMDAgent.app/Contents/MacOS/Plugins/Plugin_Audio.so
+
+SOURCES  = Audio_Manager.cpp \
+           Audio_Thread.cpp \
+           Plugin_Audio.cpp
+
+OBJECTS  = $(SOURCES:.cpp=.o)
+
+LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
+           ../Library_MMDFiles/lib/MMDFiles.a \
+           ../Library_GLFW/lib/GLFW.a \
+           ../Library_GLee/lib/GLee.a \
+           ../Library_Bullet_Physics/lib/Bullet_Physics.a \
+           ../Library_libpng/lib/libpng.a \
+           ../Library_JPEG/lib/JPEG.a \
+           ../Library_zlib/lib/zlib.a
+
+CXX      = gcc
+AR       = ar
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+           -dynamiclib \
+           -m32 \
+           -fno-common \
+           -DMMDAGENT
+INCLUDE  = -I ../Library_Bullet_Physics/include \
+           -I ../Library_GLee/include \
+           -I ../Library_GLFW/include \
+           -I ../Library_MMDFiles/include \
+           -I ../Library_MMDAgent/include
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS) $(LDADD)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) -o $(TARGET) \
+	-lstdc++ -framework AGL -framework Carbon -framework OpenGL \
+	-framework AudioUnit -framework AudioToolbox -framework CoreAudio
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)

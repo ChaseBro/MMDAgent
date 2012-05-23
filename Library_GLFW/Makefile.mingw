@@ -1,0 +1,45 @@
+
+TARGET   = lib/GLFW.a
+
+SOURCES  = src/lib/enable.c \
+           src/lib/fullscreen.c \
+           src/lib/glext.c \
+           src/lib/image.c \
+           src/lib/init.c \
+           src/lib/input.c \
+           src/lib/joystick.c \
+           src/lib/stream.c \
+           src/lib/tga.c \
+           src/lib/thread.c \
+           src/lib/time.c \
+           src/lib/window.c \
+           src/lib/win32/win32_enable.c \
+           src/lib/win32/win32_fullscreen.c \
+           src/lib/win32/win32_glext.c \
+           src/lib/win32/win32_init.c \
+           src/lib/win32/win32_joystick.c \
+           src/lib/win32/win32_thread.c \
+           src/lib/win32/win32_time.c \
+           src/lib/win32/win32_window.c
+
+OBJECTS  = $(SOURCES:.c=.o)
+
+CXX      = gcc
+AR       = ar
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+           -DMMDAGENT
+INCLUDE  = -I src/include \
+           -I src/lib \
+           -I src/lib/win32
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(AR) cru $(TARGET) $(OBJECTS)
+	cp src/include/GL/glfw.h include/GL/glfw.h
+
+.c.o:
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.c=.o) -c $<
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)

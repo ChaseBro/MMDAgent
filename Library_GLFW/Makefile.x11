@@ -1,0 +1,54 @@
+
+TARGET   = lib/GLFW.a
+
+SOURCES  = src/lib/enable.c \
+           src/lib/fullscreen.c \
+           src/lib/glext.c \
+           src/lib/image.c \
+           src/lib/init.c \
+           src/lib/input.c \
+           src/lib/joystick.c \
+           src/lib/stream.c \
+           src/lib/tga.c \
+           src/lib/thread.c \
+           src/lib/time.c \
+           src/lib/window.c \
+           src/lib/x11/x11_enable.c \
+           src/lib/x11/x11_fullscreen.c \
+           src/lib/x11/x11_glext.c \
+           src/lib/x11/x11_init.c \
+           src/lib/x11/x11_joystick.c \
+           src/lib/x11/x11_keysym2unicode.c \
+           src/lib/x11/x11_thread.c \
+           src/lib/x11/x11_time.c \
+           src/lib/x11/x11_window.c
+
+OBJECTS  = $(SOURCES:.c=.o)
+
+CXX      = gcc
+AR       = ar
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+           -pthread \
+           -DMMDAGENT \
+           -D_GLFW_USE_LINUX_JOYSTICKS \
+           -D_GLFW_HAS_XRANDR \
+           -D_GLFW_HAS_PTHREAD \
+           -D_GLFW_HAS_SCHED_YIELD \
+           -D_GLFW_HAS_GLXGETPROCADDRESS \
+           -D_GLFW_HAS_DLOPEN \
+           -D_GLFW_HAS_SYSCONF
+INCLUDE  = -I src/include \
+           -I src/lib \
+           -I src/lib/x11
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(AR) cru $(TARGET) $(OBJECTS)
+	cp src/include/GL/glfw.h include/GL/glfw.h
+
+.c.o:
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.c=.o) -c $<
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)

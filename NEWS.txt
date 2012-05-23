@@ -1,0 +1,55 @@
+Version 1.2:
+ * fix some bugs.
+ * update libraries (Bullet Physics 2.79, GLFW 2.7.2, hts_engine API 1.06, Julius 4.2.1, libpng 1.5.7, and Open JTalk 1.05).
+
+Version 1.1:
+ * fix many bugs.
+ * replace OS-dependent code with GLFW.
+ * add sample Makefiles for MinGW, Mac OS X, and Unix-like systems.
+ * add bone skeleton view by B key.
+ * add VALUE_GET command and VALUE_EVENT_GET event.
+ * improve timer precisition.
+ * update libraries (Bullet Physics 2.78, hts_engine API 1.05, libpng 1.5.2, and Open JTalk 1.04).
+ * remove some OS-dependent functions.
+
+Version 1.0:
+ * the stable release.
+ * support camera motion file.
+ * add motion holding by H key.
+ * modify CAMERA command parameter.
+ * update libraries (Julius 4.2 and Open JTalk 1.03).
+ * fix bugs.
+
+Version RC2:
+ * modify CAMERA, MOTION_ADD, and TIMER_START commands.
+ * support multi-FST in voice interaction manager.
+ * support motion priority.
+ * support motion interpolation for slow motions.
+ * support rendering by Z order for correct alpha blending.
+ * remove many warnings for compiler.
+ * add maximum number of models in .mdf options.
+ * add model translation of X-Y position by SHIFT+CTRL+drag.
+ * force edge drawing at model selection.
+ * modify buffer length.
+ * fix many bugs.
+
+Version RC:
+ * show log of speech recognition and voice interaction manager.
+ * support user's dictionary for speech recognition.
+ * support JPEG files.
+ * support mp3 file drop.
+ * add VALUE command and event.
+ * add KEY_POST, EXECUTE, and CAMERA command.
+ * fix many bugs.
+
+Version Beta:
+ * support lipsync definition per model.
+ * redesign the parameter set which can be defined in the MDF file.
+ * show motion aliases in the debug mode.
+ * add TIMER command and event.
+ * add PLUGIN command and event.
+ * add Drag and Drop events.
+ * fix many bugs.
+
+Version Alpha:
+ * the first release.

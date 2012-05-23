@@ -1,0 +1,59 @@
+#Common programs
+CXX=@CXX@
+CPPFLAGS=@CPPFLAGS@
+CXXFLAGS=@CXXFLAGS@ -Wall
+DEFS=@DEFS@
+LDFLAGS=@LDFLAGS@
+LIBS=@LIBS@
+prefix=@prefix@
+SRCDIR=@srcdir@
+exec_prefix=@exec_prefix@
+INCLUDEDIR=@includedir@
+LIBDIR=@libdir@
+INSTALL=@INSTALL@
+INSTALLP=@INSTALL_PROGRAM@
+INSTALLD=@INSTALL_DATA@
+LDCONFIG=@LDCONFIG@
+TAR=@TAR@
+DATADIR=@datadir@
+MKDIR=@MKDIR@
+
+#Package files
+PACKAGE=@PACKAGE_NAME@-@PACKAGE_VERSION@
+SOURCE=GLee.c
+HEADER=GLee.h
+LIBNAME=libGLee.so
+README=readme.txt
+BINSTALL=inst
+DISTDIR=dists
+
+#Distribution files
+DISTFILES=glee/${SOURCE} glee/${README} glee/${HEADER} glee/Makefile.in \
+    glee/config.h.in glee/configure glee/install-sh glee/extensionList.txt
+REDISTFILES=glee/Makefile.in glee/config.h.in glee/configure.ac \
+    glee/install-sh glee/${README} glee/${SOURCE} glee/${HEADER} glee/extensionList.txt
+BINDISTFILES=glee/${LIBNAME} glee/${README} glee/${HEADER} glee/${BINSTALL} glee/extensionList.txt
+
+
+
+all:
+	${CXX} ${SRCDIR}/${SOURCE} -shared -I${SRCDIR} -I${INCLUDEDIR} ${LIBS} \
+		${CXXFLAGS} ${DEFS} -o ${SRCDIR}/${LIBNAME}
+
+install:
+	${INSTALLD} ${HEADER} ${INCLUDEDIR}/GL
+	${INSTALLP} ${LIBNAME} ${LIBDIR}
+	${MKDIR} -p ${DATADIR}/doc/GLee
+	${INSTALLD} ${README} ${DATADIR}/doc/GLee
+	${LDCONFIG}
+
+dists: dist bindist redist
+
+dist:
+	${TAR} -C ../ -czf ${DISTDIR}/${PACKAGE}-src.tar.gz ${DISTFILES}
+
+redist:
+	${TAR} -C ../ -czf ${DISTDIR}/${PACKAGE}-redist.tar.gz ${REDISTFILES}
+
+bindist:
+	${TAR} -C ../ -czf ${DISTDIR}/${PACKAGE}-bin.tar.gz ${BINDISTFILES}
