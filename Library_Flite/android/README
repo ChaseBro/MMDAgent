@@ -1,0 +1,47 @@
+Android Support for Flite
+-------------------------
+
+This directory provides the source code of an Android app that can use Flite.
+
+------------
+Requirements:
+------------
+(1) On the Phone:
+
+      - Android 1.6 -- 2.1 WITH "TTS Extended" app from google installed
+                                     *OR*
+        Android 2.2 WITHOUT "TTS Extended" app from google.
+
+(2) On your computer, to build this application:
+      - Android NDK Release 4
+      - Android SDK
+
+---------------------
+How to build the app?
+---------------------
+
+(1) Export necessary environment variables.
+
+      export FLITEDIR=/path/to/flite
+      export ANDROID_NDK=/path/to/android-ndk-r4
+      export ANDROID_SDK=/path/to/android-sdk
+
+(2) Build flite first, with android support enabled.
+
+      cd $FLITEDIR
+      ./configure --with-langvox=android --target=arm-android
+      make
+
+(3) Run, in this directory (flite/android)
+      
+      cd $FLITEDIR/android 
+      make
+
+(4) Your app will be located in
+    $FLITEDIR/android/app_code/bin/FliteEngine-debug.apk
+ 
+-------------------------------
+How to install and use the app?
+-------------------------------
+
+Please refer to relevant section in $FLITEDIR/android/app_code/README for this help.
