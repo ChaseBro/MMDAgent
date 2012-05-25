@@ -160,6 +160,7 @@ INCLUDE  = -I src/src
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/src/*.h include
 	cp src/src/BulletCollision/BroadphaseCollision/*.h include/BulletCollision/BroadphaseCollision

@@ -40,6 +40,7 @@ INCLUDE  = -I ../Library_Bullet_Physics/include \
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/include/*.h include
 

@@ -13,6 +13,7 @@ INCLUDE  = -I src
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/GLee.h include/GLee.h
 

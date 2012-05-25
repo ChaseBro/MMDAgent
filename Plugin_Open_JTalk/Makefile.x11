@@ -23,7 +23,7 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
 CXX      = gcc
 AR       = ar
 CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
-           -shared \
+           -shared -g\
            -DMMDAGENT \
            -DAUDIO_PLAY_PORTAUDIO
 INCLUDE  = -I ../Library_Bullet_Physics/include \

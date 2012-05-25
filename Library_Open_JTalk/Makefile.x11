@@ -105,6 +105,7 @@ INCLUDE  = -I src/jpcommon \
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/jpcommon/jpcommon.h include
 	cp src/mecab/src/mecab.h include

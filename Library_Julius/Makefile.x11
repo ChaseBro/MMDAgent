@@ -149,6 +149,7 @@ INCLUDE  = -I src/libjulius/include \
 all: src/libjulius/include/julius/config.h src/libsent/include/sent/config.h $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/libjulius/include/julius/*.h include/julius
 	cp src/libsent/include/sent/*.h include/sent

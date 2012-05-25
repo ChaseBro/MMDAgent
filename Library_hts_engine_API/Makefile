@@ -23,6 +23,7 @@ INCLUDE  = -I ../Library_PortAudio/include \
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/include/HTS_engine.h include/HTS_engine.h
 

@@ -58,6 +58,7 @@ INCLUDE  = -I src
 all: $(TARGET)
 
 $(TARGET): src/jconfig.h $(OBJECTS)
+	@mkdir -p $(@D)
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/*.h include
 
