@@ -25,7 +25,7 @@ mingw:
 	cd Library_zlib            && make
 	cd Library_PortAudio       && make -f Makefile.mingw
 	cd Library_hts_engine_API  && make
-	cd Library_Open_JTalk      && make -f Makefile.mingw
+	cd Library_Flite           && make
 	cd Library_Julius          && make -f Makefile.mingw
 	cd main                    && make -f Makefile.mingw
 	cd Plugin_VIManager        && make -f Makefile.mingw
@@ -33,7 +33,7 @@ mingw:
 	cd Plugin_Audio            && make -f Makefile.mingw
 	cd Plugin_LookAt           && make -f Makefile.mingw
 	cd Plugin_WindowController && make -f Makefile.mingw
-	cd Plugin_Open_JTalk       && make -f Makefile.mingw
+	cd Plugin_Flite            && make
 	cd Plugin_Julius           && make -f Makefile.mingw
 
 mingw-clean:
@@ -47,7 +47,7 @@ mingw-clean:
 	cd Library_zlib            && make                   clean
 	cd Library_PortAudio       && make -f Makefile.mingw clean
 	cd Library_hts_engine_API  && make                   clean
-	cd Library_Open_JTalk      && make -f Makefile.mingw clean
+	cd Library_Flite           && make                   clean
 	cd Library_Julius          && make -f Makefile.mingw clean
 	cd main                    && make -f Makefile.mingw clean
 	cd Plugin_VIManager        && make -f Makefile.mingw clean
@@ -55,7 +55,7 @@ mingw-clean:
 	cd Plugin_Audio            && make -f Makefile.mingw clean
 	cd Plugin_LookAt           && make -f Makefile.mingw clean
 	cd Plugin_WindowController && make -f Makefile.mingw clean
-	cd Plugin_Open_JTalk       && make -f Makefile.mingw clean
+	cd Plugin_Flite            && make                   clean
 	cd Plugin_Julius           && make -f Makefile.mingw clean
 
 x11-euc-jp:
@@ -69,13 +69,13 @@ x11-euc-jp:
 	cd Library_zlib           && make
 	cd Library_PortAudio      && make -f Makefile.x11
 	cd Library_hts_engine_API && make
-	cd Library_Open_JTalk     && make -f Makefile.x11
+	cd Library_Flite          && make
 	cd Library_Julius         && make -f Makefile.x11
 	cd main                   && make -f Makefile.x11-euc-jp
 	cd Plugin_VIManager       && make -f Makefile.x11
 	cd Plugin_Variables       && make -f Makefile.x11
 	cd Plugin_LookAt          && make -f Makefile.x11
-	cd Plugin_Open_JTalk      && make -f Makefile.x11
+	cd Plugin_Flite           && make
 	cd Plugin_Julius          && make -f Makefile.x11
 
 x11-euc-jp-clean:
@@ -89,13 +89,13 @@ x11-euc-jp-clean:
 	cd Library_zlib           && make                        clean
 	cd Library_PortAudio      && make -f Makefile.x11        clean
 	cd Library_hts_engine_API && make                        clean
-	cd Library_Open_JTalk     && make -f Makefile.x11        clean
+	cd Library_Flite          && make                        clean
 	cd Library_Julius         && make -f Makefile.x11        clean
 	cd main                   && make -f Makefile.x11-euc-jp clean
 	cd Plugin_VIManager       && make -f Makefile.x11        clean
 	cd Plugin_Variables       && make -f Makefile.x11        clean
 	cd Plugin_LookAt          && make -f Makefile.x11        clean
-	cd Plugin_Open_JTalk      && make -f Makefile.x11        clean
+	cd Plugin_Flite           && make                        clean
 	cd Plugin_Julius          && make -f Makefile.x11        clean
 
 x11-utf-8:
@@ -108,15 +108,14 @@ x11-utf-8:
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8
 	cd Library_zlib           && make
 	cd Library_PortAudio      && make -f Makefile.x11
-	cd Library_hts_engine_API && make
-	cd Library_Open_JTalk     && make -f Makefile.x11
 	cd Library_Julius         && make -f Makefile.x11
+	cd Library_Flite          && make
 	cd main                   && make -f Makefile.x11-utf-8
 	cd Plugin_VIManager       && make -f Makefile.x11
 	cd Plugin_Variables       && make -f Makefile.x11
 	cd Plugin_LookAt          && make -f Makefile.x11
-	cd Plugin_Open_JTalk      && make -f Makefile.x11
 	cd Plugin_Julius          && make -f Makefile.x11
+	cd Plugin_Flite           && make
 
 x11-utf-8-clean:
 	cd Library_Bullet_Physics && make                       clean
@@ -128,15 +127,14 @@ x11-utf-8-clean:
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8 clean
 	cd Library_zlib           && make                       clean
 	cd Library_PortAudio      && make -f Makefile.x11       clean
-	cd Library_hts_engine_API && make                       clean
-	cd Library_Open_JTalk     && make -f Makefile.x11       clean
 	cd Library_Julius         && make -f Makefile.x11       clean
+	cd Library_Flite          && make                       clean
 	cd main                   && make -f Makefile.x11-utf-8 clean
 	cd Plugin_VIManager       && make -f Makefile.x11       clean
 	cd Plugin_Variables       && make -f Makefile.x11       clean
 	cd Plugin_LookAt          && make -f Makefile.x11       clean
-	cd Plugin_Open_JTalk      && make -f Makefile.x11       clean
 	cd Plugin_Julius          && make -f Makefile.x11       clean
+	cd Plugin_Flite           && make -f Makefile           clean
 
 carbon:
 	cd Library_Bullet_Physics && make
@@ -149,14 +147,14 @@ carbon:
 	cd Library_zlib           && make
 	cd Library_PortAudio      && make -f Makefile.carbon
 	cd Library_hts_engine_API && make
-	cd Library_Open_JTalk     && make -f Makefile.carbon
+	cd Library_Flite          && make
 	cd Library_Julius         && make -f Makefile.carbon
 	cd main                   && make -f Makefile.carbon
 	cd Plugin_VIManager       && make -f Makefile.carbon
 	cd Plugin_Variables       && make -f Makefile.carbon
 	cd Plugin_Audio           && make -f Makefile.carbon
 	cd Plugin_LookAt          && make -f Makefile.carbon
-	cd Plugin_Open_JTalk      && make -f Makefile.carbon
+	cd Plugin_Flite           && make
 	cd Plugin_Julius          && make -f Makefile.carbon
 
 carbon-clean:
@@ -170,12 +168,12 @@ carbon-clean:
 	cd Library_zlib           && make                    clean
 	cd Library_PortAudio      && make -f Makefile.carbon clean
 	cd Library_hts_engine_API && make                    clean
-	cd Library_Open_JTalk     && make -f Makefile.carbon clean
+	cd Library_Flite          && make                    clean
 	cd Library_Julius         && make -f Makefile.carbon clean
 	cd main                   && make -f Makefile.carbon clean
 	cd Plugin_VIManager       && make -f Makefile.carbon clean
 	cd Plugin_Variables       && make -f Makefile.carbon clean
 	cd Plugin_Audio           && make -f Makefile.carbon clean
 	cd Plugin_LookAt          && make -f Makefile.carbon clean
-	cd Plugin_Open_JTalk      && make -f Makefile.carbon clean
+	cd Plugin_Flite           && make                    clean
 	cd Plugin_Julius          && make -f Makefile.carbon clean
