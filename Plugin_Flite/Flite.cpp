@@ -46,7 +46,6 @@
 #include "MMDAgent.h"
 
 #include "flite.h"
-#include "flite_version.h"
 
 #include "Flite.h"
 
@@ -60,7 +59,6 @@ cst_lexicon *cmu_lex_init(void);
 /* Flite initialize */
 void Flite::initialize()
 {
-
    flite_init();
    flite_add_lang("eng",usenglish_init,cmu_lex_init);
 }
@@ -92,7 +90,6 @@ bool Flite::load(char **modelNames, int numModels)
 {
    int i;
    cst_voice *voice;
-   char buff[MMDAGENT_MAXBUFLEN];
    char *modelDir;
 
    for (i = 0; i < numModels; i++)

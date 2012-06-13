@@ -1,6 +1,7 @@
 /* headers */
 
 #include "MMDAgent.h"
+#include "flite.h"
 
 #include "Flite.h"
 #include "Flite_Thread.h"
