@@ -190,11 +190,11 @@ void Flite_Thread::run()
       m_mmdagent->sendEventMessage(EVENTSTART, chara);
 
       /* synthesize */
-      // prepare text (don't need?) m_openJTalk.prepare(text);
-      // Get Phonemes to pass to lipsync m_openJTalk.getPhonemeSequence(lip);
-      // m_mmdagent->sendCommandMessage(COMMANDSTARTLIP, "%s|%s", chara, lip);
-
-      m_flite.synthesize(style, text);
+      m_flite.synth_text(style, text);
+      m_flite.getPhonemeSequence(lip);
+      //printf("phonemes: %s\n",lip);
+      m_mmdagent->sendCommandMessage(COMMANDSTARTLIP, "%s|%s", chara, lip);
+      m_flite.play_saved();
 
       /* send SYNTH_EVENT_STOP */
       m_mmdagent->sendEventMessage(EVENTSTOP, chara);

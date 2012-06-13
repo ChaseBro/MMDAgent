@@ -266,6 +266,12 @@ void Flite_Manager::run()
          style = MMDAgent_strtok(NULL, "|", &save);
          text = MMDAgent_strtok(NULL, "|", &save);
 
+         for (i = 0; i < strlen(text); i++)
+         {
+            if (text[i] == '_')
+               text[i] = ' ';
+         }
+
          if(chara != NULL && style != NULL && text != NULL) {
             /* check character */
             for(i = 0, link = m_list; link; link = link->next, i++)

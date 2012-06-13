@@ -66,7 +66,7 @@ void Flite::initialize()
 /* Flite clear */
 void Flite::clear()
 {
-
+   delete_utterance(m_utt);
 }
 
 Flite::Flite()
@@ -84,6 +84,45 @@ float Flite::synthesize(char *voice_name, char *text)
 {
    cst_voice *voice = flite_voice_select(voice_name);
    return flite_text_to_speech(text,voice,"play");
+}
+
+bool Flite::synth_text(char *voice_name, char *text)
+{
+   cst_voice *voice = flite_voice_select(voice_name);
+   m_utt = flite_synth_text(text, voice);
+   if (m_utt == NULL)
+      return false;
+   return true;
+}
+
+void Flite::getPhonemeSequence(char *lip)
+{
+   const char *name;
+   float start, end, dur;
+   cst_item *seg;
+
+   if (m_utt == NULL)
+      return;
+
+   start = 0.0;
+
+   for (seg=utt_rel_head(m_utt,"Segment"); seg; seg=item_next(seg))
+   {
+      name = item_feat_string(seg,"name");
+      end = item_feat_float(seg,"end");  /* end time */
+      dur = end - start;
+      if (start != 0.0)
+         strcat(lip, LIPSYNC_SEPARATOR);
+      start = end;
+      sprintf(lip, "%s%s%s%.0f", lip, name, LIPSYNC_SEPARATOR, round(dur * 1000));
+   }
+}
+
+void Flite::play_saved()
+{
+   cst_wave *wave;
+   wave = utt_wave(m_utt);
+   play_wave(wave);
 }
 
 bool Flite::load(char **modelNames, int numModels)
