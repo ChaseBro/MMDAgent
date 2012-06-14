@@ -29,7 +29,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS) $(LDADD)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) -o $(TARGET) \
-	-lstdc++ -pthread -lm -lXrandr -l X11 -lGL -lGLU
+	-lstdc++ -pthread -lm -lXrandr -l X11 -lGL -lGLU -lftgl -lfreetype
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<

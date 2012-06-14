@@ -91,6 +91,8 @@ bool TextRenderer::getID(unsigned long mbc, unsigned int *id)
 
    return true;
 }
+#else
+#include <FTGL/ftgl.h>
 #endif /* _WIN32 */
 
 /* TextRenderer::initialize: initialize text renderer */
@@ -196,6 +198,15 @@ void TextRenderer::setup()
       return;
    }
    SelectObject(m_hDC, oldfont);
+#else
+   m_pixFont = new FTPixmapFont("/usr/share/fonts/truetype/msttcorefonts/arial.ttf");
+   m_texFont = new FTGLTextureFont("/usr/share/fonts/truetype/msttcorefonts/arial.ttf");
+
+   if (m_pixFont->Error() || m_texFont->Error())
+      return;
+
+   m_texFont->FaceSize(72,36);
+   m_pixFont->FaceSize(12);
 #endif /* _WIN32 */
 }
 
@@ -213,6 +224,11 @@ void TextRenderer::drawAsciiStringBitmap(const char *str)
       glListBase(m_bitmapFontID);
       glCallLists(size, GL_UNSIGNED_BYTE, (const GLvoid*) str);
    }
+#else
+   if (m_pixFont->Error())
+      return;
+
+   m_pixFont->Render(str);
 #endif /* _WIN32 */
 }
 
@@ -299,5 +315,13 @@ void TextRenderer::drawString(const char *str)
          renderDisplayListArrayOfString(idList, n);
       free(idList);
    }
+#else
+   if (m_texFont->Error())
+      return;
+
+   glPushMatrix();
+   glScaled(.01,.01,.01);
+   m_texFont->Render(str);
+   glPopMatrix();
 #endif /* _WIN32 */
 }
