@@ -28,7 +28,7 @@ INCLUDE  = -I ../Library_zlib/include \
 all: $(TARGET)
 
 $(TARGET): src/pnglibconf.h $(OBJECTS)
-	@mkdir -p $(@D)
+	@mkdir -p lib
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/*.h include
 

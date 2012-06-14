@@ -37,7 +37,7 @@ INCLUDE  = -I src/include \
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	@mkdir -p $(@D)
+	@mkdir -p lib
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/include/GL/glfw.h include/GL/glfw.h
 

@@ -29,6 +29,7 @@ INCLUDE  = -I src
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
+	@mkdir -p lib
 	$(AR) cru $(TARGET) $(OBJECTS)
 	cp src/*.h include
 
