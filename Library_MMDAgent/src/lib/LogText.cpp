@@ -191,6 +191,7 @@ void LogText::render()
       if (MMDAgent_strlen(m_textList[j]) > 0) {
          glColor4f(LOGTEXT_COLOR);
          glPushMatrix();
+      #ifdef _WIN32
          if (m_updated[j]) {
             /* cache display list array */
             m_length[j] = m_textRenderer->getDisplayListArrayOfString(m_textList[j], m_displayList[j], m_textWidth);
@@ -198,6 +199,9 @@ void LogText::render()
          }
          if (m_length[j] >= 0)
             m_textRenderer->renderDisplayListArrayOfString(m_displayList[j], m_length[j]);
+      #else
+         m_textRenderer->drawString(m_textList[j]);
+      #endif /* _WIN32 */
          glPopMatrix();
       }
    }
