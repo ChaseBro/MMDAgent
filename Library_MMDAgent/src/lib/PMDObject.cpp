@@ -652,13 +652,13 @@ void PMDObject::renderDebug(TextRenderer * text)
    glPushMatrix();
    pos = m_pmd.getCenterBone()->getTransform()->getOrigin();
    glTranslatef(pos.x() + 2.0f, m_pmd.getMaxHeight() + 2.0f , pos.z());
+   char buf[MMDAGENT_MAXBUFLEN];
    if(m_alias)
-      text->drawString(m_alias);
+      sprintf(buf, "%s", m_alias);
    if(m_pmd.getName()) {
-      text->drawString("(");
-      text->drawString(m_pmd.getName());
-      text->drawString(")");
+      sprintf(buf, "%s(%s)", m_alias, m_pmd.getName());
    }
+   text->drawString(buf);
    glPopMatrix();
 
    /* render motion names */
