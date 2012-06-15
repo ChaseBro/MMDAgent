@@ -122,7 +122,10 @@ void Flite::play_saved()
 {
    cst_wave *wave;
    wave = utt_wave(m_utt);
-   play_wave(wave);
+   if (wave != NULL)
+   {
+      play_wave(wave);
+   }
 }
 
 bool Flite::load(char **modelNames, int numModels)
