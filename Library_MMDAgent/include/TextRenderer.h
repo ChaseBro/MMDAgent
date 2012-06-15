@@ -39,6 +39,8 @@
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
 
+#include <FTGL/ftgl.h>
+
 /* definitions */
 
 #define TEXTRENDERER_FONT      "Arial Unicode MS"
@@ -66,6 +68,9 @@ private:
 
    /* getID: get display list of character */
    bool getID(unsigned long mbc, unsigned int *id);
+#else
+   FTPixmapFont *m_pixFont;       /* Pixmap font for rendering */
+   FTTextureFont *m_texFont;      /* Texture font for renderint */
 #endif /* _WIN32 */
 
    /* initialize: initialize text renderer */
