@@ -119,7 +119,6 @@ $(OBJDIR)/.build_so: $(FULLSHOBJS)
 
 # Used in the lib/ directory and in building new voices
 $(LIBDIR)/%.so: $(LIBDIR)/%.shared.a
-	@ echo making $@
 	@ rm -rf shared_os && mkdir shared_os
 	@ rm -f $@ $@.${PROJECT_VERSION} $@.${PROJECT_SHLIB_VERSION} 
 	@ (cd shared_os && ar x ../$<)
@@ -129,7 +128,6 @@ $(LIBDIR)/%.so: $(LIBDIR)/%.shared.a
 	@ rm -rf shared_os
 
 $(OBJDIR)/.make_build_dirs:
-	@ echo making in $(DIRNAME) ...
 ifdef BUILD_DIRS
 	@ set -e; for i in $(BUILD_DIRS) $(OTHER_BUILD_DIRS) ; \
 	do \
@@ -138,7 +136,6 @@ ifdef BUILD_DIRS
 endif
 
 clean:
-	@ echo make clean in $(DIRNAME) ...
 	@ rm -rf .build_lib .build_so *.o *.os *.a *~ $(LOCAL_CLEAN) $(OBJDIR)
 ifdef ALL_DIRS
 	@ set -e; for i in $(ALL_DIRS) ; \
@@ -148,7 +145,6 @@ ifdef ALL_DIRS
 endif
 
 distclean:
-	@ echo make distclean in $(DIRNAME) ...
 ifdef ALL_DIRS
 	@ set -e; for i in $(ALL_DIRS) ; \
 	do \
@@ -162,7 +158,6 @@ DEPEND=$(OBJDIR)/make.depend
 MAKE_DEPEND=$(CC) -MM $(CPPFLAGS) $(CFLAGS)
 
 depend:
-	@ echo make depend in $(DIRNAME) ...
 	@ rm -f $(DEPEND)
 	@ $(MAKE) nothing
 ifdef ALL_DIRS
@@ -184,7 +179,6 @@ ifdef BUILD_DIRS
 endif
 
 file-list:
-	@ echo making file-list in $(DIRNAME) ...
 ifeq ($(TOP),.)
 	@ for f in $(FILES) ; \
 	do \
