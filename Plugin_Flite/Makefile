@@ -37,6 +37,7 @@ INCLUDE  = -I ../Library_Bullet_Physics/include \
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS) $(LDADD)
+	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) $(LADD) -o $(TARGET) \
 	-lGLU -lGL -lX11 -lasound -ldl -lrt -lm -lpthread
 
