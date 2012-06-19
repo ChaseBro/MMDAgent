@@ -187,17 +187,17 @@ void Flite_Thread::run()
          index = 0;
 
       /* send SYNTH_EVENT_START */
-      m_mmdagent->sendEventMessage(EVENTSTART, chara);
+      m_mmdagent->sendEventMessage(SYNTH_EVENTSTART, chara);
 
       /* synthesize */
-      m_flite.synth_text(style, text);
-      m_flite.getPhonemeSequence(lip);
-      //printf("phonemes: %s\n",lip);
-      m_mmdagent->sendCommandMessage(COMMANDSTARTLIP, "%s|%s", chara, lip);
-      m_flite.play_saved();
+      if (m_flite.synth_text(style, text)) {
+         m_flite.getPhonemeSequence(lip);
+         m_mmdagent->sendCommandMessage(COMMANDSTARTLIP, "%s|%s", chara, lip);
+         m_flite.play_saved();
 
-      /* send SYNTH_EVENT_STOP */
-      m_mmdagent->sendEventMessage(EVENTSTOP, chara);
+         /* send SYNTH_EVENT_STOP */
+         m_mmdagent->sendEventMessage(SYNTH_EVENTSTOP, chara);
+      }
 
       if(chara) free(chara);
       if(style) free(style);
