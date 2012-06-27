@@ -113,6 +113,7 @@ x11-utf-8:
 	cd Plugin_VIManager       && make -f Makefile.x11
 	cd Plugin_Variables       && make -f Makefile.x11
 	cd Plugin_LookAt          && make -f Makefile.x11
+	cd Plugin_Sphinx          && make
 	cd Plugin_Flite           && make
 
 x11-utf-8-clean:
@@ -130,6 +131,7 @@ x11-utf-8-clean:
 	cd Plugin_VIManager       && make -f Makefile.x11       clean
 	cd Plugin_Variables       && make -f Makefile.x11       clean
 	cd Plugin_LookAt          && make -f Makefile.x11       clean
+	cd Plugin_Sphinx          && make
 	cd Plugin_Flite           && make -f Makefile           clean
 
 carbon:
