@@ -108,13 +108,11 @@ x11-utf-8:
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8
 	cd Library_zlib           && make
 	cd Library_PortAudio      && make -f Makefile.x11
-	cd Library_Julius         && make -f Makefile.x11
 	cd Library_Flite          && make
 	cd main                   && make -f Makefile.x11-utf-8
 	cd Plugin_VIManager       && make -f Makefile.x11
 	cd Plugin_Variables       && make -f Makefile.x11
 	cd Plugin_LookAt          && make -f Makefile.x11
-	cd Plugin_Julius          && make -f Makefile.x11
 	cd Plugin_Flite           && make
 
 x11-utf-8-clean:
@@ -127,13 +125,11 @@ x11-utf-8-clean:
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8 clean
 	cd Library_zlib           && make                       clean
 	cd Library_PortAudio      && make -f Makefile.x11       clean
-	cd Library_Julius         && make -f Makefile.x11       clean
 	cd Library_Flite          && make                       clean
 	cd main                   && make -f Makefile.x11-utf-8 clean
 	cd Plugin_VIManager       && make -f Makefile.x11       clean
 	cd Plugin_Variables       && make -f Makefile.x11       clean
 	cd Plugin_LookAt          && make -f Makefile.x11       clean
-	cd Plugin_Julius          && make -f Makefile.x11       clean
 	cd Plugin_Flite           && make -f Makefile           clean
 
 carbon:
