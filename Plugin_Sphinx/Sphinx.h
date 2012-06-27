@@ -19,7 +19,7 @@ private :
 
    void (*m_callbackRecogBegin)(void *data); /* Callback function for begininning of recognition */
    void *m_callbackRecogBeginData; /* data for callback function for beginning of recognition */
-   void (*m_callbackRecogResult)(char *result, void *data); /* Callback funtion for end of recognition */
+   void (*m_callbackRecogResult)(const char *result, void *data); /* Callback funtion for end of recognition */
    void *m_callbackRecogResultData; /* data for callback function for end of recognition */
 
    /* Main recognition loop */
@@ -55,6 +55,6 @@ public :
    void set_callback_begin(void (*callbackRecogBegin)(void *data), void *data);
 
    /* Register callback function when recognition ends */
-   void set_callback_return(void (*callbackRecogResult)(char *result, void *data), void *data);
+   void set_callback_return(void (*callbackRecogResult)(const char *result, void *data), void *data);
 
 };

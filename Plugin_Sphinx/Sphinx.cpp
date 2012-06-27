@@ -25,6 +25,8 @@ void Sphinx::initialize()
 
    m_callbackRecogBeginData = NULL; /* data for callback function for beginning of recognition */
    m_callbackRecogResultData = NULL; /* data for callback function for end of recognition */
+   m_callbackRecogBegin = NULL;
+   m_callbackRecogResult = NULL;
 }
 
 void Sphinx::clear()
@@ -39,6 +41,8 @@ void Sphinx::clear()
       free(m_configFile);
    if(m_userDictionary != NULL)
       free(m_userDictionary);
+
+   initialize();
 }
 
 Sphinx::Sphinx()
@@ -139,6 +143,8 @@ void Sphinx::run()
       }
       ps_process_raw(m_ps, adbuf, k, FALSE, FALSE);
       printf("Listening...\n");
+      if (m_callbackRecogBegin != NULL)
+         m_callbackRecogBegin(m_callbackRecogBeginData);
 
       /* Note timestamp for this first block of data */
       ts = m_cont->read_ts;
@@ -186,6 +192,8 @@ void Sphinx::run()
       ps_end_utt(m_ps);
       hyp = ps_get_hyp(m_ps, NULL, &uttid);
       printf("%s: %s\n", uttid, hyp);
+      if (m_callbackRecogResult != NULL)
+         m_callbackRecogResult(hyp, m_callbackRecogResultData);
 
       /* Resume A/D recording for next utterance */
       if (ad_start_rec(m_ad) < 0) {
@@ -216,7 +224,7 @@ void Sphinx::set_callback_begin(void (*callbackRecogBegin)(void *data), void *da
 }
 
 /* Register callback function when recognition ends */
-void Sphinx::set_callback_return(void (*callbackRecogResult)(char *result, void *data), void *data)
+void Sphinx::set_callback_return(void (*callbackRecogResult)(const char *result, void *data), void *data)
 {
    m_callbackRecogResult = callbackRecogResult;
    m_callbackRecogResultData = data;

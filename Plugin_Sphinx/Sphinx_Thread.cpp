@@ -57,19 +57,21 @@ static void callbackRecogBegin(void *data)
 }
 
 /* callbackRecogResult: callback for recognitional result */
-static void callbackRecogResult(char *result, void *data)
+static void callbackRecogResult(const char *result, void *data)
 {
    unsigned int i;
+   char m_result[strlen(result)];
+   strcpy(m_result, result);
    Sphinx_Thread *ps = (Sphinx_Thread *) data;
 
-   if (strlen(result) > 0) {
-      for (i = 0; i < strlen(result); i++)
+   if (strlen(m_result) > 0) {
+      for (i = 0; i < strlen(m_result); i++)
       {
-         if (result[i] == '_')
-            result[i] = ' ';
+         if (m_result[i] == '_')
+            m_result[i] = ' ';
       }
 
-      ps->sendMessage(SPHINXTHREAD_EVENTSTOP, result);
+      ps->sendMessage(SPHINXTHREAD_EVENTSTOP, m_result);
    }
 }
 
