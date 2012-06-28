@@ -42,6 +42,11 @@ void Sphinx::clear()
    if(m_userDictionary != NULL)
       free(m_userDictionary);
 
+   if (m_cont)
+      cont_ad_close(m_cont);
+   if (m_ad)
+      ad_close(m_ad);
+
    initialize();
 }
 
@@ -99,14 +104,6 @@ void Sphinx::start()
       printf("Failed to initialize voice activity detection\n");
       return;
    }
-   if (ad_start_rec(m_ad) < 0) {
-      printf("Failed to start recording\n");
-      return;
-   }
-   if (cont_ad_calib(m_cont) < 0) {
-      printf("Failed to calibrate voice activity detection\n");
-      return;
-   }
 
    run();
 }
@@ -118,9 +115,18 @@ void Sphinx::run()
    int32 k, ts, rem;
    char const *hyp;
    char const *uttid;
-   char word[256];
 
-   for (;;) {
+   /* Resume A/D recording for next utterance */
+   if (ad_start_rec(m_ad) < 0) {
+      printf("Failed to start recording\n");
+      return;
+   }
+   if (cont_ad_calib(m_cont) < 0) {
+      printf("Failed to calibrate voice activity detection\n");
+      return;
+   }
+
+   while (!m_pause) {
       /* Indicate listening for next utterance */
       printf("READY....\n");
 
@@ -149,8 +155,8 @@ void Sphinx::run()
       /* Note timestamp for this first block of data */
       ts = m_cont->read_ts;
 
-      /* Decode utterance until end (marked by a "long" silence, >1sec) */
-      for (;;) {
+      /* Decode utterance until end (marked by a "long" silence, >1sec) or told to pause */
+      while (!m_pause) {
          /* Read non-silence audio data, if any, from continuous listening module */
          if ((k = cont_ad_read(m_cont, adbuf, 4096)) < 0) {
             printf("Failed to read audio\n");
@@ -201,19 +207,23 @@ void Sphinx::run()
          return;
       }
    }
-
-   cont_ad_close(m_cont);
-   ad_close(m_ad);
+   /* Stop recording until un-paused */
+   ad_stop_rec(m_ad);
+   while (ad_read(m_ad, adbuf, 4096) >= 0);
+   cont_ad_reset(m_cont);
 }
 
 /* Tell the recognizer to pause */
 void Sphinx::pause()
 {
+   m_pause = true;
 }
 
 /* Tell the recognizer to resume */
 void Sphinx::resume()
 {
+   m_pause = false;
+   run();
 }
 
 /* Register callback function when recognition starts */
