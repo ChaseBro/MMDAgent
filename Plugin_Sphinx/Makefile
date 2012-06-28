@@ -12,9 +12,7 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
            ../Library_GLFW/lib/GLFW.a \
            ../Library_GLee/lib/GLee.a \
            ../Library_Bullet_Physics/lib/Bullet_Physics.a \
-           ../Library_libpng/lib/libpng.a \
            ../Library_JPEG/lib/JPEG.a \
-           ../Library_zlib/lib/zlib.a \
            /usr/local/lib/libpocketsphinx.a \
            /usr/local/lib/libsphinxbase.a \
            /usr/local/lib/libsphinxad.a
@@ -29,7 +27,6 @@ INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLFW/include \
            -I ../Library_MMDFiles/include \
            -I ../Library_MMDAgent/include \
-           -I ../Library_PortAudio/include \
            -I /usr/local/include/pocketsphinx \
            -I /usr/local/include/sphinxbase
 

@@ -26,9 +26,6 @@ CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
            -DMMDAGENT
 INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLee/include \
-           -I ../Library_zlib/include \
-           -I ../Library_libpng/include \
-           -I ../Library_JPEG/include \
            -I ../Library_MMDFiles/include \
            -I ../Library_GLFW/include \
            -I src/include \

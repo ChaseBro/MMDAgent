@@ -33,8 +33,6 @@ CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
            -DMMDFILES_CHARSET="\"UTF-8\""
 INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLee/include \
-           -I ../Library_zlib/include \
-           -I ../Library_libpng/include \
            -I ../Library_JPEG/include \
            -I src/include
 
