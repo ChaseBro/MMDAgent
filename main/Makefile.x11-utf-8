@@ -10,7 +10,6 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
            ../Library_GLFW/lib/GLFW.a \
            ../Library_GLee/lib/GLee.a \
            ../Library_Bullet_Physics/lib/Bullet_Physics.a \
-           ../Library_libpng/lib/libpng.a \
            ../Library_JPEG/lib/JPEG.a \
            ../Library_zlib/lib/zlib.a
 
@@ -29,7 +28,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS) $(LDADD)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) -o $(TARGET) \
-	-lstdc++ -pthread -lm -lXrandr -l X11 -lGL -lGLU -lftgl -lfreetype
+	-lstdc++ -pthread -lm -lXrandr -l X11 -lGL -lGLU -lftgl -lfreetype -lpng12
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<

@@ -103,7 +103,6 @@ x11-utf-8:
 	cd Library_GLFW           && make -f Makefile.x11
 	cd Library_GLee           && make
 	cd Library_JPEG           && make
-	cd Library_libpng         && make
 	cd Library_MMDAgent       && make
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8
 	cd Library_zlib           && make
@@ -121,7 +120,6 @@ x11-utf-8-clean:
 	cd Library_GLFW           && make -f Makefile.x11       clean
 	cd Library_GLee           && make                       clean
 	cd Library_JPEG           && make                       clean
-	cd Library_libpng         && make                       clean
 	cd Library_MMDAgent       && make                       clean
 	cd Library_MMDFiles       && make -f Makefile.x11-utf-8 clean
 	cd Library_zlib           && make                       clean

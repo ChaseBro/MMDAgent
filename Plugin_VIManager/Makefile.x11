@@ -13,7 +13,6 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
            ../Library_GLFW/lib/GLFW.a \
            ../Library_GLee/lib/GLee.a \
            ../Library_Bullet_Physics/lib/Bullet_Physics.a \
-           ../Library_libpng/lib/libpng.a \
            ../Library_JPEG/lib/JPEG.a \
            ../Library_zlib/lib/zlib.a
 
@@ -33,7 +32,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS) $(LDADD)
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) -o $(TARGET) \
-	-lGLU -lGL -lX11
+	-lGLU -lGL -lX11 -lpng12
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<
