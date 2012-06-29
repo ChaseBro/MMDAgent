@@ -389,7 +389,7 @@ void *MMDAgent_dlopen(const char *file)
 #ifdef _WIN32
    return (void *) LoadLibraryExA(file, NULL, 0);
 #else
-   char *path;
+   char *path, *error;
    void *d;
 
    if(file == NULL)
@@ -398,6 +398,9 @@ void *MMDAgent_dlopen(const char *file)
    path = MMDFiles_pathdup(file);
    d = dlopen(path, RTLD_NOW);
    free(path);
+   error = dlerror();
+   if (error != NULL)
+      printf("Failed to load library: %s with error: %s\n", file, error);
 
    return d;
 #endif /* _WIN32 */
