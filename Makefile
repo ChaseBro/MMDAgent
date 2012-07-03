@@ -109,12 +109,14 @@ x11-utf-8:
 	cd Library_zlib           && make
 	cd Library_PortAudio      && make -f Makefile.x11
 	cd Library_Flite          && make
+	cd Library_Phoenix        && make
 	cd main                   && make -f Makefile.x11-utf-8
 	cd Plugin_VIManager       && make -f Makefile.x11
 	cd Plugin_Variables       && make -f Makefile.x11
 	cd Plugin_LookAt          && make -f Makefile.x11
 	cd Plugin_Sphinx          && make
 	cd Plugin_Flite           && make
+	cd Plugin_Phoenix         && make
 
 x11-utf-8-clean:
 	cd Library_Bullet_Physics && make                       clean
@@ -127,12 +129,14 @@ x11-utf-8-clean:
 	cd Library_zlib           && make                       clean
 	cd Library_PortAudio      && make -f Makefile.x11       clean
 	cd Library_Flite          && make                       clean
+	cd Library_Phoenix        && make                       clean
 	cd main                   && make -f Makefile.x11-utf-8 clean
 	cd Plugin_VIManager       && make -f Makefile.x11       clean
 	cd Plugin_Variables       && make -f Makefile.x11       clean
 	cd Plugin_LookAt          && make -f Makefile.x11       clean
-	cd Plugin_Sphinx          && make
-	cd Plugin_Flite           && make -f Makefile           clean
+	cd Plugin_Sphinx          && make                       clean
+	cd Plugin_Flite           && make                       clean
+	cd Plugin_Phoenix         && make                       clean
 
 carbon:
 	cd Library_Bullet_Physics && make
