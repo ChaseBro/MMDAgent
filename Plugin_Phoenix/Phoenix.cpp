@@ -7,14 +7,13 @@
 #include "pconf.h"
 #include "globals_parse.h"
 #include "print_structs.h"
-#include "phoenix.h"
+#include "Phoenix.h"
 
 
 void Phoenix::initialize()
 {
 	// initialize all vars to null
 	m_mmdagent = NULL;// MMDAgent instance
-	out_ptr = outbuf;
 }
 
 void Phoenix::clear()
@@ -33,29 +32,33 @@ Phoenix::~Phoenix()
 	clear();
 }
 
-bool Phoenix::load(MMDAgent *mmdagent, /netfile/)
+bool Phoenix::load(MMDAgent *mmdagent, char *grammarFile)
 {
 	m_mmdagent = mmdagent;
 	//TODO: build argc and argv correctly!
 	argc = 5;
 	argv[0] = "parse_text.c";
 	argv[1] = "-dir";
-	argv[2] = "Grammar";
+	argv[2] = MMDAgent_pathdup(grammarFile);
 	argv[3] = "-grammar";
 	argv[4] = "MGram.net";
 	config(argc, argv);
-
-
 }
 
-char* Phoenix::parseUtterance(char* utterance)
+char* Phoenix::parseUtterance(const char* utterance)
 {
+   char *newUtterance, utteranceCopy[strlen(utterance)];
+   int i;
+
+   strcpy(utteranceCopy, utterance);
+
+	out_ptr = outbuf;
 	// Read grammar, initialize parser, malloc space, etc
 	init_parse(get_dir(), get_dict_file(), get_grammar_file(), get_forms_file(), get_priority_file());
 	
-	newUtterance = malloc(2 * strlen(utterance));
+	newUtterance = (char *)malloc(2 * strlen(utterance));
 	// Strip out punctuation, comments, and tokenize
-	this.strip_line(utterance,newUtterance);
+	strip_line(utteranceCopy,newUtterance);
 
 	parse(newUtterance, get_gram());
 

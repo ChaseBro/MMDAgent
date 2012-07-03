@@ -4,7 +4,7 @@ class Phoenix
 private :
 
 	MMDAgent *m_mmdagent;
-	char *outbuf[10000], *out_ptr;
+	char outbuf[10000], *out_ptr;
 	int argc;
 	char *argv[];
 public :
@@ -21,11 +21,11 @@ public :
 	void clear();
 
 	// load and configure phoenix parser
-	bool load(MMDAgent *m_mmdagent, char* netFile);
+	bool load(MMDAgent *m_mmdagent, char* grammarFile);
 
 	// tokenize input and remove punctuation
 	void strip_line(char *line, char *newLine);
 
 	// parse a single utterance
-	char* parseUtterance(char* utterance);
+	char* parseUtterance(const char* utterance);
 };
