@@ -95,7 +95,7 @@ EXPORT void extAppStart(MMDAgent *mmdagent)
 /* extProcCommand: process command message */
 EXPORT void extProcCommand(MMDAgent *mmdagent, const char *type, const char *args)
 {
-   printf("Got a command - %s \n",type);
+   printf("Got a command - %s - %s \n",type, args);
    if(enable == true) {
       if(MMDAgent_strequal(type, MMDAGENT_COMMAND_PLUGINDISABLE)) {
          if(MMDAgent_strequal(args, PLUGINFLITE_NAME)) {
@@ -118,6 +118,12 @@ EXPORT void extProcCommand(MMDAgent *mmdagent, const char *type, const char *arg
          }
       }
    }
+}
+
+/* extProcEvent: process event message */
+EXPORT void extProcEvent(MMDAgent *mmdagent, const char *type, const char *args)
+{
+   printf("Got an event - %s - %s \n",type, args);
 }
 
 /* extAppEnd: stop and free thread */
