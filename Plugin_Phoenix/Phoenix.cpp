@@ -41,7 +41,7 @@ bool Phoenix::load(MMDAgent *mmdagent, char *grammarFile)
 	argv[1] = "-dir";
 	argv[2] = MMDAgent_pathdup(grammarFile);
 	argv[3] = "-grammar";
-	argv[4] = "MGram.net";
+	argv[4] = "Kade.net";
 	config(argc, argv);
 }
 
@@ -55,7 +55,7 @@ char* Phoenix::parseUtterance(const char* utterance)
 	out_ptr = outbuf;
 	// Read grammar, initialize parser, malloc space, etc
 	init_parse(get_dir(), get_dict_file(), get_grammar_file(), get_forms_file(), get_priority_file());
-	
+
 	newUtterance = (char *)malloc(2 * strlen(utterance));
 	// Strip out punctuation, comments, and tokenize
 	strip_line(utteranceCopy,newUtterance);
@@ -71,7 +71,7 @@ char* Phoenix::parseUtterance(const char* utterance)
         	for(i= 0; i < get_num_parses(); i++ ) print_parse(i, out_ptr, 1, get_gram());
                 out_ptr += strlen(out_ptr);
         }
-	
+
 	// clear parser temps
 	reset(get_num_nets());
 	// free the line buffer

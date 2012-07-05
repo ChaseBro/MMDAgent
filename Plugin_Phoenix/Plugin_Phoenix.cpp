@@ -48,8 +48,9 @@
 #endif /* _WIN32 */
 
 #define PLUGINPHOENIX_NAME         "Phoenix"
+#define LOGIOS                     "Logios"
 #define PLUGINPHOENIX_STOPEVENT    "PARSE_RESULT"
-#define PLUGINPHOENIX_GRAMMARFILE    MMDAGENT_DIRSEPARATOR, PLUGINPHOENIX_NAME
+#define PLUGINPHOENIX_GRAMMARFILE    MMDAGENT_DIRSEPARATOR, LOGIOS, MMDAGENT_DIRSEPARATOR, "Grammar"
 #define SPHINXTHREAD_EVENTSTOP  "RECOG_EVENT_STOP"
 
 /* headers */
@@ -69,7 +70,7 @@ EXPORT void extAppStart(MMDAgent *mmdagent)
    char configFile[MMDAGENT_MAXBUFLEN];
 
    /* get config file */
-   sprintf(configFile, "%s%c%s", mmdagent->getAppDirName(), PLUGINPHOENIX_GRAMMARFILE);
+   sprintf(configFile, "%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINPHOENIX_GRAMMARFILE);
 
    phoenix.load(mmdagent, configFile);
 
