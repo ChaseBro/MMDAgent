@@ -48,8 +48,9 @@
 #endif /* _WIN32 */
 
 #define PLUGINSPHINX_NAME          "Sphinx"
-#define PLUGINSPHINX_LANGUAGEMODEL MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "model", MMDAGENT_DIRSEPARATOR, "lm", MMDAGENT_DIRSEPARATOR, "en_US", MMDAGENT_DIRSEPARATOR, "hub4.5000.DMP"
-#define PLUGINSPHINX_DICTIONARY    MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "model", MMDAGENT_DIRSEPARATOR, "lm", MMDAGENT_DIRSEPARATOR, "en_US", MMDAGENT_DIRSEPARATOR, "hub4.5000.dic"
+#define LOGIOS                     "Logios"
+#define PLUGINSPHINX_LANGUAGEMODEL MMDAGENT_DIRSEPARATOR, LOGIOS, MMDAGENT_DIRSEPARATOR, "Grammar", MMDAGENT_DIRSEPARATOR, "Kade.arpa"
+#define PLUGINSPHINX_DICTIONARY    MMDAGENT_DIRSEPARATOR, LOGIOS, MMDAGENT_DIRSEPARATOR, "Grammar", MMDAGENT_DIRSEPARATOR, "Kade.dict"
 #define PLUGINSPHINX_ACOUSTICMODEL MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "model", MMDAGENT_DIRSEPARATOR, "hmm", MMDAGENT_DIRSEPARATOR, "en_US", MMDAGENT_DIRSEPARATOR, "hub4wsj_sc_8k", MMDAGENT_DIRSEPARATOR, "mdef"
 #define PLUGINSPHINX_CONFIGFILE    MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "jconf.txt"
 
@@ -79,8 +80,8 @@ EXPORT void extAppStart(MMDAgent *mmdagent)
    char userDictionary[MMDAGENT_MAXBUFLEN];
 
    /* set model file names */
-   sprintf(languageModel, "%s%c%s%c%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_LANGUAGEMODEL);
-   sprintf(dictionary, "%s%c%s%c%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
+   sprintf(languageModel, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_LANGUAGEMODEL);
+   sprintf(dictionary, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
    sprintf(acousticModel, "%s%c%s%c%s%c%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_ACOUSTICMODEL);
    sprintf(configFile, "%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_CONFIGFILE);
 
