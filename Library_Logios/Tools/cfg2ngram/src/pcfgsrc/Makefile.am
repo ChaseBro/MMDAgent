@@ -1,0 +1,4 @@
+noinst_LIBRARIES = libPCFG.a
+libPCFG_a_SOURCES = PCFG.cpp debug.cpp
+INCLUDES = -I..
+AM_CXXFLAGS = -DPCRE_STATIC
