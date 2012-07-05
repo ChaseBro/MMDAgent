@@ -3,6 +3,7 @@
 #include <cont_ad.h>
 #include <MMDAgent.h>
 #include "Sphinx.h"
+#include "err.h"
 
 
 bool m_pause;
@@ -69,6 +70,7 @@ bool Sphinx::load(MMDAgent *mmdagent, const char *languageModel, const char *dic
    m_acousticModel = MMDAgent_strdup(acousticModel);
    m_configFile = MMDAgent_strdup(configFile);
    m_userDictionary = MMDAgent_strdup(userDictionary);
+   err_set_logfp(NULL);
 
    /* load models */
    m_config = cmd_ln_init(NULL, ps_args(), 1,
