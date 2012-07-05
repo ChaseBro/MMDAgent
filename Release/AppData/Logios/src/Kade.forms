@@ -1,0 +1,55 @@
+#######################################################
+# 
+# 
+# 
+# 
+#######################################################
+
+
+FUNCTION: PersonFunc
+    NETS:
+	[Professor]
+	[Staff]
+	[Student]
+;
+
+FUNCTION: GeneralTypes
+    NETS:
+	[Location]
+	[Person]
+	[Info]
+;
+
+FUNCTION: LocationFunc
+    NETS:
+	[_Office]
+	[Building]
+;
+
+FUNCTION: InfoFunc
+    NETS:
+	[_Phone]
+	[_Email]
+	[_Department]
+	[_Publication]
+	[_Research]
+;
+
+FUNCTION: Query
+    NETS:
+	[InfoQuery]
+	[LocationQuery]
+	[PersonQuery]
+;
+
+FUNCTION: Question
+    NETS:
+	[WhatQuestion]
+	[WhoQuestion]
+	[WhereQuestion]
+;
+
+FUNCTION: Verbs
+    NETS:
+	[Linking]
+;

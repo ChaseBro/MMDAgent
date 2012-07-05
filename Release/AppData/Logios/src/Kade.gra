@@ -1,0 +1,161 @@
+###################################################################
+# 
+# CMU GraphQA Receptionist Specific segments
+# 
+# 
+# 
+# Written by Shane Smith
+#
+# 
+#
+###################################################################
+
+
+[WhatQuestion]
+	(what [Linking] [InfoQuery])
+	(what [Linking] [LocationQuery])
+;
+
+[WhoQuestion]
+	(who [Linking] [PersonQuery])
+;
+
+[WhereQuestion]
+	(where [Linking] [LocationQuery])
+;
+
+[Linking]
+	(is)
+	(are)
+	(was)
+	(were)
+	([AllLinking])
+;
+[AllLinking]
+	(may)
+	(might)
+	(must)
+	(be) 
+	(being) 
+	(been)
+	(am)
+	(do)
+	(does)
+	(did)
+	(should)
+	(could)
+	(would)
+	(have)
+	(had)
+	(has)
+	(will)
+	(can)
+	(shall)
+;
+
+[Person]
+	([Professor])
+	([Staff])
+	([Student])
+;
+
+[Staff]
+	(abele nicholas)
+	(nicholas abele)
+	(abele)
+	(nicholas)
+
+;
+
+[Student]
+	(smith shane)
+	(shane smith)
+	(shane)
+	(smith)
+
+	(montgomery jack)
+	(jack montgomery)
+	(jack)
+	(montgomery)
+;
+
+[Professor]
+	(nyberg eric)
+	(eric nyberg)
+	(eric)
+	(nyberg)
+  
+	(black alan)
+	(alan black)
+	(alan)
+	(black)
+
+;
+
+
+#Info
+[Info]
+	([_Phone])
+	([_Email])
+	([_Department])
+	([_Publication])
+	([_Research])
+;
+
+#Relationship
+[Rel]
+	(advisor)
+	(advisee)
+	(student)
+	(professor)
+;
+
+[_Phone]
+	(phone *number)
+	(number)
+;
+[_Office]
+	(office)
+	(sit)
+;
+
+[_Email]
+	(email *address)
+;
+[_Department]
+	(department)
+;
+[_Publication]
+	(publication)
+	(publications)
+	(published *works *papers)
+;
+[_Research]
+	(research)
+;
+[Building]
+	(building)
+	(gates)
+;
+[Location]
+	([_Office])
+	([Building])
+;          
+[Node]
+	([Location])
+	([Person])
+; 
+#Query
+[InfoQuery]
+	([Node] 's [Info])
+;
+
+[PersonQuery]
+	(what [Person])
+	(who *[Linking] [Person])
+;
+
+[LocationQuery]
+	([Location])
+	([Person] 's [Location])
+;
