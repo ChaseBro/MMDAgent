@@ -10,38 +10,49 @@
 #
 ###################################################################
 
-
-[WhatQuestion]
-	(what [Linking] [InfoQuery])
-	(what [Linking] [LocationQuery])
+# Querys
+[InfoQuery]
+	(what *[Linking] [SpecNode] *'s [Info])
 ;
 
-[WhoQuestion]
-	(who [Linking] [PersonQuery])
+[NodeQuery]
+	(what [GenNode] [RelVerb] [SpecNode])
+	(what [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
 ;
 
-[WhereQuestion]
-	(where [Linking] [LocationQuery])
+[PersonQuery]
+	(who *[Linking] [SpecPerson])
+	(who *[Linking] [SpecPerson] *'s [Rel])
 ;
 
+[LocationQuery]
+	(where *[Linking] [SpecLocation])
+	(where *[Linking] [SpecPerson] *'s [GenLocation])
+	(where *[_do] [SpecPerson] [LocationVerb])
+;
+
+# Verbs ------------------------------------------
 [Linking]
 	(is)
 	(are)
 	(was)
 	(were)
-	([AllLinking])
+	(be)
+	(being)
+	(been)
+	(am)
 ;
+
+[_do]
+	(do)
+	(does)
+	(did)
+;
+
 [AllLinking]
 	(may)
 	(might)
 	(must)
-	(be) 
-	(being) 
-	(been)
-	(am)
-	(do)
-	(does)
-	(did)
 	(should)
 	(could)
 	(would)
@@ -51,23 +62,133 @@
 	(will)
 	(can)
 	(shall)
+	([Linking])
+	([_do])
 ;
 
-[Person]
-	([Professor])
-	([Staff])
-	([Student])
+[RelVerb]
+	([PersonVerb])
+	([LocationVerb])
 ;
 
-[Staff]
+[PersonVerb]
+	(advises)
+	(advise)
+	(teaches)
+	(teach)
+	(mentors)
+	(mentor)
+;
+
+[LocationVerb]
+	(sit)
+	(sits)
+	(work)
+	(works)
+	(play)
+;
+
+
+# Relationships ----------------------------------
+[Rel]
+	(advisor)
+	(advisee)
+	(student)
+	(professor)
+;
+
+
+# Nodes ------------------------------------------
+[GenNode]
+	([GenLocation])
+	([GenPerson])
+;
+
+[SpecNode]
+	([SpecLocation])
+	([SpecPerson])
+;
+
+[GenPerson]
+	(PROFESSOR)
+	(STUDENT)
+	(STAFF)
+	(PERSON)
+PROFESSOR
+	(professor)
+	(professors)
+	(prof)
+	(doctor)
+	(dr)
+STUDENT
+	(student)
+	(students)
+	(t a)
+STAFF
+	(staff)
+	(employee)
+	(employees)
+PERSON
+	(person)
+	(people)
+	(he)
+	(her)
+;
+
+[SpecPerson]
+	([SpecProfessor])
+	([SpecStaff])
+	([SpecStudent])
+	(YOU)
+YOU
+	(you)
+	(your)
+;
+
+[GenLocation]
+	(OFFICE)
+	([_building])
+OFFICE
+	(office)
+;
+
+[SpecLocation]
+	([SpecBuilding])
+	([SpecRoom])
+;
+
+
+# Info -------------------------------------------
+[Info]
+	(PHONE)
+	(EMAIL)
+	(DEPARTMENT)
+	(PUBLICATION)
+	(RESEARCH)
+PHONE
+	(phone *number)
+	(number)
+EMAIL
+	(email *address)
+DEPARTMENT
+	(department)
+PUBLICATION
+	(publication)
+	(publications)
+	(published *works *papers)
+RESEARCH
+	(research)
+;
+
+# Specifics --------------------------------------
+[SpecStaff]
 	(abele nicholas)
 	(nicholas abele)
 	(abele)
 	(nicholas)
-
 ;
 
-[Student]
+[SpecStudent]
 	(smith shane)
 	(shane smith)
 	(shane)
@@ -79,83 +200,62 @@
 	(montgomery)
 ;
 
-[Professor]
+[SpecProfessor]
 	(nyberg eric)
 	(eric nyberg)
 	(eric)
 	(nyberg)
-  
+
 	(black alan)
 	(alan black)
 	(alan)
 	(black)
-
 ;
 
-
-#Info
-[Info]
-	([_Phone])
-	([_Email])
-	([_Department])
-	([_Publication])
-	([_Research])
+[SpecBuilding]
+	(GATES)
+	(NSH)
+	(HILLMAN)
+GATES
+	(gates *hillman center for computer science)
+	(gates *hillman *[_building])
+	(g h c *building)
+NSH
+	(newell simon *[_building])
+	(newell simon hall)
+	(n s h *[_building])
+HILLMAN
+	(hillman center for future generation technologies)
+	(hillman *[_building])
 ;
 
-#Relationship
-[Rel]
-	(advisor)
-	(advisee)
-	(student)
-	(professor)
+[SpecRoom]
+	(RASHEED)
+	(VONAHN)
+RASHEED
+	(rasheed [_room])
+VONAHN
+	(von ahn *awesome [_room])
+	(aweseome [_room])
 ;
 
-[_Phone]
-	(phone *number)
-	(number)
-;
-[_Office]
-	(office)
-	(sit)
-;
-
-[_Email]
-	(email *address)
-;
-[_Department]
-	(department)
-;
-[_Publication]
-	(publication)
-	(publications)
-	(published *works *papers)
-;
-[_Research]
-	(research)
-;
-[Building]
+# Terminals --------------------------------------
+[_building]
 	(building)
-	(gates)
-;
-[Location]
-	([_Office])
-	([Building])
-;          
-[Node]
-	([Location])
-	([Person])
-; 
-#Query
-[InfoQuery]
-	([Node] 's [Info])
+	(center)
+	(hall)
 ;
 
-[PersonQuery]
-	(what [Person])
-	(who *[Linking] [Person])
+[_room]
+	(room)
+	(classroom)
+	(auditorium)
 ;
 
-[LocationQuery]
-	([Location])
-	([Person] 's [Location])
+[Prep]
+	(in)
+	(to)
+	(on)
+	(of)
 ;
+

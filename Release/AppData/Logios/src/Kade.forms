@@ -6,33 +6,10 @@
 #######################################################
 
 
-FUNCTION: PersonFunc
+FUNCTION: SpecNode
     NETS:
-	[Professor]
-	[Staff]
-	[Student]
-;
-
-FUNCTION: GeneralTypes
-    NETS:
-	[Location]
-	[Person]
-	[Info]
-;
-
-FUNCTION: LocationFunc
-    NETS:
-	[_Office]
-	[Building]
-;
-
-FUNCTION: InfoFunc
-    NETS:
-	[_Phone]
-	[_Email]
-	[_Department]
-	[_Publication]
-	[_Research]
+	[SpecNode]
+	[GenNode]
 ;
 
 FUNCTION: Query
@@ -40,16 +17,6 @@ FUNCTION: Query
 	[InfoQuery]
 	[LocationQuery]
 	[PersonQuery]
+	[NodeQuery]
 ;
 
-FUNCTION: Question
-    NETS:
-	[WhatQuestion]
-	[WhoQuestion]
-	[WhereQuestion]
-;
-
-FUNCTION: Verbs
-    NETS:
-	[Linking]
-;
