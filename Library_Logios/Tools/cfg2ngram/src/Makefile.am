@@ -2,7 +2,7 @@ SUBDIRS = pcfgsrc
 
 bin_PROGRAMS = phoenix2pcfg pcfg2corpus phoenix2corpus
 
-LDADD = pcfgsrc/libPCFG.a
+LDADD = pcfgsrc/libPCFG.a -lpcre
 
 # you must link to the actual MinGW libraries, not the Cygwin versions
 # change the following paths according to your installation
