@@ -53,12 +53,10 @@ int main( argc, argv)
 {
     int	netid;
 
-    printf("-\n");
     /* set command line parms */
     if (pconf(argc,argv,conf,NULL,NULL,NULL))
 	pusage(argv[0],conf),exit(-1);
 
-    printf("-\n");
     /* malloc space for symbol buffer */
     if( !(sym_buf=(char *)malloc(SymBufSize * sizeof(char)))){
 	printf("can't allocate space for script buffer\n");
@@ -70,14 +68,12 @@ int main( argc, argv)
     gram= read_grammar(".", dict_file, grammar_file, frames_file, priority_file);
     num_nets= gram->num_nets;
 
-    printf("-\n");
     if( !(leaf= (char *)malloc(num_nets * sizeof(char))) ) {
 	printf("malloc failed\n");
 	exit(-1);
     }
     for(netid= 0; netid < num_nets; netid++) leaf[netid]= (char)-1;
 
-    printf("-\n");
     /* set concept leaf flag for all nets, positive if no concept subnets */
     for(netid= 1; netid < num_nets; netid++) {
 	if( leaf[netid] != -1 ) continue;
@@ -89,14 +85,12 @@ int main( argc, argv)
 	leaf[netid]= is_leaf( netid );
     }
 
-    printf("-\n");
     /* mark non-concept nets as not concept leaves */
     for(netid= 1; netid < num_nets; netid++) {
 	    if(!gram->labels[netid] || !isupper((int)*(gram->labels[netid]+1)))
 		leaf[netid]= 0;
     }
 
-    printf("-\n");
     /* open output .net file */
     if( !(fp_out= fopen(grammar_file,"w")) ) {
 	printf("can't open %s\n", grammar_file);
@@ -105,11 +99,9 @@ int main( argc, argv)
     /* write number of nets at start of file */
     fprintf(fp_out, "Number of Nets= %d\n", num_nets-1);
 
-    printf("-\n");
     for(netid= 1; netid < num_nets; netid++) {
 	write_net(netid);
     }
-    printf("-\n");
     fclose(fp_out);
     printf("Done\n");
     return(0);
