@@ -12,3 +12,4 @@ Library_Flite/include/flite_version.h
 Library_Flite/main/flite_voice_list.c
 Release/AppData/Logios/Grammar
 .svn
+*.pyc
