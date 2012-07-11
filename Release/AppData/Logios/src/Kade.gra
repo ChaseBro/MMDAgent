@@ -142,10 +142,8 @@ PERSON
 	([SpecProfessor])
 	([SpecStaff])
 	([SpecStudent])
-	(YOU)
-YOU
-	(you)
-	(your)
+	([_you])
+	([_me])
 ;
 
 [GenLocation]
@@ -260,5 +258,15 @@ VONAHN
 	(to)
 	(on)
 	(of)
+;
+
+[_you]
+	(you)
+	(your)
+;
+
+[_me]
+	(me)
+	(i)
 ;
 
