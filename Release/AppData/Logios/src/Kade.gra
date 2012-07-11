@@ -16,13 +16,16 @@
 ;
 
 [NodeQuery]
-	(what [GenNode] [RelVerb] [SpecNode])
-	(what [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
+	(WHWORD [GenNode] [RelVerb] [SpecNode])
+	(WHWORD [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
+WHWORD
+	(what)
+	(which)
 ;
 
 [PersonQuery]
-	(who *[Linking] [SpecPerson])
-	(who *[Linking] [SpecPerson] *'s [Rel])
+	(who [Linking] [SpecPerson])
+	(who [Linking] [SpecPerson] *'s [Rel])
 ;
 
 [LocationQuery]
