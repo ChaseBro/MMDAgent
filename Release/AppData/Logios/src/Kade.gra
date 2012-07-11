@@ -166,6 +166,7 @@ OFFICE
 	(DEPARTMENT)
 	(PUBLICATION)
 	(RESEARCH)
+	(NAME)
 PHONE
 	(phone *number)
 	(number)
@@ -179,6 +180,10 @@ PUBLICATION
 	(published *works *papers)
 RESEARCH
 	(research)
+NAME
+	(name)
+	(first name)
+	(last name)
 ;
 
 # Specifics --------------------------------------
