@@ -16,13 +16,16 @@
 ;
 
 [NodeQuery]
-	(what [GenNode] [RelVerb] [SpecNode])
-	(what [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
+	(WHWORD [GenNode] [RelVerb] [SpecNode])
+	(WHWORD [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
+WHWORD
+	(what)
+	(which)
 ;
 
 [PersonQuery]
-	(who *[Linking] [SpecPerson])
-	(who *[Linking] [SpecPerson] *'s [Rel])
+	(who [Linking] [SpecPerson])
+	(who [Linking] [SpecPerson] *'s [Rel])
 ;
 
 [LocationQuery]
@@ -139,10 +142,8 @@ PERSON
 	([SpecProfessor])
 	([SpecStaff])
 	([SpecStudent])
-	(YOU)
-YOU
-	(you)
-	(your)
+	([_you])
+	([_me])
 ;
 
 [GenLocation]
@@ -165,6 +166,7 @@ OFFICE
 	(DEPARTMENT)
 	(PUBLICATION)
 	(RESEARCH)
+	(NAME)
 PHONE
 	(phone *number)
 	(number)
@@ -178,6 +180,10 @@ PUBLICATION
 	(published *works *papers)
 RESEARCH
 	(research)
+NAME
+	(name)
+	(first name)
+	(last name)
 ;
 
 # Specifics --------------------------------------
@@ -257,5 +263,15 @@ VONAHN
 	(to)
 	(on)
 	(of)
+;
+
+[_you]
+	(you)
+	(your)
+;
+
+[_me]
+	(me)
+	(i)
 ;
 
