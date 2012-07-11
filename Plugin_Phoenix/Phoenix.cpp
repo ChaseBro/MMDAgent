@@ -63,7 +63,7 @@ char* Phoenix::parseUtterance(const char* utterance)
 	parse(newUtterance, get_gram());
 
 	for(i=0; i < get_num_parses(); i++) {
-		print_parse(i, out_ptr, 0, get_gram());
+		print_parse(i, out_ptr, 1, get_gram());
 		out_ptr += strlen(out_ptr);
 	}
 
