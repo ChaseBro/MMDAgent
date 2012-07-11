@@ -203,7 +203,6 @@ void Sphinx_Thread::run()
       printf("Failed to load config\n");
       return;
    }
-   printf("Config loaded\n");
 
    /* register callback functions */
    m_recog->set_callback_begin(callbackRecogBegin, this);
@@ -216,7 +215,6 @@ void Sphinx_Thread::run()
    //m_logger.setActiveFlag(true);
 
    /* start recognize */
-   printf("Attempting to start\n");
    m_recog->start();
 }
 
