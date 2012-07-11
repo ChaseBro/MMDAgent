@@ -8,6 +8,18 @@ Kade uses the [Flite](http://www.speech.cs.cmu.edu/flite/) engine for TTS and [P
 
 ## Building Kade
 
+Currently Kade is only officially supported on Ubuntu 12.04 although it should work well on any recent UNIX distro. It may work on other platorms (especially Windows), but support is not guaranteed.
+
+1.  First, apt-get the following things:
+        apt-get install libpulse-dev libftgl-dev libfreetype-dev
+
+2.  Then try:
+        make x11-utf-8
+3.  Assuming all went well we will now build the grammar files (which don't build by default)
+        ./Release/AppData/Logios/CompileLanguage.sh
+4.  If everything went well so far then try running MMDAgent (you may still be missing some dependencies, this is still a work in progress).
+        ./Release/MMDAgent
+
 Pretty much, it's awful.
 
 ## Contributors
