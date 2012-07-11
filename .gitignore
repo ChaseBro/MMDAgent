@@ -13,3 +13,4 @@ Library_Flite/main/flite_voice_list.c
 Release/AppData/Logios/Grammar
 .svn
 *.pyc
+Library_libpng/src/pnglibconf.h
