@@ -13,11 +13,13 @@
 # Querys
 [InfoQuery]
 	(what *[Linking] [SpecNode] *'s [Info])
+	(what *'s [SpecNode] *'s [Info])
 ;
 
 [NodeQuery]
 	(WHWORD [GenNode] [RelVerb] [SpecNode])
 	(WHWORD [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
+	(WHWORD [GenNode] [AllLinking] [RelVerb] by [SpecNode])
 WHWORD
 	(what)
 	(which)
@@ -30,7 +32,7 @@ WHWORD
 
 [LocationQuery]
 	(where *[Linking] [SpecLocation])
-	(where *[Linking] [SpecPerson] *'s [GenLocation])
+	(where *[Linking] [SpecPerson] 's [GenLocation])
 	(where *[_do] [SpecPerson] [LocationVerb])
 ;
 
@@ -75,12 +77,8 @@ WHWORD
 ;
 
 [PersonVerb]
-	(advises)
-	(advise)
-	(teaches)
-	(teach)
-	(mentors)
-	(mentor)
+	([_advise])
+	([_teach])
 ;
 
 [LocationVerb]
@@ -89,6 +87,23 @@ WHWORD
 	(work)
 	(works)
 	(play)
+;
+
+# Verbs -----------------
+[_advise]
+	(advises)
+	(advise)
+	(advised)
+	(advising)
+	(mentors)
+	(mentor)
+	(mentoring)
+;
+[_teach]
+	(teaches)
+	(teach)
+	(taught)
+	(teaching)
 ;
 
 
@@ -161,29 +176,14 @@ OFFICE
 
 # Info -------------------------------------------
 [Info]
-	(PHONE)
-	(EMAIL)
-	(DEPARTMENT)
-	(PUBLICATION)
-	(RESEARCH)
-	(NAME)
-PHONE
-	(phone *number)
-	(number)
-EMAIL
-	(email *address)
-DEPARTMENT
-	(department)
-PUBLICATION
-	(publication)
-	(publications)
-	(published *works *papers)
-RESEARCH
-	(research)
-NAME
-	(name)
-	(first name)
-	(last name)
+	([_phone])
+	([_email])
+	([_department])
+	([_publication])
+	([_research])
+	([_name])
+	([_firstName])
+	([_lastName])
 ;
 
 # Specifics --------------------------------------
@@ -275,3 +275,29 @@ VONAHN
 	(i)
 ;
 
+[_phone]
+	(*phone number)
+;
+[_email]
+	(email *address)
+;
+[_department]
+	(department)
+;
+[_publication]
+	(publication)
+	(publications)
+	(published *works *papers)
+;
+[_research]
+	(research)
+;
+[_name]
+	(name)
+;
+[_firstName]
+	(first name)
+;
+[_lastName]
+	(last name)
+;

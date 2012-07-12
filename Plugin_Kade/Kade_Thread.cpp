@@ -178,9 +178,9 @@ void Kade_Thread::sendMessage(const char *str1, const char *str2)
    m_mmdagent->sendEventMessage(str1, str2);
 }
 
-char* Kade_Thread::procParse(const char *parse)
+char* Kade_Thread::procParse(const char *plainText, const char *parse)
 {
-   PyObject *pParse, *pAnswer, *pAnswerStr, *pArgs;
+   PyObject *pParse, *pAnswer, *pAnswerStr, *pArgs, *pPlain;
 
    if (!pProcParse || !PyCallable_Check(pProcParse)) {
       printf("procParse does not exists or is not callable.\n");
@@ -190,11 +190,13 @@ char* Kade_Thread::procParse(const char *parse)
    }
 
    pParse = PyString_FromString(parse);
-   if (pParse != NULL) {
+   pPlain = PyString_FromString(plainText);
+   if (pParse != NULL && pPlain != NULL) {
 
-      pArgs = PyTuple_New(1);
+      pArgs = PyTuple_New(2);
       if (pArgs != NULL) {
-         PyTuple_SetItem(pArgs, 0, pParse);
+         PyTuple_SetItem(pArgs, 0, pPlain);
+         PyTuple_SetItem(pArgs, 1, pParse);
          pAnswer = PyObject_CallObject(pProcParse, pArgs);
 
          if (pAnswer != NULL) {
