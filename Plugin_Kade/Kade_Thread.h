@@ -79,7 +79,7 @@ public:
    /* sendMessage: send message to MMDAgent */
    void sendMessage(const char *str1, const char *str2);
 
-   char* procParse(const char *parse);
+   char* procParse(const char *plainText, const char *parse);
 
    char* procPlainText(char *text);
 };
