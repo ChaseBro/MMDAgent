@@ -1,0 +1,17 @@
+# Node Queries
+What professor teaches Jack?
+What professors teach Jack?
+What classes does Alan teach?
+Which buildings does Alan teach in?
+Which professor advises jack?
+Which student does Eric advise?
+Which students does Eric advise?
+
+# Info Queries
+What is Alan's email?
+What is Eric's phone?
+What is Alan's email address?
+What is Eric's department?
+What is professor Black's first name?
+What is Alan's last name?
+
