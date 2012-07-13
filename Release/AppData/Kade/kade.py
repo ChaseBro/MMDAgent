@@ -1,8 +1,11 @@
 #Parse Tester
-import json;
+import json
 import uuid
+import os
 import re
 import sys
+import shlex
+import subprocess
 import jsonrpclib
 
 class JsonServer:
@@ -17,7 +20,7 @@ class JsonServer:
         print result
         return result
 
-myInfo = {'name' : 'Fergus', 'email': 'fergus at c m u dot e d u', 'phone': '123-456-7890', 'department': 'Language Technologies', 'firstName': 'Fergus', 'lastName': 'Carnegie'}
+myInfo = {'name' : 'Fergus', 'email': 'fergus at c.m.u dot e.d.u', 'department': 'Language Technologies', 'firstName': 'Fergus', 'lastName': 'Carnegie'}
 
 def procParse(plainText, inParse):
     print "I see you have a question..."
@@ -47,7 +50,7 @@ def procParse(plainText, inParse):
                         jsonQuery = jsonSpecNode(infoQuery['SpecNode']) , ('Traverse', None), ('Type', infoNode)
                         answer = server.callNell(plainText, jsonQuery)
                         if answer is not None:
-                            response = extractLeaves(specNode) + '\'s ' + infoNode + ' is ' + answer
+                            response = extractLeaves(specNode) + '\'s ' + infoNode + ' is ' + answer['plainText']
 
                 elif 'NodeQuery' in extract.keys():
                     nodeQuery = extract['NodeQuery']
@@ -121,4 +124,30 @@ def getNodeType(node):
 
 #print parse("[WhereQuestion] ( WHERE [Linking] ( IS ) [LocationQuery] ( [Person] ( [Professor] ( NYBERG ) ) 'S [Location] ( [_Office] ( OFFICE ) ) ) ) ")
 if __name__ == '__main__':
-    print procParse('What is alan\'s name', '{"Query": {"extracts":[{"InfoQuery": {"SpecNode":{"SpecPerson":{"SpecProfessor":["ALAN", "BLACK"]}}, "Info":"email"}}]}}')
+    sys.argv.pop(0)
+    args = sys.argv
+
+    if len(args) < 5:
+        print 'Usage: python kade.py [path to parse_text] -dir [path to grammar dir] -grammar [grammar file name]'
+        quit()
+    print args
+    print
+
+    print 'Usage: input a simple sentence of the from:'
+    print '"What is/are [Person]\'s [info]?"'
+    print
+
+    while True:
+        s = raw_input()
+        if s == "quit":
+            break
+
+        if s is not '':
+            out, err = subprocess.Popen(args, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE).communicate(s)
+            print 'err:',err
+            print 'out:',out
+            print procParse(s, out)
+
+        else:
+            print "Invalid input."
+
