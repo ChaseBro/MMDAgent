@@ -46,11 +46,11 @@ def procParse(plainText, inParse):
                         else:
                             response = 'My ' + (infoNode, 'last name')[infoNode == 'lastName'] + ' is ' + myInfo[infoNode] + '.'
                     else:
-                        response = 'I think you are looking for info about ' + extractLeaves(specNode) + '\'s ' + infoNode + "."
                         jsonQuery = jsonSpecNode(infoQuery['SpecNode']) , ('Traverse', None), ('Type', infoNode)
                         answer = server.callNell(plainText, jsonQuery)
-                        if answer is not None:
+                        if answer is not None and answer['plainText'] is not None:
                             response = extractLeaves(specNode) + '\'s ' + infoNode + ' is ' + answer['plainText']
+                        response = 'I think you are looking for info about ' + extractLeaves(specNode) + '\'s ' + infoNode + "."
 
                 elif 'NodeQuery' in extract.keys():
                     nodeQuery = extract['NodeQuery']
