@@ -1,1617 +1,1617 @@
 [SpecProfessor]
-	([victor_adamchik])	#FKTR #ATMX
-	([jonathan_aldrich])	#JN0N #ALTR
-	([vincent_aleven])	#FNSN #ALFN
-	([omead_amidi])	#AMT #AMT
-	([david_andersen])	#TFT #ANTR
-	([john_anderson])	#JN #ANTR
-	([paul_andre])	#PL #ANTR
-	([dimitrios_apostolopoulos])	#TMTR #APST
-	([christopher_atkeson])	#KRST #ATKS
-	([james_bagnell])	#JMS #PNL
-	([john_bares])	#JN #PRS
-	([ziv_bar-joseph])	#SF #PRJS
-	([darrin_bentivegna])	#TRN #PNTF
-	([marcel_bergerman])	#MRSL #PRKR
-	([alan_black])	#ALN #PLK
-	([guy_blelloch])	#K #PLLK
-	([lenore_blum])	#LNR #PLM
-	([avrim_blum])	#AFRM #PLM
-	([manuel_blum])	#MNL #PLM
-	([david_bourne])	#TFT #PRN
-	([daniel_boyarski])	#TNL #PRSK
-	([stephen_brookes])	#STFN #PRKS
-	([ralf_brown])	#RLF #PRN
-	([brett_browning])	#PRT #PRNN
-	([emma_brunskill])	#AM #PRNS
-	([randal_bryant])	#RNTL #PRNT
-	([james_callan])	#JMS #KLN
-	([jaime_carbonell])	#JM #KRPN
-	([kathleen_carley])	#K0LN #KRL
-	([jacobo_carrasquel])	#JKP #KRSK
-	([lynn_carter])	#LN #KRTR
-	([justine_cassell])	#JSTN #KSL
-	([iliano_cervesato])	#ALN #SRFS
-	([howard_choset])	#HRT #XST
-	([edmund_clarke])	#ATMN #KLRK
-	([william_cohen])	#ALM #KHN
-	([eric_cooper])	#ARK #KPR
-	([albert_corbett])	#ALPR #KRPT
-	([thomas_cortina])	#TMS #KRTN
-	([lorrie_cranor])	#LR #KRNR
-	([karl_crary])	#KRL #KRR
-	([wanda_dann])	#ANT #TN
-	([roger_dannenberg])	#RKR #TNNP
-	([fernando_de_la_torre_frade])	#FRNN #TLTR
-	([anind_dey])	#ANNT #T
-	([m_dias])	#M #TS
-	([john_dolan])	#JN #TLN
-	([steven_dow])	#STFN #T
-	([artur_dubrawski])	#ARTR #TPRS
-	([m_durand])	#M #TRNT
-	([david_eckhardt])	#TFT #AKRT
-	([alexei_efros])	#ALKS #AFRS
-	([jeffrey_eppinger])	#JFR #APNK
-	([michael_erdmann])	#MKL #ARTM
-	([maxine_eskenazi])	#MKSN #ASKN
-	([scott_fahlman])	#SKT #FLMN
-	([christos_faloutsos])	#KRST #FLTS
-	([david_farber])	#TFT #FRPR
-	([kayvon_fatahalian])	#KFN #FTHL
-	([gary_fedder])	#KR #FTR
-	([stephen_fienberg])	#STFN #FNPR
-	([eugene_fink])	#AJN #FNK
-	([jodi_forlizzi])	#JT #FRLS
-	([robert_frederking])	#RPRT #FRTR
-	([edward_fredkin])	#ATRT #FRTK
-	([carol_frieze])	#KRL #FRS
-	([kaigham_gabriel])	#KM #KPRL
-	([gregory_ganger])	#KRKR #KNKR
-	([david_garlan])	#TFT #KRLN
-	([anatole_gershman])	#ANTL #KRXM
-	([hartmut_geyer])	#HRTM #KR
-	([garth_gibson])	#KR0 #KPSN
-	([seth_goldstein])	#S0 #KLTS
-	([geoffrey_gordon])	#JFR #KRTN
-	([carlos_guestrin])	#KRLS #KSTR
-	([ananda_gunawardena])	#ANNT #KNRT
-	([abhinav_gupta])	#APNF #KPT
-	([anupam_gupta])	#ANPM #KPT
-	([venkatesan_guruswami])	#FNKT #KRSM
-	([mor_harchol-balter])	#MR #HRXL
-	([robert_harper])	#RPRT #HRPR
-	([khaled_harras])	#KLT #HRS
-	([alexander_hauptmann])	#ALKS #HPTM
-	([martial_hebert])	#MRXL #HPRT
-	([james_herbsleb])	#JMS #HRPS
-	([alex_hills])	#ALKS #HLS
-	([jessica_hodgins])	#JSK #HJNS
-	([ralph_hollis])	#RLF #HLS
-	([jason_hong])	#JSN #HNK
-	([daniel_huber])	#TNL #HPR
-	([scott_hudson])	#SKT #HTSN
-	([branislav_jaramaz])	#PRNL #JRMS
-	([bonnie_john])	#PN #JN
-	([angel_jordan])	#ANJL #JRTN
-	([matthew_kam])	#M0 #KM
-	([takeo_kanade])	#TK #KNT
-	([george_kantor])	#JRJ #KNTR
-	([robert_kass])	#RPRT #KS
-	([thomas_keating])	#TMS #KTNK
-	([alonzo_kelly])	#ALNS #KL
-	([gregory_kesden])	#KRKR #KSTN
-	([pradeep_khosla])	#PRTP #KSL
-	([sara_kiesler])	#SR #KSLR
-	([se_young_kim])	#SNK #KM
-	([jin_kyu_kim])	#JNK #KM
-	([aniket_kittur])	#ANKT #KTR
-	([roberta_klatzky])	#RPRT #KLTS
-	([kenneth_koedinger])	#KN0 #KTNK
-	([ram_konduru])	#RM #KNTR
-	([philip_koopman])	#FLP #KPMN
-	([david_kosbie])	#TFT #KSP
-	([ioannis_koutis])	#ANS #KTS
-	([robert_kraut])	#RPRT #KRT
-	([john_lafferty])	#JN #LFRT
-	([christopher_langmead])	#KRST #LNKM
-	([anthony_lattanze])	#AN0N #LTNS
-	([alon_lavie])	#ALN #LF
-	([tai-sing_lee])	#TSNK #L
-	([philip_lehman])	#FLP #LMN
-	([lorraine_levin])	#LRN #LFN
-	([golan_levin])	#KLN #LFN
-	([maxim_likhachev])	#MKSM #LKXF
-	([javier_lopez])	#JF #LPS
-	([simon_lucey])	#SMN #LS
-	([jennifer_mankoff])	#JNFR #MNKF
-	([don_marinelli])	#TN #MRNL
-	([matthew_mason])	#M0 #MSN
-	([iain_matthews])	#AN #M0S
-	([roy_maxion])	#R #MKSN
-	([bruce_mclaren])	#PRS #MKLR
-	([florian_metze])	#FLRN #MTS
-	([gary_miller])	#KR #MLR
-	([eduardo_miranda])	#ATRT #MRNT
-	([teruko_mitamura])	#TRK #MTMR
-	([tom_mitchell])	#TM #MXL
-	([andrew_moore])	#ANTR #MR
-	([hans_moravec])	#HNS #MRFK
-	([james_morris])	#JMS #MRS
-	([jack_mostow])	#JK #MST
-	([todd_mowry])	#TT #MR
-	([robert_murphy])	#RPRT #MRF
-	([onur_mutlu])	#ANR #MTL
-	([brad_myers])	#PRT #MRS
-	([srinivasa_narasimhan])	#SRNF #NRSM
-	([priya_narasimhan])	#PR #NRSM
-	([christine_neuwirth])	#KRST #NR0
-	([illah_nourbakhsh])	#AL #NRPK
-	([eric_nyberg])	#ARK #NPRK
-	([ryan_o'donnell])	#RN #ATNL
-	([kemal_oflazer])	#KML #AFLS
-	([david_o'hallaron])	#TFT #ALRN
-	([mark_paulk])	#MRK #PLK
-	([eric_paulos])	#ARK #PLS
-	([frank_pfenning])	#FRNK #PFNN
-	([andre_platzer])	#ANTR #PLTS
-	([nancy_pollard])	#NNS #PLRT
-	([ariel_procaccia])	#ARL #PRKX
-	([bhiksha_ramakrishnan])	#PKX #RMKR
-	([ramamoorthi_ravi])	#RMMR #RF
-	([raj_reddy])	#RJ #RT
-	([margaret_reid-miller])	#MRKR #RTML
-	([john_reynolds])	#JN #RNLT
-	([cameron_riviere])	#KMRN #RFR
-	([alfred_rizzi])	#ALFR #RS
-	([katherine_roeder])	#K0RN #RTR
-	([gustavo_rohde])	#KSTF #RT
-	([david_root])	#TFT #RT
-	([carolyn_rose])	#KRLN #RS
-	([ronald_rosenfeld])	#RNLT #RSNF
-	([manuel_rosso-llopart])	#MNL #RSLP
-	([zack_rubinstein])	#SK #RPNS
-	([steven_rudich])	#STFN #RTX
-	([alexander_rudnicky])	#ALKS #RTNK
-	([paul_rybski])	#PL #RPSK
-	([norman_sadeh-koniecpol])	#NRMN #STKN
-	([nick_sahinidis])	#NK #SHNT
-	([majd_sakr])	#MJT #SKR
-	([tuomas_sandholm])	#TMS #SNTL
-	([mahadev_satyanarayanan])	#MHTF #STNR
-	([paul_scerri])	#PL #SR
-	([hagen_schempf])	#HJN #SKMP
-	([william_scherlis])	#ALM #XRLS
-	([bradley_schmerl])	#PRTL #XMRL
-	([jeff_schneider])	#JF #XNTR
-	([tanja_schultz])	#TNJ #XLTS
-	([russell_schwartz])	#RSL #XRTS
-	([dana_scott])	#TN #SKT
-	([srinivasan_seshan])	#SRNF #SXN
-	([michael_shamos])	#MKL #XMS
-	([mary_shaw])	#MR #X
-	([yaser_sheikh])	#ASR #XK
-	([kenji_shimada])	#KNJ #XMT
-	([mel_siegel])	#ML #SJL
-	([daniel_siewiorek])	#TNL #SRK
-	([reid_simmons])	#RT #SMNS
-	([aarti_singh])	#ART #SNK
-	([sanjiv_singh])	#SNJF #SNK
-	([donald_slater])	#TNLT #SLTR
-	([daniel_sleator])	#TNL #SLTR
-	([stephen_smith])	#STFN #SM0
-	([noah_smith])	#N #SM0
-	([peter_spirtes])	#PTR #SPRT
-	([siddhartha_srinivasa])	#STR0 #SRNF
-	([peter_steenkiste])	#PTR #STNK
-	([mark_stehlik])	#MRK #STLK
-	([aaron_steinfeld])	#ARN #STNF
-	([anthony_stentz])	#AN0N #STNT
-	([richard_stern])	#RXRT #STRN
-	([george_stetten])	#JRJ #STTN
-	([klaus_sutner])	#KLS #STNR
-	([katia_sycara])	#KX #SKR
-	([sujata_telang])	#SJT #TLNK
-	([karen_thickman])	#KRN #0KMN
-	([charles_thorpe])	#XRLS #0RP
-	([anthony_tomasic])	#AN0N #TMSK
-	([david_touretzky])	#TFT #TRTS
-	([adrien_treuille])	#ATRN #TRL
-	([rodolfo_vega])	#RTLF #FK
-	([maria_manuela_veloso])	#MRMN #FLS
-	([stephan_vogel])	#STFN #FJL
-	([luis_von_ahn])	#LS #FNN
-	([john_vu])	#JN #F
-	([howard_wactlar])	#HRT #AKTL
-	([alexander_waibel])	#ALKS #APL
-	([larry_wasserman])	#LR #ASRM
-	([lee_weiss])	#L #AS
-	([kurt_wescoe])	#KRT #ASK
-	([david_wettergreen])	#TFT #ATRK
-	([william_red_whittaker])	#ALMR #ATKR
-	([jeannette_wing])	#JNT #ANK
-	([wei_wu])	#A #A
-	([poe_xing])	#P #SNK
-	([yiming_yang])	#AMNK #ANK
-	([ge_yang])	#J #ANK
-	([hui_zhang])	#H #JNK
-	([john_zimmerman])	#JN #SMRM
-	([joseph_bates])	#JSF #PTS
-	([hans_berliner])	#HNS #PRLN
-	([ashok_bharucha])	#AXK #PRX
-	([clifford_brubaker])	#KLFR #PRPK
-	([bernd_bruegge])	#PRNT #PRK
-	([peter_brusilovsky])	#PTR #PRSL
-	([peter_capell])	#PTR #KPL
-	([panos_chrysanthis])	#PNS #KRSN
-	([jeffrey_cohn])	#JFR #KN
-	([steve_collins])	#STF #KLNS
-	([rory_cooper])	#RR #KPR
-	([anthony_digioia])	#AN0N #TJ
-	([phillip_gibbons])	#FLP #KPNS
-	([chris_kemerer])	#KRS #KMRR
-	([judith_klein])	#JT0 #KLN
-	([peter_kolenich])	#PTR #KLNX
-	([alexandros_labrinidis])	#ALKS #LPRN
-	([jill_fain_lehman])	#JLFN #LMN
-	([sam_leinhardt])	#SM #LNRT
-	([peter_lucas])	#PTR #LKS
-	([ganesh_mani])	#KNX #MN
-	([richard_martin])	#RXRT #MRTN
-	([bart_nabbe])	#PRT #NP
-	([alain_rappaport])	#ALN #RPPR
-	([james_rozum])	#JMS #RSM
-	([andrew_schwartz])	#ANTR #XRTS
-	([metin_sitti])	#MTN #ST
-	([susan_straus])	#SSN #STRS
-	([rahul_sukthankar])	#RHL #SK0N
-	([raul_valdes-perez])	#RL #FLTS
-	([helmut_veith])	#HLMT #F0
-	([alonso_vera])	#ALNS #FR
-	([john_wilkes])	#JN #ALKS
+	([VICTOR_ADAMCHIK])	#FKTR #ATMX
+	([JONATHAN_ALDRICH])	#JN0N #ALTR
+	([VINCENT_ALEVEN])	#FNSN #ALFN
+	([OMEAD_AMIDI])	#AMT #AMT
+	([DAVID_ANDERSEN])	#TFT #ANTR
+	([JOHN_ANDERSON])	#JN #ANTR
+	([PAUL_ANDRE])	#PL #ANTR
+	([DIMITRIOS_APOSTOLOPOULOS])	#TMTR #APST
+	([CHRISTOPHER_ATKESON])	#KRST #ATKS
+	([JAMES_BAGNELL])	#JMS #PNL
+	([JOHN_BARES])	#JN #PRS
+	([ZIV_BAR-JOSEPH])	#SF #PRJS
+	([DARRIN_BENTIVEGNA])	#TRN #PNTF
+	([MARCEL_BERGERMAN])	#MRSL #PRKR
+	([ALAN_BLACK])	#ALN #PLK
+	([GUY_BLELLOCH])	#K #PLLK
+	([LENORE_BLUM])	#LNR #PLM
+	([AVRIM_BLUM])	#AFRM #PLM
+	([MANUEL_BLUM])	#MNL #PLM
+	([DAVID_BOURNE])	#TFT #PRN
+	([DANIEL_BOYARSKI])	#TNL #PRSK
+	([STEPHEN_BROOKES])	#STFN #PRKS
+	([RALF_BROWN])	#RLF #PRN
+	([BRETT_BROWNING])	#PRT #PRNN
+	([EMMA_BRUNSKILL])	#AM #PRNS
+	([RANDAL_BRYANT])	#RNTL #PRNT
+	([JAMES_CALLAN])	#JMS #KLN
+	([JAIME_CARBONELL])	#JM #KRPN
+	([KATHLEEN_CARLEY])	#K0LN #KRL
+	([JACOBO_CARRASQUEL])	#JKP #KRSK
+	([LYNN_CARTER])	#LN #KRTR
+	([JUSTINE_CASSELL])	#JSTN #KSL
+	([ILIANO_CERVESATO])	#ALN #SRFS
+	([HOWARD_CHOSET])	#HRT #XST
+	([EDMUND_CLARKE])	#ATMN #KLRK
+	([WILLIAM_COHEN])	#ALM #KHN
+	([ERIC_COOPER])	#ARK #KPR
+	([ALBERT_CORBETT])	#ALPR #KRPT
+	([THOMAS_CORTINA])	#TMS #KRTN
+	([LORRIE_CRANOR])	#LR #KRNR
+	([KARL_CRARY])	#KRL #KRR
+	([WANDA_DANN])	#ANT #TN
+	([ROGER_DANNENBERG])	#RKR #TNNP
+	([FERNANDO_DE_LA_TORRE_FRADE])	#FRNN #TLTR
+	([ANIND_DEY])	#ANNT #T
+	([M_DIAS])	#M #TS
+	([JOHN_DOLAN])	#JN #TLN
+	([STEVEN_DOW])	#STFN #T
+	([ARTUR_DUBRAWSKI])	#ARTR #TPRS
+	([M_DURAND])	#M #TRNT
+	([DAVID_ECKHARDT])	#TFT #AKRT
+	([ALEXEI_EFROS])	#ALKS #AFRS
+	([JEFFREY_EPPINGER])	#JFR #APNK
+	([MICHAEL_ERDMANN])	#MKL #ARTM
+	([MAXINE_ESKENAZI])	#MKSN #ASKN
+	([SCOTT_FAHLMAN])	#SKT #FLMN
+	([CHRISTOS_FALOUTSOS])	#KRST #FLTS
+	([DAVID_FARBER])	#TFT #FRPR
+	([KAYVON_FATAHALIAN])	#KFN #FTHL
+	([GARY_FEDDER])	#KR #FTR
+	([STEPHEN_FIENBERG])	#STFN #FNPR
+	([EUGENE_FINK])	#AJN #FNK
+	([JODI_FORLIZZI])	#JT #FRLS
+	([ROBERT_FREDERKING])	#RPRT #FRTR
+	([EDWARD_FREDKIN])	#ATRT #FRTK
+	([CAROL_FRIEZE])	#KRL #FRS
+	([KAIGHAM_GABRIEL])	#KM #KPRL
+	([GREGORY_GANGER])	#KRKR #KNKR
+	([DAVID_GARLAN])	#TFT #KRLN
+	([ANATOLE_GERSHMAN])	#ANTL #KRXM
+	([HARTMUT_GEYER])	#HRTM #KR
+	([GARTH_GIBSON])	#KR0 #KPSN
+	([SETH_GOLDSTEIN])	#S0 #KLTS
+	([GEOFFREY_GORDON])	#JFR #KRTN
+	([CARLOS_GUESTRIN])	#KRLS #KSTR
+	([ANANDA_GUNAWARDENA])	#ANNT #KNRT
+	([ABHINAV_GUPTA])	#APNF #KPT
+	([ANUPAM_GUPTA])	#ANPM #KPT
+	([VENKATESAN_GURUSWAMI])	#FNKT #KRSM
+	([MOR_HARCHOL-BALTER])	#MR #HRXL
+	([ROBERT_HARPER])	#RPRT #HRPR
+	([KHALED_HARRAS])	#KLT #HRS
+	([ALEXANDER_HAUPTMANN])	#ALKS #HPTM
+	([MARTIAL_HEBERT])	#MRXL #HPRT
+	([JAMES_HERBSLEB])	#JMS #HRPS
+	([ALEX_HILLS])	#ALKS #HLS
+	([JESSICA_HODGINS])	#JSK #HJNS
+	([RALPH_HOLLIS])	#RLF #HLS
+	([JASON_HONG])	#JSN #HNK
+	([DANIEL_HUBER])	#TNL #HPR
+	([SCOTT_HUDSON])	#SKT #HTSN
+	([BRANISLAV_JARAMAZ])	#PRNL #JRMS
+	([BONNIE_JOHN])	#PN #JN
+	([ANGEL_JORDAN])	#ANJL #JRTN
+	([MATTHEW_KAM])	#M0 #KM
+	([TAKEO_KANADE])	#TK #KNT
+	([GEORGE_KANTOR])	#JRJ #KNTR
+	([ROBERT_KASS])	#RPRT #KS
+	([THOMAS_KEATING])	#TMS #KTNK
+	([ALONZO_KELLY])	#ALNS #KL
+	([GREGORY_KESDEN])	#KRKR #KSTN
+	([PRADEEP_KHOSLA])	#PRTP #KSL
+	([SARA_KIESLER])	#SR #KSLR
+	([SE_YOUNG_KIM])	#SNK #KM
+	([JIN_KYU_KIM])	#JNK #KM
+	([ANIKET_KITTUR])	#ANKT #KTR
+	([ROBERTA_KLATZKY])	#RPRT #KLTS
+	([KENNETH_KOEDINGER])	#KN0 #KTNK
+	([RAM_KONDURU])	#RM #KNTR
+	([PHILIP_KOOPMAN])	#FLP #KPMN
+	([DAVID_KOSBIE])	#TFT #KSP
+	([IOANNIS_KOUTIS])	#ANS #KTS
+	([ROBERT_KRAUT])	#RPRT #KRT
+	([JOHN_LAFFERTY])	#JN #LFRT
+	([CHRISTOPHER_LANGMEAD])	#KRST #LNKM
+	([ANTHONY_LATTANZE])	#AN0N #LTNS
+	([ALON_LAVIE])	#ALN #LF
+	([TAI-SING_LEE])	#TSNK #L
+	([PHILIP_LEHMAN])	#FLP #LMN
+	([LORRAINE_LEVIN])	#LRN #LFN
+	([GOLAN_LEVIN])	#KLN #LFN
+	([MAXIM_LIKHACHEV])	#MKSM #LKXF
+	([JAVIER_LOPEZ])	#JF #LPS
+	([SIMON_LUCEY])	#SMN #LS
+	([JENNIFER_MANKOFF])	#JNFR #MNKF
+	([DON_MARINELLI])	#TN #MRNL
+	([MATTHEW_MASON])	#M0 #MSN
+	([IAIN_MATTHEWS])	#AN #M0S
+	([ROY_MAXION])	#R #MKSN
+	([BRUCE_MCLAREN])	#PRS #MKLR
+	([FLORIAN_METZE])	#FLRN #MTS
+	([GARY_MILLER])	#KR #MLR
+	([EDUARDO_MIRANDA])	#ATRT #MRNT
+	([TERUKO_MITAMURA])	#TRK #MTMR
+	([TOM_MITCHELL])	#TM #MXL
+	([ANDREW_MOORE])	#ANTR #MR
+	([HANS_MORAVEC])	#HNS #MRFK
+	([JAMES_MORRIS])	#JMS #MRS
+	([JACK_MOSTOW])	#JK #MST
+	([TODD_MOWRY])	#TT #MR
+	([ROBERT_MURPHY])	#RPRT #MRF
+	([ONUR_MUTLU])	#ANR #MTL
+	([BRAD_MYERS])	#PRT #MRS
+	([SRINIVASA_NARASIMHAN])	#SRNF #NRSM
+	([PRIYA_NARASIMHAN])	#PR #NRSM
+	([CHRISTINE_NEUWIRTH])	#KRST #NR0
+	([ILLAH_NOURBAKHSH])	#AL #NRPK
+	([ERIC_NYBERG])	#ARK #NPRK
+	([RYAN_O'DONNELL])	#RN #ATNL
+	([KEMAL_OFLAZER])	#KML #AFLS
+	([DAVID_O'HALLARON])	#TFT #ALRN
+	([MARK_PAULK])	#MRK #PLK
+	([ERIC_PAULOS])	#ARK #PLS
+	([FRANK_PFENNING])	#FRNK #PFNN
+	([ANDRE_PLATZER])	#ANTR #PLTS
+	([NANCY_POLLARD])	#NNS #PLRT
+	([ARIEL_PROCACCIA])	#ARL #PRKX
+	([BHIKSHA_RAMAKRISHNAN])	#PKX #RMKR
+	([RAMAMOORTHI_RAVI])	#RMMR #RF
+	([RAJ_REDDY])	#RJ #RT
+	([MARGARET_REID-MILLER])	#MRKR #RTML
+	([JOHN_REYNOLDS])	#JN #RNLT
+	([CAMERON_RIVIERE])	#KMRN #RFR
+	([ALFRED_RIZZI])	#ALFR #RS
+	([KATHERINE_ROEDER])	#K0RN #RTR
+	([GUSTAVO_ROHDE])	#KSTF #RT
+	([DAVID_ROOT])	#TFT #RT
+	([CAROLYN_ROSE])	#KRLN #RS
+	([RONALD_ROSENFELD])	#RNLT #RSNF
+	([MANUEL_ROSSO-LLOPART])	#MNL #RSLP
+	([ZACK_RUBINSTEIN])	#SK #RPNS
+	([STEVEN_RUDICH])	#STFN #RTX
+	([ALEXANDER_RUDNICKY])	#ALKS #RTNK
+	([PAUL_RYBSKI])	#PL #RPSK
+	([NORMAN_SADEH-KONIECPOL])	#NRMN #STKN
+	([NICK_SAHINIDIS])	#NK #SHNT
+	([MAJD_SAKR])	#MJT #SKR
+	([TUOMAS_SANDHOLM])	#TMS #SNTL
+	([MAHADEV_SATYANARAYANAN])	#MHTF #STNR
+	([PAUL_SCERRI])	#PL #SR
+	([HAGEN_SCHEMPF])	#HJN #SKMP
+	([WILLIAM_SCHERLIS])	#ALM #XRLS
+	([BRADLEY_SCHMERL])	#PRTL #XMRL
+	([JEFF_SCHNEIDER])	#JF #XNTR
+	([TANJA_SCHULTZ])	#TNJ #XLTS
+	([RUSSELL_SCHWARTZ])	#RSL #XRTS
+	([DANA_SCOTT])	#TN #SKT
+	([SRINIVASAN_SESHAN])	#SRNF #SXN
+	([MICHAEL_SHAMOS])	#MKL #XMS
+	([MARY_SHAW])	#MR #X
+	([YASER_SHEIKH])	#ASR #XK
+	([KENJI_SHIMADA])	#KNJ #XMT
+	([MEL_SIEGEL])	#ML #SJL
+	([DANIEL_SIEWIOREK])	#TNL #SRK
+	([REID_SIMMONS])	#RT #SMNS
+	([AARTI_SINGH])	#ART #SNK
+	([SANJIV_SINGH])	#SNJF #SNK
+	([DONALD_SLATER])	#TNLT #SLTR
+	([DANIEL_SLEATOR])	#TNL #SLTR
+	([STEPHEN_SMITH])	#STFN #SM0
+	([NOAH_SMITH])	#N #SM0
+	([PETER_SPIRTES])	#PTR #SPRT
+	([SIDDHARTHA_SRINIVASA])	#STR0 #SRNF
+	([PETER_STEENKISTE])	#PTR #STNK
+	([MARK_STEHLIK])	#MRK #STLK
+	([AARON_STEINFELD])	#ARN #STNF
+	([ANTHONY_STENTZ])	#AN0N #STNT
+	([RICHARD_STERN])	#RXRT #STRN
+	([GEORGE_STETTEN])	#JRJ #STTN
+	([KLAUS_SUTNER])	#KLS #STNR
+	([KATIA_SYCARA])	#KX #SKR
+	([SUJATA_TELANG])	#SJT #TLNK
+	([KAREN_THICKMAN])	#KRN #0KMN
+	([CHARLES_THORPE])	#XRLS #0RP
+	([ANTHONY_TOMASIC])	#AN0N #TMSK
+	([DAVID_TOURETZKY])	#TFT #TRTS
+	([ADRIEN_TREUILLE])	#ATRN #TRL
+	([RODOLFO_VEGA])	#RTLF #FK
+	([MARIA_MANUELA_VELOSO])	#MRMN #FLS
+	([STEPHAN_VOGEL])	#STFN #FJL
+	([LUIS_VON_AHN])	#LS #FNN
+	([JOHN_VU])	#JN #F
+	([HOWARD_WACTLAR])	#HRT #AKTL
+	([ALEXANDER_WAIBEL])	#ALKS #APL
+	([LARRY_WASSERMAN])	#LR #ASRM
+	([LEE_WEISS])	#L #AS
+	([KURT_WESCOE])	#KRT #ASK
+	([DAVID_WETTERGREEN])	#TFT #ATRK
+	([WILLIAM_RED_WHITTAKER])	#ALMR #ATKR
+	([JEANNETTE_WING])	#JNT #ANK
+	([WEI_WU])	#A #A
+	([POE_XING])	#P #SNK
+	([YIMING_YANG])	#AMNK #ANK
+	([GE_YANG])	#J #ANK
+	([HUI_ZHANG])	#H #JNK
+	([JOHN_ZIMMERMAN])	#JN #SMRM
+	([JOSEPH_BATES])	#JSF #PTS
+	([HANS_BERLINER])	#HNS #PRLN
+	([ASHOK_BHARUCHA])	#AXK #PRX
+	([CLIFFORD_BRUBAKER])	#KLFR #PRPK
+	([BERND_BRUEGGE])	#PRNT #PRK
+	([PETER_BRUSILOVSKY])	#PTR #PRSL
+	([PETER_CAPELL])	#PTR #KPL
+	([PANOS_CHRYSANTHIS])	#PNS #KRSN
+	([JEFFREY_COHN])	#JFR #KN
+	([STEVE_COLLINS])	#STF #KLNS
+	([RORY_COOPER])	#RR #KPR
+	([ANTHONY_DIGIOIA])	#AN0N #TJ
+	([PHILLIP_GIBBONS])	#FLP #KPNS
+	([CHRIS_KEMERER])	#KRS #KMRR
+	([JUDITH_KLEIN])	#JT0 #KLN
+	([PETER_KOLENICH])	#PTR #KLNX
+	([ALEXANDROS_LABRINIDIS])	#ALKS #LPRN
+	([JILL_FAIN_LEHMAN])	#JLFN #LMN
+	([SAM_LEINHARDT])	#SM #LNRT
+	([PETER_LUCAS])	#PTR #LKS
+	([GANESH_MANI])	#KNX #MN
+	([RICHARD_MARTIN])	#RXRT #MRTN
+	([BART_NABBE])	#PRT #NP
+	([ALAIN_RAPPAPORT])	#ALN #RPPR
+	([JAMES_ROZUM])	#JMS #RSM
+	([ANDREW_SCHWARTZ])	#ANTR #XRTS
+	([METIN_SITTI])	#MTN #ST
+	([SUSAN_STRAUS])	#SSN #STRS
+	([RAHUL_SUKTHANKAR])	#RHL #SK0N
+	([RAUL_VALDES-PEREZ])	#RL #FLTS
+	([HELMUT_VEITH])	#HLMT #F0
+	([ALONSO_VERA])	#ALNS #FR
+	([JOHN_WILKES])	#JN #ALKS
 	([AmbiguousPerson])
 ;
 
-[victor_adamchik]
+[VICTOR_ADAMCHIK]
 	(victor)
 	(adamchik)
 	(victor adamchik)
 ;
-[jonathan_aldrich]
+[JONATHAN_ALDRICH]
 	(jonathan)
 	(aldrich)
 	(jonathan aldrich)
 ;
-[vincent_aleven]
+[VINCENT_ALEVEN]
 	(vincent)
 	(aleven)
 	(vincent aleven)
 ;
-[omead_amidi]
+[OMEAD_AMIDI]
 # AMBIGUOUS: omead
 # AMBIGUOUS: amidi
 	(omead amidi)
 ;
-[david_andersen]
+[DAVID_ANDERSEN]
 # AMBIGUOUS: david
 # AMBIGUOUS: andersen
 	(david andersen)
 ;
-[john_anderson]
+[JOHN_ANDERSON]
 # AMBIGUOUS: john
 # AMBIGUOUS: anderson
 	(john anderson)
 ;
-[paul_andre]
+[PAUL_ANDRE]
 # AMBIGUOUS: paul
 # AMBIGUOUS: andre
 	(paul andre)
 ;
-[dimitrios_apostolopoulos]
+[DIMITRIOS_APOSTOLOPOULOS]
 	(dimitrios)
 	(apostolopoulos)
 	(dimitrios apostolopoulos)
 ;
-[christopher_atkeson]
+[CHRISTOPHER_ATKESON]
 # AMBIGUOUS: christopher
 	(atkeson)
 	(christopher atkeson)
 ;
-[james_bagnell]
+[JAMES_BAGNELL]
 # AMBIGUOUS: james
 	(bagnell)
 	(james bagnell)
 ;
-[john_bares]
+[JOHN_BARES]
 # AMBIGUOUS: john
 # AMBIGUOUS: bares
 	(john bares)
 ;
-[ziv_bar-joseph]
+[ZIV_BAR-JOSEPH]
 	(ziv)
 	(bar-joseph)
 	(ziv bar-joseph)
 ;
-[darrin_bentivegna]
+[DARRIN_BENTIVEGNA]
 	(darrin)
 	(bentivegna)
 	(darrin bentivegna)
 ;
-[marcel_bergerman]
+[MARCEL_BERGERMAN]
 	(marcel)
 	(bergerman)
 	(marcel bergerman)
 ;
-[alan_black]
+[ALAN_BLACK]
 # AMBIGUOUS: alan
 # AMBIGUOUS: black
 	(alan black)
 ;
-[guy_blelloch]
+[GUY_BLELLOCH]
 	(guy)
 	(blelloch)
 	(guy blelloch)
 ;
-[lenore_blum]
+[LENORE_BLUM]
 	(lenore)
 # AMBIGUOUS: blum
 	(lenore blum)
 ;
-[avrim_blum]
+[AVRIM_BLUM]
 	(avrim)
 # AMBIGUOUS: blum
 	(avrim blum)
 ;
-[manuel_blum]
+[MANUEL_BLUM]
 # AMBIGUOUS: manuel
 # AMBIGUOUS: blum
 	(manuel blum)
 ;
-[david_bourne]
+[DAVID_BOURNE]
 # AMBIGUOUS: david
 # AMBIGUOUS: bourne
 	(david bourne)
 ;
-[daniel_boyarski]
+[DANIEL_BOYARSKI]
 # AMBIGUOUS: daniel
 	(boyarski)
 	(daniel boyarski)
 ;
-[stephen_brookes]
+[STEPHEN_BROOKES]
 # AMBIGUOUS: stephen
 	(brookes)
 	(stephen brookes)
 ;
-[ralf_brown]
+[RALF_BROWN]
 # AMBIGUOUS: ralf
 # AMBIGUOUS: brown
 	(ralf brown)
 ;
-[brett_browning]
+[BRETT_BROWNING]
 # AMBIGUOUS: brett
 	(browning)
 	(brett browning)
 ;
-[emma_brunskill]
+[EMMA_BRUNSKILL]
 	(emma)
 	(brunskill)
 	(emma brunskill)
 ;
-[randal_bryant]
+[RANDAL_BRYANT]
 	(randal)
 # AMBIGUOUS: bryant
 	(randal bryant)
 ;
-[james_callan]
+[JAMES_CALLAN]
 # AMBIGUOUS: james
 # AMBIGUOUS: callan
 	(james callan)
 ;
-[jaime_carbonell]
+[JAIME_CARBONELL]
 	(jaime)
 	(carbonell)
 	(jaime carbonell)
 ;
-[kathleen_carley]
+[KATHLEEN_CARLEY]
 	(kathleen)
 # AMBIGUOUS: carley
 	(kathleen carley)
 ;
-[jacobo_carrasquel]
+[JACOBO_CARRASQUEL]
 	(jacobo)
 	(carrasquel)
 	(jacobo carrasquel)
 ;
-[lynn_carter]
+[LYNN_CARTER]
 	(lynn)
 	(carter)
 	(lynn carter)
 ;
-[justine_cassell]
+[JUSTINE_CASSELL]
 	(justine)
 # AMBIGUOUS: cassell
 	(justine cassell)
 ;
-[iliano_cervesato]
+[ILIANO_CERVESATO]
 # AMBIGUOUS: iliano
 	(cervesato)
 	(iliano cervesato)
 ;
-[howard_choset]
+[HOWARD_CHOSET]
 # AMBIGUOUS: howard
 	(choset)
 	(howard choset)
 ;
-[edmund_clarke]
+[EDMUND_CLARKE]
 	(edmund)
 	(clarke)
 	(edmund clarke)
 ;
-[william_cohen]
+[WILLIAM_COHEN]
 # AMBIGUOUS: william
 	(cohen)
 	(william cohen)
 ;
-[eric_cooper]
+[ERIC_COOPER]
 # AMBIGUOUS: eric
 # AMBIGUOUS: cooper
 	(eric cooper)
 ;
-[albert_corbett]
+[ALBERT_CORBETT]
 	(albert)
 	(corbett)
 	(albert corbett)
 ;
-[thomas_cortina]
+[THOMAS_CORTINA]
 # AMBIGUOUS: thomas
 # AMBIGUOUS: cortina
 	(thomas cortina)
 ;
-[lorrie_cranor]
+[LORRIE_CRANOR]
 # AMBIGUOUS: lorrie
 	(cranor)
 	(lorrie cranor)
 ;
-[karl_crary]
+[KARL_CRARY]
 # AMBIGUOUS: karl
 	(crary)
 	(karl crary)
 ;
-[wanda_dann]
+[WANDA_DANN]
 	(wanda)
 # AMBIGUOUS: dann
 	(wanda dann)
 ;
-[roger_dannenberg]
+[ROGER_DANNENBERG]
 	(roger)
 	(dannenberg)
 	(roger dannenberg)
 ;
-[fernando_de_la_torre_frade]
+[FERNANDO_DE_LA_TORRE_FRADE]
 	(fernando)
 	(de la torre frade)
 	(fernando de la torre frade)
 ;
-[anind_dey]
+[ANIND_DEY]
 # AMBIGUOUS: anind
 # AMBIGUOUS: dey
 	(anind dey)
 ;
-[m_dias]
+[M_DIAS]
 # AMBIGUOUS: m
 	(dias)
 	(m dias)
 ;
-[john_dolan]
+[JOHN_DOLAN]
 # AMBIGUOUS: john
 	(dolan)
 	(john dolan)
 ;
-[steven_dow]
+[STEVEN_DOW]
 # AMBIGUOUS: steven
 # AMBIGUOUS: dow
 	(steven dow)
 ;
-[artur_dubrawski]
+[ARTUR_DUBRAWSKI]
 	(artur)
 	(dubrawski)
 	(artur dubrawski)
 ;
-[m_durand]
+[M_DURAND]
 # AMBIGUOUS: m
 	(durand)
 	(m durand)
 ;
-[david_eckhardt]
+[DAVID_ECKHARDT]
 # AMBIGUOUS: david
 	(eckhardt)
 	(david eckhardt)
 ;
-[alexei_efros]
+[ALEXEI_EFROS]
 # AMBIGUOUS: alexei
 	(efros)
 	(alexei efros)
 ;
-[jeffrey_eppinger]
+[JEFFREY_EPPINGER]
 # AMBIGUOUS: jeffrey
 	(eppinger)
 	(jeffrey eppinger)
 ;
-[michael_erdmann]
+[MICHAEL_ERDMANN]
 # AMBIGUOUS: michael
 	(erdmann)
 	(michael erdmann)
 ;
-[maxine_eskenazi]
+[MAXINE_ESKENAZI]
 # AMBIGUOUS: maxine
 	(eskenazi)
 	(maxine eskenazi)
 ;
-[scott_fahlman]
+[SCOTT_FAHLMAN]
 # AMBIGUOUS: scott
 	(fahlman)
 	(scott fahlman)
 ;
-[christos_faloutsos]
+[CHRISTOS_FALOUTSOS]
 # AMBIGUOUS: christos
 # AMBIGUOUS: faloutsos
 	(christos faloutsos)
 ;
-[david_farber]
+[DAVID_FARBER]
 # AMBIGUOUS: david
 	(farber)
 	(david farber)
 ;
-[kayvon_fatahalian]
+[KAYVON_FATAHALIAN]
 	(kayvon)
 	(fatahalian)
 	(kayvon fatahalian)
 ;
-[gary_fedder]
+[GARY_FEDDER]
 # AMBIGUOUS: gary
 	(fedder)
 	(gary fedder)
 ;
-[stephen_fienberg]
+[STEPHEN_FIENBERG]
 # AMBIGUOUS: stephen
 	(fienberg)
 	(stephen fienberg)
 ;
-[eugene_fink]
+[EUGENE_FINK]
 	(eugene)
 	(fink)
 	(eugene fink)
 ;
-[jodi_forlizzi]
+[JODI_FORLIZZI]
 	(jodi)
 	(forlizzi)
 	(jodi forlizzi)
 ;
-[robert_frederking]
+[ROBERT_FREDERKING]
 # AMBIGUOUS: robert
 	(frederking)
 	(robert frederking)
 ;
-[edward_fredkin]
+[EDWARD_FREDKIN]
 # AMBIGUOUS: edward
 	(fredkin)
 	(edward fredkin)
 ;
-[carol_frieze]
+[CAROL_FRIEZE]
 # AMBIGUOUS: carol
 	(frieze)
 	(carol frieze)
 ;
-[kaigham_gabriel]
+[KAIGHAM_GABRIEL]
 # AMBIGUOUS: kaigham
 	(gabriel)
 	(kaigham gabriel)
 ;
-[gregory_ganger]
+[GREGORY_GANGER]
 # AMBIGUOUS: gregory
 	(ganger)
 	(gregory ganger)
 ;
-[david_garlan]
+[DAVID_GARLAN]
 # AMBIGUOUS: david
 # AMBIGUOUS: garlan
 	(david garlan)
 ;
-[anatole_gershman]
+[ANATOLE_GERSHMAN]
 	(anatole)
 	(gershman)
 	(anatole gershman)
 ;
-[hartmut_geyer]
+[HARTMUT_GEYER]
 	(hartmut)
 # AMBIGUOUS: geyer
 	(hartmut geyer)
 ;
-[garth_gibson]
+[GARTH_GIBSON]
 	(garth)
 	(gibson)
 	(garth gibson)
 ;
-[seth_goldstein]
+[SETH_GOLDSTEIN]
 	(seth)
 # AMBIGUOUS: goldstein
 	(seth goldstein)
 ;
-[geoffrey_gordon]
+[GEOFFREY_GORDON]
 # AMBIGUOUS: geoffrey
 # AMBIGUOUS: gordon
 	(geoffrey gordon)
 ;
-[carlos_guestrin]
+[CARLOS_GUESTRIN]
 	(carlos)
 	(guestrin)
 	(carlos guestrin)
 ;
-[ananda_gunawardena]
+[ANANDA_GUNAWARDENA]
 # AMBIGUOUS: ananda
 	(gunawardena)
 	(ananda gunawardena)
 ;
-[abhinav_gupta]
+[ABHINAV_GUPTA]
 	(abhinav)
 # AMBIGUOUS: gupta
 	(abhinav gupta)
 ;
-[anupam_gupta]
+[ANUPAM_GUPTA]
 	(anupam)
 # AMBIGUOUS: gupta
 	(anupam gupta)
 ;
-[venkatesan_guruswami]
+[VENKATESAN_GURUSWAMI]
 	(venkatesan)
 	(guruswami)
 	(venkatesan guruswami)
 ;
-[mor_harchol-balter]
+[MOR_HARCHOL-BALTER]
 # AMBIGUOUS: mor
 	(harchol-balter)
 	(mor harchol-balter)
 ;
-[robert_harper]
+[ROBERT_HARPER]
 # AMBIGUOUS: robert
 	(harper)
 	(robert harper)
 ;
-[khaled_harras]
+[KHALED_HARRAS]
 	(khaled)
 	(harras)
 	(khaled harras)
 ;
-[alexander_hauptmann]
+[ALEXANDER_HAUPTMANN]
 # AMBIGUOUS: alexander
 	(hauptmann)
 	(alexander hauptmann)
 ;
-[martial_hebert]
+[MARTIAL_HEBERT]
 	(martial)
 	(hebert)
 	(martial hebert)
 ;
-[james_herbsleb]
+[JAMES_HERBSLEB]
 # AMBIGUOUS: james
 	(herbsleb)
 	(james herbsleb)
 ;
-[alex_hills]
+[ALEX_HILLS]
 # AMBIGUOUS: alex
 # AMBIGUOUS: hills
 	(alex hills)
 ;
-[jessica_hodgins]
+[JESSICA_HODGINS]
 	(jessica)
 	(hodgins)
 	(jessica hodgins)
 ;
-[ralph_hollis]
+[RALPH_HOLLIS]
 # AMBIGUOUS: ralph
 # AMBIGUOUS: hollis
 	(ralph hollis)
 ;
-[jason_hong]
+[JASON_HONG]
 	(jason)
 	(hong)
 	(jason hong)
 ;
-[daniel_huber]
+[DANIEL_HUBER]
 # AMBIGUOUS: daniel
 	(huber)
 	(daniel huber)
 ;
-[scott_hudson]
+[SCOTT_HUDSON]
 # AMBIGUOUS: scott
 	(hudson)
 	(scott hudson)
 ;
-[branislav_jaramaz]
+[BRANISLAV_JARAMAZ]
 	(branislav)
 	(jaramaz)
 	(branislav jaramaz)
 ;
-[bonnie_john]
+[BONNIE_JOHN]
 	(bonnie)
 # AMBIGUOUS: john
 	(bonnie john)
 ;
-[angel_jordan]
+[ANGEL_JORDAN]
 	(angel)
 	(jordan)
 	(angel jordan)
 ;
-[matthew_kam]
+[MATTHEW_KAM]
 # AMBIGUOUS: matthew
 # AMBIGUOUS: kam
 	(matthew kam)
 ;
-[takeo_kanade]
+[TAKEO_KANADE]
 	(takeo)
 	(kanade)
 	(takeo kanade)
 ;
-[george_kantor]
+[GEORGE_KANTOR]
 # AMBIGUOUS: george
 # AMBIGUOUS: kantor
 	(george kantor)
 ;
-[robert_kass]
+[ROBERT_KASS]
 # AMBIGUOUS: robert
 	(kass)
 	(robert kass)
 ;
-[thomas_keating]
+[THOMAS_KEATING]
 # AMBIGUOUS: thomas
 # AMBIGUOUS: keating
 	(thomas keating)
 ;
-[alonzo_kelly]
+[ALONZO_KELLY]
 # AMBIGUOUS: alonzo
 	(kelly)
 	(alonzo kelly)
 ;
-[gregory_kesden]
+[GREGORY_KESDEN]
 # AMBIGUOUS: gregory
 	(kesden)
 	(gregory kesden)
 ;
-[pradeep_khosla]
+[PRADEEP_KHOSLA]
 	(pradeep)
 # AMBIGUOUS: khosla
 	(pradeep khosla)
 ;
-[sara_kiesler]
+[SARA_KIESLER]
 # AMBIGUOUS: sara
 	(kiesler)
 	(sara kiesler)
 ;
-[se_young_kim]
+[SE_YOUNG_KIM]
 # AMBIGUOUS: se young
 # AMBIGUOUS: kim
 	(se young kim)
 ;
-[jin_kyu_kim]
+[JIN_KYU_KIM]
 # AMBIGUOUS: jin kyu
 # AMBIGUOUS: kim
 	(jin kyu kim)
 ;
-[aniket_kittur]
+[ANIKET_KITTUR]
 	(aniket)
 	(kittur)
 	(aniket kittur)
 ;
-[roberta_klatzky]
+[ROBERTA_KLATZKY]
 # AMBIGUOUS: roberta
 # AMBIGUOUS: klatzky
 	(roberta klatzky)
 ;
-[kenneth_koedinger]
+[KENNETH_KOEDINGER]
 	(kenneth)
 # AMBIGUOUS: koedinger
 	(kenneth koedinger)
 ;
-[ram_konduru]
+[RAM_KONDURU]
 	(ram)
 # AMBIGUOUS: konduru
 	(ram konduru)
 ;
-[philip_koopman]
+[PHILIP_KOOPMAN]
 # AMBIGUOUS: philip
 	(koopman)
 	(philip koopman)
 ;
-[david_kosbie]
+[DAVID_KOSBIE]
 # AMBIGUOUS: david
 	(kosbie)
 	(david kosbie)
 ;
-[ioannis_koutis]
+[IOANNIS_KOUTIS]
 	(ioannis)
 	(koutis)
 	(ioannis koutis)
 ;
-[robert_kraut]
+[ROBERT_KRAUT]
 # AMBIGUOUS: robert
 # AMBIGUOUS: kraut
 	(robert kraut)
 ;
-[john_lafferty]
+[JOHN_LAFFERTY]
 # AMBIGUOUS: john
 	(lafferty)
 	(john lafferty)
 ;
-[christopher_langmead]
+[CHRISTOPHER_LANGMEAD]
 # AMBIGUOUS: christopher
 	(langmead)
 	(christopher langmead)
 ;
-[anthony_lattanze]
+[ANTHONY_LATTANZE]
 # AMBIGUOUS: anthony
 	(lattanze)
 	(anthony lattanze)
 ;
-[alon_lavie]
+[ALON_LAVIE]
 # AMBIGUOUS: alon
 	(lavie)
 	(alon lavie)
 ;
-[tai-sing_lee]
+[TAI-SING_LEE]
 	(tai-sing)
 # AMBIGUOUS: lee
 	(tai-sing lee)
 ;
-[philip_lehman]
+[PHILIP_LEHMAN]
 # AMBIGUOUS: philip
 # AMBIGUOUS: lehman
 	(philip lehman)
 ;
-[lorraine_levin]
+[LORRAINE_LEVIN]
 	(lorraine)
 # AMBIGUOUS: levin
 	(lorraine levin)
 ;
-[golan_levin]
+[GOLAN_LEVIN]
 # AMBIGUOUS: golan
 # AMBIGUOUS: levin
 	(golan levin)
 ;
-[maxim_likhachev]
+[MAXIM_LIKHACHEV]
 	(maxim)
 	(likhachev)
 	(maxim likhachev)
 ;
-[javier_lopez]
+[JAVIER_LOPEZ]
 # AMBIGUOUS: javier
 	(lopez)
 	(javier lopez)
 ;
-[simon_lucey]
+[SIMON_LUCEY]
 	(simon)
 # AMBIGUOUS: lucey
 	(simon lucey)
 ;
-[jennifer_mankoff]
+[JENNIFER_MANKOFF]
 	(jennifer)
 	(mankoff)
 	(jennifer mankoff)
 ;
-[don_marinelli]
+[DON_MARINELLI]
 # AMBIGUOUS: don
 	(marinelli)
 	(don marinelli)
 ;
-[matthew_mason]
+[MATTHEW_MASON]
 # AMBIGUOUS: matthew
 	(mason)
 	(matthew mason)
 ;
-[iain_matthews]
+[IAIN_MATTHEWS]
 	(iain)
 	(matthews)
 	(iain matthews)
 ;
-[roy_maxion]
+[ROY_MAXION]
 	(roy)
 # AMBIGUOUS: maxion
 	(roy maxion)
 ;
-[bruce_mclaren]
+[BRUCE_MCLAREN]
 # AMBIGUOUS: bruce
 	(mclaren)
 	(bruce mclaren)
 ;
-[florian_metze]
+[FLORIAN_METZE]
 	(florian)
 	(metze)
 	(florian metze)
 ;
-[gary_miller]
+[GARY_MILLER]
 # AMBIGUOUS: gary
 	(miller)
 	(gary miller)
 ;
-[eduardo_miranda]
+[EDUARDO_MIRANDA]
 # AMBIGUOUS: eduardo
 	(miranda)
 	(eduardo miranda)
 ;
-[teruko_mitamura]
+[TERUKO_MITAMURA]
 	(teruko)
 	(mitamura)
 	(teruko mitamura)
 ;
-[tom_mitchell]
+[TOM_MITCHELL]
 	(tom)
 	(mitchell)
 	(tom mitchell)
 ;
-[andrew_moore]
+[ANDREW_MOORE]
 # AMBIGUOUS: andrew
 # AMBIGUOUS: moore
 	(andrew moore)
 ;
-[hans_moravec]
+[HANS_MORAVEC]
 # AMBIGUOUS: hans
 	(moravec)
 	(hans moravec)
 ;
-[james_morris]
+[JAMES_MORRIS]
 # AMBIGUOUS: james
 # AMBIGUOUS: morris
 	(james morris)
 ;
-[jack_mostow]
+[JACK_MOSTOW]
 	(jack)
 	(mostow)
 	(jack mostow)
 ;
-[todd_mowry]
+[TODD_MOWRY]
 	(todd)
 # AMBIGUOUS: mowry
 	(todd mowry)
 ;
-[robert_murphy]
+[ROBERT_MURPHY]
 # AMBIGUOUS: robert
 	(murphy)
 	(robert murphy)
 ;
-[onur_mutlu]
+[ONUR_MUTLU]
 	(onur)
 	(mutlu)
 	(onur mutlu)
 ;
-[brad_myers]
+[BRAD_MYERS]
 # AMBIGUOUS: brad
 # AMBIGUOUS: myers
 	(brad myers)
 ;
-[srinivasa_narasimhan]
+[SRINIVASA_NARASIMHAN]
 # AMBIGUOUS: srinivasa
 # AMBIGUOUS: narasimhan
 	(srinivasa narasimhan)
 ;
-[priya_narasimhan]
+[PRIYA_NARASIMHAN]
 	(priya)
 # AMBIGUOUS: narasimhan
 	(priya narasimhan)
 ;
-[christine_neuwirth]
+[CHRISTINE_NEUWIRTH]
 # AMBIGUOUS: christine
 	(neuwirth)
 	(christine neuwirth)
 ;
-[illah_nourbakhsh]
+[ILLAH_NOURBAKHSH]
 	(illah)
 	(nourbakhsh)
 	(illah nourbakhsh)
 ;
-[eric_nyberg]
+[ERIC_NYBERG]
 # AMBIGUOUS: eric
 	(nyberg)
 	(eric nyberg)
 ;
-[ryan_o'donnell]
+[RYAN_O'DONNELL]
 	(ryan)
 	(o'donnell)
 	(ryan o'donnell)
 ;
-[kemal_oflazer]
+[KEMAL_OFLAZER]
 	(kemal)
 	(oflazer)
 	(kemal oflazer)
 ;
-[david_o'hallaron]
+[DAVID_O'HALLARON]
 # AMBIGUOUS: david
 	(o'hallaron)
 	(david o'hallaron)
 ;
-[mark_paulk]
+[MARK_PAULK]
 # AMBIGUOUS: mark
 # AMBIGUOUS: paulk
 	(mark paulk)
 ;
-[eric_paulos]
+[ERIC_PAULOS]
 # AMBIGUOUS: eric
 	(paulos)
 	(eric paulos)
 ;
-[frank_pfenning]
+[FRANK_PFENNING]
 	(frank)
 	(pfenning)
 	(frank pfenning)
 ;
-[andre_platzer]
+[ANDRE_PLATZER]
 # AMBIGUOUS: andre
 	(platzer)
 	(andre platzer)
 ;
-[nancy_pollard]
+[NANCY_POLLARD]
 	(nancy)
 	(pollard)
 	(nancy pollard)
 ;
-[ariel_procaccia]
+[ARIEL_PROCACCIA]
 	(ariel)
 	(procaccia)
 	(ariel procaccia)
 ;
-[bhiksha_ramakrishnan]
+[BHIKSHA_RAMAKRISHNAN]
 	(bhiksha)
 	(ramakrishnan)
 	(bhiksha ramakrishnan)
 ;
-[ramamoorthi_ravi]
+[RAMAMOORTHI_RAVI]
 	(ramamoorthi)
 	(ravi)
 	(ramamoorthi ravi)
 ;
-[raj_reddy]
+[RAJ_REDDY]
 	(raj)
 # AMBIGUOUS: reddy
 	(raj reddy)
 ;
-[margaret_reid-miller]
+[MARGARET_REID-MILLER]
 	(margaret)
 	(reid-miller)
 	(margaret reid-miller)
 ;
-[john_reynolds]
+[JOHN_REYNOLDS]
 # AMBIGUOUS: john
 # AMBIGUOUS: reynolds
 	(john reynolds)
 ;
-[cameron_riviere]
+[CAMERON_RIVIERE]
 	(cameron)
 	(riviere)
 	(cameron riviere)
 ;
-[alfred_rizzi]
+[ALFRED_RIZZI]
 	(alfred)
 # AMBIGUOUS: rizzi
 	(alfred rizzi)
 ;
-[katherine_roeder]
+[KATHERINE_ROEDER]
 	(katherine)
 	(roeder)
 	(katherine roeder)
 ;
-[gustavo_rohde]
+[GUSTAVO_ROHDE]
 	(gustavo)
 # AMBIGUOUS: rohde
 	(gustavo rohde)
 ;
-[david_root]
+[DAVID_ROOT]
 # AMBIGUOUS: david
 # AMBIGUOUS: root
 	(david root)
 ;
-[carolyn_rose]
+[CAROLYN_ROSE]
 # AMBIGUOUS: carolyn
 # AMBIGUOUS: rose
 	(carolyn rose)
 ;
-[ronald_rosenfeld]
+[RONALD_ROSENFELD]
 # AMBIGUOUS: ronald
 	(rosenfeld)
 	(ronald rosenfeld)
 ;
-[manuel_rosso-llopart]
+[MANUEL_ROSSO-LLOPART]
 # AMBIGUOUS: manuel
 	(rosso-llopart)
 	(manuel rosso-llopart)
 ;
-[zack_rubinstein]
+[ZACK_RUBINSTEIN]
 	(zack)
 	(rubinstein)
 	(zack rubinstein)
 ;
-[steven_rudich]
+[STEVEN_RUDICH]
 # AMBIGUOUS: steven
 	(rudich)
 	(steven rudich)
 ;
-[alexander_rudnicky]
+[ALEXANDER_RUDNICKY]
 # AMBIGUOUS: alexander
 	(rudnicky)
 	(alexander rudnicky)
 ;
-[paul_rybski]
+[PAUL_RYBSKI]
 # AMBIGUOUS: paul
 	(rybski)
 	(paul rybski)
 ;
-[norman_sadeh-koniecpol]
+[NORMAN_SADEH-KONIECPOL]
 	(norman)
 	(sadeh-koniecpol)
 	(norman sadeh-koniecpol)
 ;
-[nick_sahinidis]
+[NICK_SAHINIDIS]
 	(nick)
 	(sahinidis)
 	(nick sahinidis)
 ;
-[majd_sakr]
+[MAJD_SAKR]
 	(majd)
 # AMBIGUOUS: sakr
 	(majd sakr)
 ;
-[tuomas_sandholm]
+[TUOMAS_SANDHOLM]
 # AMBIGUOUS: tuomas
 	(sandholm)
 	(tuomas sandholm)
 ;
-[mahadev_satyanarayanan]
+[MAHADEV_SATYANARAYANAN]
 	(mahadev)
 # AMBIGUOUS: satyanarayanan
 	(mahadev satyanarayanan)
 ;
-[paul_scerri]
+[PAUL_SCERRI]
 # AMBIGUOUS: paul
 # AMBIGUOUS: scerri
 	(paul scerri)
 ;
-[hagen_schempf]
+[HAGEN_SCHEMPF]
 	(hagen)
 	(schempf)
 	(hagen schempf)
 ;
-[william_scherlis]
+[WILLIAM_SCHERLIS]
 # AMBIGUOUS: william
 # AMBIGUOUS: scherlis
 	(william scherlis)
 ;
-[bradley_schmerl]
+[BRADLEY_SCHMERL]
 	(bradley)
 	(schmerl)
 	(bradley schmerl)
 ;
-[jeff_schneider]
+[JEFF_SCHNEIDER]
 # AMBIGUOUS: jeff
 	(schneider)
 	(jeff schneider)
 ;
-[tanja_schultz]
+[TANJA_SCHULTZ]
 	(tanja)
 	(schultz)
 	(tanja schultz)
 ;
-[russell_schwartz]
+[RUSSELL_SCHWARTZ]
 	(russell)
 # AMBIGUOUS: schwartz
 	(russell schwartz)
 ;
-[dana_scott]
+[DANA_SCOTT]
 # AMBIGUOUS: dana
 # AMBIGUOUS: scott
 	(dana scott)
 ;
-[srinivasan_seshan]
+[SRINIVASAN_SESHAN]
 # AMBIGUOUS: srinivasan
 	(seshan)
 	(srinivasan seshan)
 ;
-[michael_shamos]
+[MICHAEL_SHAMOS]
 # AMBIGUOUS: michael
 	(shamos)
 	(michael shamos)
 ;
-[mary_shaw]
+[MARY_SHAW]
 # AMBIGUOUS: mary
 	(shaw)
 	(mary shaw)
 ;
-[yaser_sheikh]
+[YASER_SHEIKH]
 	(yaser)
 	(sheikh)
 	(yaser sheikh)
 ;
-[kenji_shimada]
+[KENJI_SHIMADA]
 	(kenji)
 	(shimada)
 	(kenji shimada)
 ;
-[mel_siegel]
+[MEL_SIEGEL]
 	(mel)
 	(siegel)
 	(mel siegel)
 ;
-[daniel_siewiorek]
+[DANIEL_SIEWIOREK]
 # AMBIGUOUS: daniel
 	(siewiorek)
 	(daniel siewiorek)
 ;
-[reid_simmons]
+[REID_SIMMONS]
 # AMBIGUOUS: reid
 	(simmons)
 	(reid simmons)
 ;
-[aarti_singh]
+[AARTI_SINGH]
 	(aarti)
 # AMBIGUOUS: singh
 	(aarti singh)
 ;
-[sanjiv_singh]
+[SANJIV_SINGH]
 	(sanjiv)
 # AMBIGUOUS: singh
 	(sanjiv singh)
 ;
-[donald_slater]
+[DONALD_SLATER]
 	(donald)
 # AMBIGUOUS: slater
 	(donald slater)
 ;
-[daniel_sleator]
+[DANIEL_SLEATOR]
 # AMBIGUOUS: daniel
 # AMBIGUOUS: sleator
 	(daniel sleator)
 ;
-[stephen_smith]
+[STEPHEN_SMITH]
 # AMBIGUOUS: stephen
 # AMBIGUOUS: smith
 	(stephen smith)
 ;
-[noah_smith]
+[NOAH_SMITH]
 	(noah)
 # AMBIGUOUS: smith
 	(noah smith)
 ;
-[peter_spirtes]
+[PETER_SPIRTES]
 # AMBIGUOUS: peter
 	(spirtes)
 	(peter spirtes)
 ;
-[siddhartha_srinivasa]
+[SIDDHARTHA_SRINIVASA]
 	(siddhartha)
 # AMBIGUOUS: srinivasa
 	(siddhartha srinivasa)
 ;
-[peter_steenkiste]
+[PETER_STEENKISTE]
 # AMBIGUOUS: peter
 	(steenkiste)
 	(peter steenkiste)
 ;
-[mark_stehlik]
+[MARK_STEHLIK]
 # AMBIGUOUS: mark
 	(stehlik)
 	(mark stehlik)
 ;
-[aaron_steinfeld]
+[AARON_STEINFELD]
 	(aaron)
 	(steinfeld)
 	(aaron steinfeld)
 ;
-[anthony_stentz]
+[ANTHONY_STENTZ]
 # AMBIGUOUS: anthony
 	(stentz)
 	(anthony stentz)
 ;
-[richard_stern]
+[RICHARD_STERN]
 # AMBIGUOUS: richard
 	(stern)
 	(richard stern)
 ;
-[george_stetten]
+[GEORGE_STETTEN]
 # AMBIGUOUS: george
 	(stetten)
 	(george stetten)
 ;
-[klaus_sutner]
+[KLAUS_SUTNER]
 	(klaus)
 # AMBIGUOUS: sutner
 	(klaus sutner)
 ;
-[katia_sycara]
+[KATIA_SYCARA]
 	(katia)
 # AMBIGUOUS: sycara
 	(katia sycara)
 ;
-[sujata_telang]
+[SUJATA_TELANG]
 	(sujata)
 	(telang)
 	(sujata telang)
 ;
-[karen_thickman]
+[KAREN_THICKMAN]
 	(karen)
 	(thickman)
 	(karen thickman)
 ;
-[charles_thorpe]
+[CHARLES_THORPE]
 # AMBIGUOUS: charles
 	(thorpe)
 	(charles thorpe)
 ;
-[anthony_tomasic]
+[ANTHONY_TOMASIC]
 # AMBIGUOUS: anthony
 	(tomasic)
 	(anthony tomasic)
 ;
-[david_touretzky]
+[DAVID_TOURETZKY]
 # AMBIGUOUS: david
 	(touretzky)
 	(david touretzky)
 ;
-[adrien_treuille]
+[ADRIEN_TREUILLE]
 	(adrien)
 	(treuille)
 	(adrien treuille)
 ;
-[rodolfo_vega]
+[RODOLFO_VEGA]
 	(rodolfo)
 	(vega)
 	(rodolfo vega)
 ;
-[maria_manuela_veloso]
+[MARIA_MANUELA_VELOSO]
 	(maria manuela)
 	(veloso)
 	(maria manuela veloso)
 ;
-[stephan_vogel]
+[STEPHAN_VOGEL]
 # AMBIGUOUS: stephan
 	(vogel)
 	(stephan vogel)
 ;
-[luis_von_ahn]
+[LUIS_VON_AHN]
 # AMBIGUOUS: luis
 	(von ahn)
 	(luis von ahn)
 ;
-[john_vu]
+[JOHN_VU]
 # AMBIGUOUS: john
 	(vu)
 	(john vu)
 ;
-[howard_wactlar]
+[HOWARD_WACTLAR]
 # AMBIGUOUS: howard
 	(wactlar)
 	(howard wactlar)
 ;
-[alexander_waibel]
+[ALEXANDER_WAIBEL]
 # AMBIGUOUS: alexander
 	(waibel)
 	(alexander waibel)
 ;
-[larry_wasserman]
+[LARRY_WASSERMAN]
 # AMBIGUOUS: larry
 	(wasserman)
 	(larry wasserman)
 ;
-[lee_weiss]
+[LEE_WEISS]
 # AMBIGUOUS: lee
 	(weiss)
 	(lee weiss)
 ;
-[kurt_wescoe]
+[KURT_WESCOE]
 # AMBIGUOUS: kurt
 	(wescoe)
 	(kurt wescoe)
 ;
-[david_wettergreen]
+[DAVID_WETTERGREEN]
 # AMBIGUOUS: david
 	(wettergreen)
 	(david wettergreen)
 ;
-[william_red_whittaker]
+[WILLIAM_RED_WHITTAKER]
 	(william red)
 	(whittaker)
 	(william red whittaker)
 ;
-[jeannette_wing]
+[JEANNETTE_WING]
 	(jeannette)
 # AMBIGUOUS: wing
 	(jeannette wing)
 ;
-[wei_wu]
+[WEI_WU]
 # AMBIGUOUS: wei
 # AMBIGUOUS: wu
 	(wei wu)
 ;
-[poe_xing]
+[POE_XING]
 	(poe)
 # AMBIGUOUS: xing
 	(poe xing)
 ;
-[yiming_yang]
+[YIMING_YANG]
 	(yiming)
 # AMBIGUOUS: yang
 	(yiming yang)
 ;
-[ge_yang]
+[GE_YANG]
 	(ge)
 # AMBIGUOUS: yang
 	(ge yang)
 ;
-[hui_zhang]
+[HUI_ZHANG]
 	(hui)
 # AMBIGUOUS: zhang
 	(hui zhang)
 ;
-[john_zimmerman]
+[JOHN_ZIMMERMAN]
 # AMBIGUOUS: john
 	(zimmerman)
 	(john zimmerman)
 ;
-[joseph_bates]
+[JOSEPH_BATES]
 	(joseph)
 	(bates)
 	(joseph bates)
 ;
-[hans_berliner]
+[HANS_BERLINER]
 # AMBIGUOUS: hans
 	(berliner)
 	(hans berliner)
 ;
-[ashok_bharucha]
+[ASHOK_BHARUCHA]
 	(ashok)
 	(bharucha)
 	(ashok bharucha)
 ;
-[clifford_brubaker]
+[CLIFFORD_BRUBAKER]
 	(clifford)
 	(brubaker)
 	(clifford brubaker)
 ;
-[bernd_bruegge]
+[BERND_BRUEGGE]
 # AMBIGUOUS: bernd
 	(bruegge)
 	(bernd bruegge)
 ;
-[peter_brusilovsky]
+[PETER_BRUSILOVSKY]
 # AMBIGUOUS: peter
 	(brusilovsky)
 	(peter brusilovsky)
 ;
-[peter_capell]
+[PETER_CAPELL]
 # AMBIGUOUS: peter
 	(capell)
 	(peter capell)
 ;
-[panos_chrysanthis]
+[PANOS_CHRYSANTHIS]
 	(panos)
 	(chrysanthis)
 	(panos chrysanthis)
 ;
-[jeffrey_cohn]
+[JEFFREY_COHN]
 # AMBIGUOUS: jeffrey
 	(cohn)
 	(jeffrey cohn)
 ;
-[steve_collins]
+[STEVE_COLLINS]
 	(steve)
 	(collins)
 	(steve collins)
 ;
-[rory_cooper]
+[RORY_COOPER]
 	(rory)
 # AMBIGUOUS: cooper
 	(rory cooper)
 ;
-[anthony_digioia]
+[ANTHONY_DIGIOIA]
 # AMBIGUOUS: anthony
 	(digioia)
 	(anthony digioia)
 ;
-[phillip_gibbons]
+[PHILLIP_GIBBONS]
 # AMBIGUOUS: phillip
 	(gibbons)
 	(phillip gibbons)
 ;
-[chris_kemerer]
+[CHRIS_KEMERER]
 	(chris)
 	(kemerer)
 	(chris kemerer)
 ;
-[judith_klein]
+[JUDITH_KLEIN]
 	(judith)
 # AMBIGUOUS: klein
 	(judith klein)
 ;
-[peter_kolenich]
+[PETER_KOLENICH]
 # AMBIGUOUS: peter
 	(kolenich)
 	(peter kolenich)
 ;
-[alexandros_labrinidis]
+[ALEXANDROS_LABRINIDIS]
 # AMBIGUOUS: alexandros
 	(labrinidis)
 	(alexandros labrinidis)
 ;
-[jill_fain_lehman]
+[JILL_FAIN_LEHMAN]
 	(jill fain)
 # AMBIGUOUS: lehman
 	(jill fain lehman)
 ;
-[sam_leinhardt]
+[SAM_LEINHARDT]
 	(sam)
 	(leinhardt)
 	(sam leinhardt)
 ;
-[peter_lucas]
+[PETER_LUCAS]
 # AMBIGUOUS: peter
 	(lucas)
 	(peter lucas)
 ;
-[ganesh_mani]
+[GANESH_MANI]
 	(ganesh)
 	(mani)
 	(ganesh mani)
 ;
-[richard_martin]
+[RICHARD_MARTIN]
 # AMBIGUOUS: richard
 	(martin)
 	(richard martin)
 ;
-[bart_nabbe]
+[BART_NABBE]
 # AMBIGUOUS: bart
 	(nabbe)
 	(bart nabbe)
 ;
-[alain_rappaport]
+[ALAIN_RAPPAPORT]
 # AMBIGUOUS: alain
 	(rappaport)
 	(alain rappaport)
 ;
-[james_rozum]
+[JAMES_ROZUM]
 # AMBIGUOUS: james
 	(rozum)
 	(james rozum)
 ;
-[andrew_schwartz]
+[ANDREW_SCHWARTZ]
 # AMBIGUOUS: andrew
 # AMBIGUOUS: schwartz
 	(andrew schwartz)
 ;
-[metin_sitti]
+[METIN_SITTI]
 	(metin)
 	(sitti)
 	(metin sitti)
 ;
-[susan_straus]
+[SUSAN_STRAUS]
 	(susan)
 	(straus)
 	(susan straus)
 ;
-[rahul_sukthankar]
+[RAHUL_SUKTHANKAR]
 	(rahul)
 	(sukthankar)
 	(rahul sukthankar)
 ;
-[raul_valdes-perez]
+[RAUL_VALDES-PEREZ]
 	(raul)
 # AMBIGUOUS: valdes-perez
 	(raul valdes-perez)
 ;
-[helmut_veith]
+[HELMUT_VEITH]
 	(helmut)
 	(veith)
 	(helmut veith)
 ;
-[alonso_vera]
+[ALONSO_VERA]
 # AMBIGUOUS: alonso
 	(vera)
 	(alonso vera)
 ;
-[john_wilkes]
+[JOHN_WILKES]
 # AMBIGUOUS: john
 # AMBIGUOUS: wilkes
 	(john wilkes)
