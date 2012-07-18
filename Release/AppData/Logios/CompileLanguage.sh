@@ -6,6 +6,10 @@
 #   ::  FIRST: Copy this script into your Project root folder                             ::::::
 here="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+#   ::  Combine the grammar files into a main source file
+rm $here/src/Kade.gra
+cat $here/src/*.gra >> $here/src/Kade.gra
+
 #   ::  SECOND: Change the following line to point to your Logios installation            ::::::
 #   ::  or have the environment variable set appropriately                                ::::::
 cd "$( dirname "${BASH_SOURCE[0]}" )"
