@@ -17,4 +17,13 @@ What is Alan's last name?
 What does Alan research?
 What is Jack's fax number?
 
-
+What is Professor Platzer's telephone number?
+What is Andre's phone number?
+What is Professor Adamchik's number?
+Where is David Bourne's office?
+Where is Manuel Blum's office?
+What is Mr. Black's email?
+What is Dr. Nyberg's email?
+Where does Alan sit?
+Where does Professor Anderson sit?
+What is Paul Andre's fax?
