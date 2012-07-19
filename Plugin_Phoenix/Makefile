@@ -13,6 +13,7 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
            ../Library_Bullet_Physics/lib/Bullet_Physics.a \
            ../Library_JPEG/lib/JPEG.a \
            ../Library_zlib/lib/zlib.a \
+           ../Library_libpng/lib/libpng.a \
            ../Library_Phoenix/lib/libphoenix.a
 
 CXX      = gcc
@@ -25,6 +26,7 @@ INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLFW/include \
            -I ../Library_MMDFiles/include \
            -I ../Library_MMDAgent/include \
+           -I ../Library_libpng/include \
            -I ../Library_Phoenix/include
 
 all: $(TARGET)
@@ -32,7 +34,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS) $(LDADD)
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) $(LADD) -o $(TARGET) \
-	-lGLU -lGL -lX11 -lasound -ldl -lrt -lm -lpthread -lpng12
+	-lGLU -lGL -lasound -ldl -lrt -lm -lpthread
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<

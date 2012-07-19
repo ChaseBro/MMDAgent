@@ -35,3 +35,4 @@ INSTANCE="Kade"
    --force
 #
 
+rm $here/src/Kade.gra

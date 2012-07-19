@@ -14,4 +14,7 @@ What is Alan's email address?
 What is Eric's department?
 What is professor Black's first name?
 What is Alan's last name?
+What does Alan research?
+What is Jack's fax number?
+
 

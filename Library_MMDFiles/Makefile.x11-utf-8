@@ -34,6 +34,7 @@ CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
 INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLee/include \
            -I ../Library_JPEG/include \
+	   -I ../Library_libpng/include \
            -I src/include
 
 all: $(TARGET)
