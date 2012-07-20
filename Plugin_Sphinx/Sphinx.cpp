@@ -43,10 +43,8 @@ void Sphinx::clear()
    if(m_userDictionary != NULL)
       free(m_userDictionary);
 
-   if (m_cont)
-      cont_ad_close(m_cont);
-   if (m_ad)
-      ad_close(m_ad);
+   if(m_ps)
+     ps_free(m_ps);
 
    initialize();
 }
@@ -209,6 +207,7 @@ void Sphinx::run()
          return;
       }
    }
+
    /* Stop recording until un-paused */
    ad_stop_rec(m_ad);
    while (ad_read(m_ad, adbuf, 4096) >= 0);

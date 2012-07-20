@@ -104,7 +104,7 @@ void Sphinx_Thread::clear()
 {
    if(m_thread >= 0) {
       if(m_recog)
-         //j_close_stream(m_recog);
+         delete m_recog;
       glfwWaitThread(m_thread, GLFW_WAIT);
       glfwDestroyThread(m_thread);
       glfwTerminate();
