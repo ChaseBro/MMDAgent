@@ -26,14 +26,24 @@ WHWORD
 ;
 
 [PersonQuery]
-	(who [Linking] [SpecPerson])
-	(who [Linking] [SpecPerson] *'s [Rel])
+	(who [Linking] [SpecNode])
+	(who [Linking] [SpecNode] *'s [GenPerson])
 ;
 
 [LocationQuery]
 	(where *[Linking] [SpecLocation])
-	(where *[Linking] [SpecPerson] 's [GenLocation])
-	(where *[_do] [SpecPerson] [LocationVerb])
+	(where *[Linking] [SpecNode] 's [GenLocation])
+	(where *[_do] [SpecNode] [LocationVerb])
+;
+
+[KadeQuery]
+	(who MADE you)
+	(how old are you)
+	(where did you come from)
+	(where am I)
+MADE
+	(made)
+	(built)
 ;
 
 # Verbs ------------------------------------------
@@ -107,15 +117,6 @@ WHWORD
 ;
 
 
-# Relationships ----------------------------------
-[Rel]
-	(advisor)
-	(advisee)
-	(student)
-	(professor)
-;
-
-
 # Nodes ------------------------------------------
 [GenNode]
 	([GenLocation])
@@ -184,6 +185,7 @@ OFFICE
 	([_name])
 	([_firstName])
 	([_lastName])
+	([_fax])
 ;
 
 # Specifics --------------------------------------
@@ -255,6 +257,7 @@ VONAHN
 	(to)
 	(on)
 	(of)
+	(by)
 ;
 
 [_you]
@@ -269,6 +272,9 @@ VONAHN
 
 [_phone]
 	(*phone number)
+;
+[_fax]
+	(fax *number)
 ;
 [_email]
 	(email *address)

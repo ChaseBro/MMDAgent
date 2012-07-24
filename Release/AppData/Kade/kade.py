@@ -24,11 +24,11 @@ class JsonServer:
         return result
 
 myInfo = {'name' : 'Fergus', 'email': 'fergus at c.m.u dot e.d.u', 'department': 'Language Technologies', 'firstName': 'Fergus', 'lastName': 'Carnegie'}
+infoOutput = {'lastName': 'last name', 'firstName': 'name', 'phone': 'phone number', 'fax': 'fax number', 'email': 'email address', 'name': 'name', 'department': 'department'}
 
 def procParse(plainText, inParse):
-    print "I see you have a question..."
     inParse = str(inParse)
-    if inParse=="no parse found":
+    if 'No parses found' in inParse:
         return "I'm sorry, I'm a little hard of hearing, can ya repeat that?"
     parse = json.loads(inParse)
 
@@ -49,15 +49,19 @@ def procParse(plainText, inParse):
                     if extractLeaves(specNode) == 'you':
                         if infoNode == 'phone':
                             response = 'Why do ya want my phone number? If you want a date just say so.'
+                        elif infoNode == 'lastName':
+                            response = 'My last name is Carnegie, just like Andrew\'s.'
+                        elif infoNode == 'firstName' or infoNode == 'name':
+                            response = 'My name is Fergus.'
                         else:
                             response = 'My ' + (infoNode, 'last name')[infoNode == 'lastName'] + ' is ' + myInfo[infoNode] + '.'
                     else:
                         jsonQuery = jsonSpecNode(infoQuery['SpecNode']) + (('Traverse', None), ('Type', infoNode))
                         answer = server.callNell(plainText, jsonQuery)
                         if answer is not None and answer['plainText'] is not None:
-                            response = extractLeaves(specNode) + '\'s ' + infoNode + ' is ' + answer['plainText']
+                            response = extractLeaves(specNode) + '\'s ' + infoOutput[infoNode] + ' is ' + answer['plainText']
                         else:
-                            response = 'I\'m sorry, I don\'t have any info about ' + extractLeaves(specNode) + '\'s ' + infoNode + "."
+                            response = 'I\'m sorry, I don\'t what ' + extractLeaves(specNode) + '\'s ' + infoOutput[infoNode] + ' is.'
 
                 elif 'NodeQuery' in extract.keys():
                     nodeQuery = extract['NodeQuery']
@@ -85,18 +89,30 @@ def procParse(plainText, inParse):
                     if 'SpecLocation' in locQuery:
                         jsonQuery = '["Text", "' + extractLeaves(locQuery['SpecLocation']) + '"]'
                     elif 'GenLocation' in locQuery:
-                        genLocType = getNodeType(locQuery['GenLocation'])
+                        genLoc = extract['GenLocation']
+                        genLocType = getNodeType(genLoc)
                         if genLocType is None:
                             genLocType = 'location'
-                    genLoc = extract['GenLocation']
+
                     specNode = extract['SpecNode']
                     response = 'I think you want to know something about a location.'
+
+                elif 'KadeQuery' in extract.keys():
+                    kadeQuery = extractLeaves(extract['KadeQuery'])
+                    if kadeQuery == 'HOW OLD ARE YOU':
+                        response = 'Old enough to mind my manners sonny. I might think you should do the same.'
+                    elif kadeQuery == 'WHO MADE YOU' or kadeQuery == 'WHO BUILT YOU':
+                        response = 'I was made by the Kade team from the Language Technologies Institute her at Carnegie Mellon.'
+                    elif kadeQuery == 'WHERE DID YOU COME FROM':
+                        response = 'I came from your mother, and I learned some manners, unlike you.'
+                    else:
+                        response = 'Something else.'
 
     else:
         answer = server.callNell(plainText, None)
         if answer is not None and answer['plainText'] is not None:
             response = 'I think the answer you\'re looking for is ' + answer['plainText']
-        response = 'Sorry, I don\'t know how to help you with that.'
+        response = 'I\'m sorry, I don\'t know how to help you with that.'
 
     return response
 
@@ -114,11 +130,17 @@ def extractLeaves(node):
 # Extract the json query from a SpecNode (Specific Node)
 def jsonSpecNode(specNode):
     if 'SpecPerson' in specNode:
-        jsonQuery = (('Type', 'person'),)
-        jsonQuery += (('Text', extractLeaves(specNode)),)
+        if 'SpecProfessor' in specNode['SpecPerson'].keys():
+            if 'AmbiguousPerson' not in specNode['SpecPerson']['SpecProfessor'].keys():
+                jsonQuery = (('Text', specNode['SpecPerson']['SpecProfessor'].keys()[0]),)
+            else:
+                jsonQuery = (('Text', extractLeaves(specNode)),)
+        else:
+            jsonQuery = (('Text', extractLeaves(specNode)),)
+        jsonQuery += (('Type', 'person'),)
     elif 'SpecLocation' in specNode:
-        jsonQuery = (('Type', 'location'),)
-        jsonQuery += ('Text', extractLeaves(specNode))
+        jsonQuery = ('Text', extractLeaves(specNode))
+        jsonQuery += (('Type', 'location'),)
     else:
         jsonQuery = ('Text', extractLeaves(specNode))
 
