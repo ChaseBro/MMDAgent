@@ -6,8 +6,6 @@
 #include "err.h"
 
 
-bool m_pause;
-
 void Sphinx::initialize()
 {
    m_ps = NULL; /* Recognizer instance */
@@ -88,8 +86,6 @@ bool Sphinx::load(MMDAgent *mmdagent, const char *languageModel, const char *dic
 
 void Sphinx::start()
 {
-   m_pause = false;
-
    if (m_ps == NULL)
       return;
 
@@ -126,7 +122,7 @@ void Sphinx::run()
       return;
    }
 
-   while (!m_pause) {
+   while (true) {
       /* Indicate listening for next utterance */
       printf("READY....\n");
 
@@ -156,7 +152,7 @@ void Sphinx::run()
       ts = m_cont->read_ts;
 
       /* Decode utterance until end (marked by a "long" silence, >1sec) or told to pause */
-      while (!m_pause) {
+      while (true) {
          /* Read non-silence audio data, if any, from continuous listening module */
          if ((k = cont_ad_read(m_cont, adbuf, 4096)) < 0) {
             printf("Failed to read audio\n");
@@ -217,13 +213,11 @@ void Sphinx::run()
 /* Tell the recognizer to pause */
 void Sphinx::pause()
 {
-   m_pause = true;
 }
 
 /* Tell the recognizer to resume */
 void Sphinx::resume()
 {
-   m_pause = false;
    run();
 }
 
