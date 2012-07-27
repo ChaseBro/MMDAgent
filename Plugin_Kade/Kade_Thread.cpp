@@ -181,6 +181,7 @@ void Kade_Thread::sendMessage(const char *str1, const char *str2)
 char* Kade_Thread::procParse(const char *plainText, const char *parse)
 {
    PyObject *pParse, *pAnswer, *pAnswerStr, *pArgs, *pPlain;
+   char *answerStr;
 
    if (!pProcParse || !PyCallable_Check(pProcParse)) {
       printf("procParse does not exists or is not callable.\n");
@@ -203,13 +204,15 @@ char* Kade_Thread::procParse(const char *plainText, const char *parse)
             pAnswerStr = PyObject_Str(pAnswer);
             Py_DECREF(pAnswer);
             Py_DECREF(pArgs);
-            Py_DECREF(pParse);
-            printf("Answer: %s\n", PyString_AsString(pAnswerStr));
-            return PyString_AsString(pAnswerStr);
+            answerStr = PyString_AsString(pAnswerStr);
+            Py_DECREF(pAnswerStr);
+            printf("Answer: %s\n", answerStr);
+            return answerStr;
          }
          Py_DECREF(pArgs);
       } else
          Py_DECREF(pParse);
+         Py_DECREF(pPlain);
    }
    printf("Error\n");
    if (PyErr_Occurred())

@@ -64,7 +64,7 @@
 
 static Kade_Thread kade_thread;
 static bool enable;
-char *plainText;
+char *plainText, *parseText;
 
 /* extAppStart: load models and start thread */
 EXPORT void extAppStart(MMDAgent *mmdagent)
@@ -104,14 +104,21 @@ EXPORT void extProcCommand(MMDAgent *mmdagent, const char *type, const char *arg
 EXPORT void extProcEvent(MMDAgent *mmdagent, const char *type, const char *args)
 {
    char *answer, newArgs[1000];
-   char plainTextCopy[10000];
 
    if(enable) {
       if (MMDAgent_strequal(type, SPHINXTHREAD_EVENTSTOP)) {
-         sprintf(plainTextCopy, "%s", args);
-	 plainText = plainTextCopy;
+         if (plainText)
+            free(plainText);
+
+         plainText = (char *)malloc(strlen(args) + 1);
+         sprintf(plainText, "%s", args);
       } else if (MMDAgent_strequal(type, PLUGINPHOENIX_STOPEVENT)) {
-         answer = kade_thread.procParse(plainText, args);
+         if (parseText)
+            free(parseText);
+
+         parseText = (char *)malloc(strlen(args) + 1);
+         sprintf(parseText, "%s", args);
+         answer = kade_thread.procParse(plainText, parseText);
          if (answer) {
             sprintf(newArgs, "%s|%s|%s", CHARACTER, VOICE, answer);
             mmdagent->sendCommandMessage(SYNTH_START, newArgs);
@@ -124,5 +131,11 @@ EXPORT void extProcEvent(MMDAgent *mmdagent, const char *type, const char *args)
 EXPORT void extAppEnd(MMDAgent *mmdagent)
 {
    enable = false;
+   if (plainText)
+      free(plainText);
+   plainText = NULL;
+   if (parseText)
+      free(parseText);
+   parseText = NULL;
 }
 
