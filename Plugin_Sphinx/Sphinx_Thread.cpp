@@ -96,7 +96,7 @@ void Sphinx_Thread::initialize()
    m_dictionary = NULL;
    m_acousticModel = NULL;
    m_configFile = NULL;
-   m_userDictionary = NULL;
+   m_logFolder = NULL;
 }
 
 /* Sphinx_Thread::clear: free thread */
@@ -121,8 +121,8 @@ void Sphinx_Thread::clear()
       free(m_acousticModel);
    if(m_configFile != NULL)
       free(m_configFile);
-   if(m_userDictionary != NULL)
-      free(m_userDictionary);
+   if(m_logFolder != NULL)
+      free(m_logFolder);
 
    initialize();
 }
@@ -140,7 +140,7 @@ Sphinx_Thread::~Sphinx_Thread()
 }
 
 /* Sphinx_Thread::loadAndStart: load models and start thread */
-void Sphinx_Thread::loadAndStart(MMDAgent *mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *userDictionary)
+void Sphinx_Thread::loadAndStart(MMDAgent *mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *logFolder)
 {
    /* reset */
    clear();
@@ -151,31 +151,12 @@ void Sphinx_Thread::loadAndStart(MMDAgent *mmdagent, const char *languageModel, 
    m_dictionary = MMDAgent_strdup(dictionary);
    m_acousticModel = MMDAgent_strdup(acousticModel);
    m_configFile = MMDAgent_strdup(configFile);
-   m_userDictionary = MMDAgent_strdup(userDictionary);
+   m_logFolder = MMDAgent_strdup(logFolder);
 
-   if(m_mmdagent == NULL || m_languageModel == NULL || m_dictionary == NULL || m_acousticModel == NULL || m_configFile == NULL) {
+   if(m_mmdagent == NULL || m_languageModel == NULL || m_dictionary == NULL || m_acousticModel == NULL || m_configFile == NULL || m_logFolder == NULL) {
       clear();
       return;
    }
-
-   /* load config file
-   tmp = MMDAgent_pathdup(m_configFile);
-   if(j_config_load_file(m_jconf, tmp) < 0) {
-      free(tmp);
-      return;
-   }
-   free(tmp);
-   */
-
-   /* load user dictionary
-   fp = MMDAgent_fopen(m_userDictionary, "r");
-   if(fp != NULL) {
-      fclose(fp);
-      tmp = MMDAgent_pathdup(m_userDictionary);
-      j_add_dict(m_jconf->lm_root, tmp);
-      free(tmp);
-   }
-   */
 
    /* create recognition thread */
    glfwInit();
@@ -195,11 +176,9 @@ void Sphinx_Thread::stopAndRelease()
 /* Sphinx_Thread::run: main loop */
 void Sphinx_Thread::run()
 {
-   char buff[MMDAGENT_MAXBUFLEN];
-
    /* create instance */
    m_recog = new Sphinx();
-   if (!m_recog->load(m_mmdagent, m_languageModel, m_dictionary, m_acousticModel, m_configFile, m_userDictionary)) {
+   if (!m_recog->load(m_mmdagent, m_languageModel, m_dictionary, m_acousticModel, m_configFile, m_logFolder)) {
       printf("Failed to load config\n");
       return;
    }

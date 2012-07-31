@@ -20,7 +20,7 @@ void Sphinx::initialize()
    m_dictionary = NULL;
    m_acousticModel = NULL;
    m_configFile = NULL;
-   m_userDictionary = NULL;
+   m_logFolder = NULL;
 
    m_callbackRecogBeginData = NULL; /* data for callback function for beginning of recognition */
    m_callbackRecogResultData = NULL; /* data for callback function for end of recognition */
@@ -38,8 +38,8 @@ void Sphinx::clear()
       free(m_acousticModel);
    if(m_configFile != NULL)
       free(m_configFile);
-   if(m_userDictionary != NULL)
-      free(m_userDictionary);
+   if(m_logFolder != NULL)
+      free(m_logFolder);
 
    if(m_ps)
      ps_free(m_ps);
@@ -57,7 +57,7 @@ Sphinx::~Sphinx()
    clear();
 }
 
-bool Sphinx::load(MMDAgent *mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *userDictionary)
+bool Sphinx::load(MMDAgent *mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *logFolder)
 {
    m_mmdagent = mmdagent;
 
@@ -65,8 +65,7 @@ bool Sphinx::load(MMDAgent *mmdagent, const char *languageModel, const char *dic
    m_dictionary = MMDAgent_strdup(dictionary);
    m_acousticModel = MMDAgent_strdup(acousticModel);
    m_configFile = MMDAgent_strdup(configFile);
-   m_userDictionary = MMDAgent_strdup(userDictionary);
-   err_set_logfp(NULL);
+   m_logFolder = MMDAgent_strdup(logFolder);
 
    /* load models */
    m_config = cmd_ln_init(NULL, ps_args(), 1,
@@ -98,6 +97,37 @@ void Sphinx::start()
    /* Initialize continuous listening module */
    if ((m_cont = cont_ad_init(m_ad, ad_read)) == NULL) {
       printf("Failed to initialize voice activity detection\n");
+      return;
+   }
+
+   FILE *logFile;
+   char logFilePath[MMDAGENT_MAXBUFLEN];
+   sprintf(logFilePath, "%s%s", m_logFolder, "sphinxlog.log");
+   logFile = fopen(MMDAgent_pathdup(logFilePath), "w");
+   if (logFile == NULL) {
+      printf("Failed to open log file.\n");
+      return;
+   }
+   if (cont_ad_set_logfp(m_cont, logFile) != 0) {
+      printf("Failed to initialize Sphinx logging.\n");
+      fclose(logFile);
+      return;
+   }
+   err_set_logfp(logFile);
+
+   FILE *rawLogFile;
+   char audioLogFilePath[MMDAGENT_MAXBUFLEN];
+   sprintf(audioLogFilePath, "%s%s", m_logFolder, "sphinxaudio.raw");
+   rawLogFile = fopen(MMDAgent_pathdup(audioLogFilePath), "w");
+   if (rawLogFile == NULL) {
+      printf("Failed to open audio log file.\n");
+      fclose(logFile);
+      return;
+   }
+   if (cont_ad_set_rawfp(m_cont, rawLogFile) != 0) {
+      printf("Failed to initalize Sphinx audio logging.\n");
+      fclose(rawLogFile);
+      fclose(logFile);
       return;
    }
 

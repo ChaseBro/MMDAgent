@@ -53,6 +53,8 @@
 #define PLUGINSPHINX_DICTIONARY    MMDAGENT_DIRSEPARATOR, LOGIOS, MMDAGENT_DIRSEPARATOR, "Grammar", MMDAGENT_DIRSEPARATOR, "Kade.dict"
 #define PLUGINSPHINX_ACOUSTICMODEL MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "model", MMDAGENT_DIRSEPARATOR, "hmm", MMDAGENT_DIRSEPARATOR, "en_US", MMDAGENT_DIRSEPARATOR, "hub4wsj_sc_8k", MMDAGENT_DIRSEPARATOR, "mdef"
 #define PLUGINSPHINX_CONFIGFILE    MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "jconf.txt"
+#define PLUGINSPHINX_LOGFOLDER     MMDAGENT_DIRSEPARATOR, "Logs", MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, 
+
 
 /* headers */
 
@@ -72,33 +74,21 @@ static bool enable;
 /* extAppStart: load models and start thread */
 EXPORT void extAppStart(MMDAgent *mmdagent)
 {
-   int len;
    char languageModel[MMDAGENT_MAXBUFLEN];
    char dictionary[MMDAGENT_MAXBUFLEN];
    char acousticModel[MMDAGENT_MAXBUFLEN];
    char configFile[MMDAGENT_MAXBUFLEN];
-   char userDictionary[MMDAGENT_MAXBUFLEN];
+   char logFolder[MMDAGENT_MAXBUFLEN];
 
    /* set model file names */
    sprintf(languageModel, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_LANGUAGEMODEL);
    sprintf(dictionary, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
    sprintf(acousticModel, "%s%c%s%c%s%c%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_ACOUSTICMODEL);
    sprintf(configFile, "%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_CONFIGFILE);
-
-   /* user dictionary */
-   strcpy(userDictionary, mmdagent->getConfigFileName());
-   len = MMDAgent_strlen(userDictionary);
-   if(len > 4) {
-      userDictionary[len-4] = '.';
-      userDictionary[len-3] = 'd';
-      userDictionary[len-2] = 'i';
-      userDictionary[len-1] = 'c';
-   } else {
-      strcpy(userDictionary, "");
-   }
+   sprintf(logFolder, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
 
    /* load models and start thread */
-   sphinx_thread.loadAndStart(mmdagent, languageModel, dictionary, acousticModel, configFile, userDictionary);
+   sphinx_thread.loadAndStart(mmdagent, languageModel, dictionary, acousticModel, configFile, logFolder);
 
    enable = true;
    mmdagent->sendEventMessage(MMDAGENT_EVENT_PLUGINENABLE, PLUGINSPHINX_NAME);

@@ -12,7 +12,7 @@ private :
    char *m_dictionary;
    char *m_acousticModel;
    char *m_configFile;
-   char *m_userDictionary;
+   char *m_logFolder;
 
    ad_rec_t *m_ad;
    cont_ad_t *m_cont;
@@ -40,7 +40,7 @@ public :
    void clear();
 
    /* load config and  */
-   bool load(MMDAgent *m_mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *userDictionary);
+   bool load(MMDAgent *m_mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *logFolder);
 
    /* start recognizing from microphone */
    void start();

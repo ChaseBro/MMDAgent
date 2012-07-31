@@ -61,7 +61,7 @@ private:
    char *m_dictionary;
    char *m_acousticModel;
    char *m_configFile;
-   char *m_userDictionary;
+   char *m_logFolder;
 
    //Sphinx_Logger m_logger;
 
@@ -80,7 +80,7 @@ public:
    ~Sphinx_Thread();
 
    /* loadAndStart: load models and start thread */
-   void loadAndStart(MMDAgent *m_mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *userDictionary);
+   void loadAndStart(MMDAgent *m_mmdagent, const char *languageModel, const char *dictionary, const char *acousticModel, const char *configFile, const char *logFolder);
 
    /* stopAndRlease: stop thread and release sphinx */
    void stopAndRelease();
