@@ -12,10 +12,13 @@
 
 # Queries
 [InfoQuery]
-	(what *[Linking] [SpecNode] *'s [Info])
-	(what *'s [SpecNode] *'s [Info])
-	(i WANT [SpecNode] *'s [Info])
-	(can you FIND *me [SpecNode] *'s [Info])
+	(START *the [Info] *of [SpecNode])
+	(START [SpecNode] *'s [Info])
+START
+	(what *[Linking])
+	(what *'s )
+	(i WANT)
+	(*can *you FIND *me)
 FIND
 	(find)
 	(get)
@@ -124,6 +127,7 @@ WHWORD
 	([GenLocation])
 	([GenPerson])
 	([GenCourse])
+	([Info])
 ;
 
 [SpecNode]
@@ -164,6 +168,7 @@ PERSON
 	([SpecStudent])
 	([_you])
 	([_me])
+	([_pronoun])
 ;
 
 [GenLocation]
@@ -219,6 +224,18 @@ OFFICE
 	(montgomery)
 ;
 
+[_pronoun]
+	(he)
+	(his)
+	(she)
+	(her)
+	(it)
+	(its)
+	(they)
+	(them)
+	(their)
+;
+
 # SpecProf net now in SpecProfessor.gra
 # [SpecProfessor]
 
@@ -255,10 +272,13 @@ VONAHN
 # Kade Queries -----------------------------------
 [KadeQuery]
 	([WhoMadeQuery])
+	([WhoAreYouQuery])
+	([WhatAreYouQuery])
 	([CapabilityQuery])
 	([AgeQuery])
 	([WhenBornQuery])
 	([WhereAmI])
+	([WhereAreYouFromQuery])
 	([TellAJoke])
 	([WhosThere])
 	([Hello])
@@ -280,10 +300,19 @@ MADE
 	(created)
 ;
 
+[WhoAreYouQuery]
+	(who are you)
+;
+
+[WhatAreYouQuery]
+	(what are you)
+;
+
 [CapabilityQuery]
 	(what can you do)
+	(what do you do)
 	(what are you capable of)
-	(what can I ask you)
+	(what can i ask you)
 	(what do you know)
 ;
 
@@ -298,12 +327,15 @@ MADE
 [WhereAmI]
 	(where am i)
 	(where is this)
-	(where are you)
+;
+
+[WhereAreYouFromQuery]
+	(*where *are you from)
 ;
 
 [TellAJoke]
-	(tell *me a joke)
-	(do you know any jokes)
+	(tell *me *a joke)
+	(*do *you *know *any jokes)
 ;
 
 [WhosThere]
@@ -313,10 +345,12 @@ MADE
 [Hello]
 	(hello *there)
 	(hi *there)
-	(good morning)
-	(good afternoon)
-	(good evening)
-	(good night)
+	(good *TOD)
+TOD
+	(morning)
+	(afternoon)
+	(evening)
+	(night)
 ;
 
 [Goodbye]
@@ -326,16 +360,22 @@ MADE
 ;
 
 [ThankYou]
-	(thank you)
+	(thank *you)
 	(thanks)
 ;
 
 [FavoriteColorQuery]
-	(what *is *'s your favorite color)
+	(what *IS your favorite color)
+IS
+	(is)
+	('s)
 ;
 
 [FavoriteFoodQuery]
-	(what *is *'s your favorite food)
+	(what *IS your favorite food)
+IS
+	(is)
+	('s)
 ;
 
 # Terminals --------------------------------------
@@ -370,7 +410,9 @@ MADE
 ;
 
 [_phone]
+	(phone)
 	(*phone number)
+	(telephone *number)
 ;
 [_fax]
 	(fax *number)

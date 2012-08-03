@@ -32,8 +32,8 @@ def procParse(plainText, inParse):
         return "I'm sorry, I'm a little hard of hearing, can ya repeat that?"
     parse = json.loads(inParse)
 
-    #server = JsonServer('http://peace.isri.cs.cmu.edu:9080/constellation/')
-    server = JsonServer('http://128.237.126.174:8080/constellation/')
+    server = JsonServer('http://peace.isri.cs.cmu.edu:9080/constellation/')
+    #server = JsonServer('http://128.237.126.174:8080/constellation/')
 
     if 'Query' in parse.keys():
         query = parse['Query']
@@ -102,34 +102,41 @@ def procParse(plainText, inParse):
                 elif 'KadeQuery' in extract.keys():
                     kadeQuery = extract['KadeQuery']
                     keys = extract['KadeQuery'].keys()
-                    if 'AgeQuery' in keys:
+                    if 'WhoMadeQuery' in keys:
+                        response = 'I was made by the Kade team from the Language Technologies Institute here at Carnegie Mellon.'
+                    elif 'WhoAreYouQuery' in keys:
+                        response = 'I am a virtual receptionist developed by the Kade team in the Language Technologies Institute here at Carnegie Mellon.'
+                    elif 'WhatAreYouQuery' in keys:
+                        response = 'I am a virtual receptionist developed by the Kade team in the Language Technologies Institute here at Carnegie Mellon.'
+                    elif 'CapabilityQuery' in keys:
+                        response = 'I can do many things, try asking for information about a professor in LTI or about what courses that professor teaches.'
+                    elif 'AgeQuery' in keys:
                         response = 'Old enough to mind my manners sonny. I might think you should do the same.'
                     elif 'WhenBornQuery' in keys:
                         response = 'I was born about a week ago.'
-                    elif 'WhoMadeQuery' in keys:
-                        response = 'I was made by the Kade team from the Language Technologies Institute her at Carnegie Mellon.'
-                    elif 'CapabilityQuery' in keys:
-                        response = 'I can do many things, try asking for information about a professor in LTI or about what courses that professor teaches.'
-                    elif 'WhereFromQuery' in keys:
-                        response = 'I came from your mother, and I learned some manners, unlike you.'
+                    elif 'WhereAmI' in keys:
+                        response = 'In the Gates Hillman Center.'
+                    elif 'WhereAreYouFromQuery' in keys:
+                        response = 'I\'m from japan, can\'t you tell by my accent?'
+                    elif 'TellAJoke' in keys:
+                        response = 'Your GPA, now do you have any more serious questions?'
+                    elif 'WhosThere' in keys:
+                        response = 'Your mother.'
                     elif 'Hello' in keys:
                         response = 'Hello there.'
                     elif 'Goodbye' in keys:
                         response = 'Enjoy the rest of your day here at Hershey Park.'
                     elif 'ThankYou' in keys:
                         response = 'You\'re very welcome, just don\'t start expecting anything.'
-                    elif 'WhereAmI' in keys:
-                        response = 'In the Gates Hillman Center.'
-                    elif 'WhosThere' in keys:
-                        response = 'Your mother.'
-                    elif 'TellAJoke' in keys:
-                        response = 'Your GPA, now do you have any more serious questions?'
                     elif 'FavoriteColorQuery' in keys:
                         response = 'The Carnegie Tartan, obviously.'
                     elif 'FavoriteFoodQuery' in keys:
                         response = 'My favorite food is haggis, did you know they still grow wild in the mountains in scottland.'
                     else:
                         response = 'I don\'t know, I\'m old, give me a break.'
+
+                else:
+                    response = 'I\'m sorry, I don\'t have that information.'
 
     else:
         answer = server.callNell(plainText, None)
