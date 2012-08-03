@@ -18,7 +18,7 @@ class JsonServer:
         print jsonDump
         try:
             result = self.proxy.parse({'uuid': uid.int, 'qid': 0, 'type': 'question', 'plainText': plainText, 'query': jsonQuery, 'context': {}, 'plural': False })
-            print result
+            print json.dumps(result)
         except:
             result = None
         return result
@@ -32,7 +32,8 @@ def procParse(plainText, inParse):
         return "I'm sorry, I'm a little hard of hearing, can ya repeat that?"
     parse = json.loads(inParse)
 
-    server = JsonServer('http://peace.isri.cs.cmu.edu:9080/constellation/')
+    #server = JsonServer('http://peace.isri.cs.cmu.edu:9080/constellation/')
+    server = JsonServer('http://128.237.126.174:8080/constellation/')
 
     if 'Query' in parse.keys():
         query = parse['Query']
@@ -59,9 +60,9 @@ def procParse(plainText, inParse):
                         jsonQuery = jsonSpecNode(infoQuery['SpecNode']) + (('Traverse', None), ('Type', infoNode))
                         answer = server.callNell(plainText, jsonQuery)
                         if answer is not None and answer['plainText'] is not None:
-                            response = extractLeaves(specNode) + '\'s ' + infoOutput[infoNode] + ' is ' + answer['plainText']
+                            response = extractLeaves(specNode) + '\'s ' + infoNode + ' is ' + answer['plainText']
                         else:
-                            response = 'I\'m sorry, I don\'t what ' + extractLeaves(specNode) + '\'s ' + infoOutput[infoNode] + ' is.'
+                            response = 'I\'m sorry, I don\'t what ' + extractLeaves(specNode) + '\'s ' + infoNode + ' is.'
 
                 elif 'NodeQuery' in extract.keys():
                     nodeQuery = extract['NodeQuery']
@@ -73,7 +74,8 @@ def procParse(plainText, inParse):
 
                     if 'AllLinking' in nodeQuery.keys() and ( 'Prep' not in nodeQuery.keys() or nodeQuery['Prep'][0] != 'BY' ):
                         response = 'I think you want to know what ' + genNode + ' ' + extractLeaves(nodeQuery['AllLinking']) + ' ' + extractLeaves(specNode) + ' ' + extractLeaves(relVerb) + '.'
-                        jsonQuery += (('Traverse', extractLeaves(relVerb)),)
+                        # jsonQuery += (('Traverse', extractLeaves(relVerb)),)
+                        jsonQuery += (('Traverse', None),)
                     else:
                         response = 'I think you want to know what ' + genNode + ' ' + extractLeaves(relVerb) + ' ' + extractLeaves(specNode) + '.'
                         jsonQuery += (('TraverseIn', extractLeaves(relVerb)),)
@@ -82,7 +84,7 @@ def procParse(plainText, inParse):
 
                     answer = server.callNell(plainText, jsonQuery)
                     if answer is not None and answer['plainText'] is not None:
-                        response = genNodeType + '\'s ' + infoNode + ' is ' + answer['plainText']
+                        response = extractLeaves(specNode) + ' ' + extractLeaves(relVerb) + 'es ' + answer['plainText'] + '.'
 
                 elif 'LocationQuery' in extract.keys():
                     locQuery = extract['LocationQuery']
@@ -98,15 +100,36 @@ def procParse(plainText, inParse):
                     response = 'I think you want to know something about a location.'
 
                 elif 'KadeQuery' in extract.keys():
-                    kadeQuery = extractLeaves(extract['KadeQuery'])
-                    if kadeQuery == 'HOW OLD ARE YOU':
+                    kadeQuery = extract['KadeQuery']
+                    keys = extract['KadeQuery'].keys()
+                    if 'AgeQuery' in keys:
                         response = 'Old enough to mind my manners sonny. I might think you should do the same.'
-                    elif kadeQuery == 'WHO MADE YOU' or kadeQuery == 'WHO BUILT YOU':
+                    elif 'WhenBornQuery' in keys:
+                        response = 'I was born about a week ago.'
+                    elif 'WhoMadeQuery' in keys:
                         response = 'I was made by the Kade team from the Language Technologies Institute her at Carnegie Mellon.'
-                    elif kadeQuery == 'WHERE DID YOU COME FROM':
+                    elif 'CapabilityQuery' in keys:
+                        response = 'I can do many things, try asking for information about a professor in LTI or about what courses that professor teaches.'
+                    elif 'WhereFromQuery' in keys:
                         response = 'I came from your mother, and I learned some manners, unlike you.'
+                    elif 'Hello' in keys:
+                        response = 'Hello there.'
+                    elif 'Goodbye' in keys:
+                        response = 'Enjoy the rest of your day here at Hershey Park.'
+                    elif 'ThankYou' in keys:
+                        response = 'You\'re very welcome, just don\'t start expecting anything.'
+                    elif 'WhereAmI' in keys:
+                        response = 'In the Gates Hillman Center.'
+                    elif 'WhosThere' in keys:
+                        response = 'Your mother.'
+                    elif 'TellAJoke' in keys:
+                        response = 'Your GPA, now do you have any more serious questions?'
+                    elif 'FavoriteColorQuery' in keys:
+                        response = 'The Carnegie Tartan, obviously.'
+                    elif 'FavoriteFoodQuery' in keys:
+                        response = 'My favorite food is haggis, did you know they still grow wild in the mountains in scottland.'
                     else:
-                        response = 'Something else.'
+                        response = 'I don\'t know, I\'m old, give me a break.'
 
     else:
         answer = server.callNell(plainText, None)
@@ -121,11 +144,17 @@ def extractLeaves(node):
         return ' '.join(node)
 
     if isinstance(node, dict):
-        if node[node.keys()[0]] is not None:
-            return extractLeaves(node[node.keys()[0]])
-        else:
-            return node.keys()[0]
-    return node
+        if len(node.keys()) > 0:
+            if node[node.keys()[0]] is not None:
+                return extractLeaves(node[node.keys()[0]])
+            else:
+                return node.keys()[0]
+
+    if isinstance(node, unicode):
+        return node
+
+    print node
+    return None
 
 # Extract the json query from a SpecNode (Specific Node)
 def jsonSpecNode(specNode):
@@ -154,6 +183,8 @@ def getNodeType(node):
         ret += (('Type', 'person'),)
     elif label == 'SpecLocation' or label == 'GenLocation':
         ret += (('Type', 'location'),)
+    elif label == 'SpecCourse' or label == 'GenCourse':
+        ret += (('Type', 'course'),)
     return ret
 
 #print parse("[WhereQuestion] ( WHERE [Linking] ( IS ) [LocationQuery] ( [Person] ( [Professor] ( NYBERG ) ) 'S [Location] ( [_Office] ( OFFICE ) ) ) ) ")

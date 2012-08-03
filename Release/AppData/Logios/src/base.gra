@@ -36,16 +36,6 @@ WHWORD
 	(where *[_do] [SpecNode] [LocationVerb])
 ;
 
-[KadeQuery]
-	(who MADE you)
-	(how old are you)
-	(where did you come from)
-	(where am I)
-MADE
-	(made)
-	(built)
-;
-
 # Verbs ------------------------------------------
 [Linking]
 	(is)
@@ -121,6 +111,7 @@ MADE
 [GenNode]
 	([GenLocation])
 	([GenPerson])
+	([GenCourse])
 ;
 
 [SpecNode]
@@ -155,7 +146,8 @@ PERSON
 ;
 
 [SpecPerson]
-	([SpecProfessor])
+	(*doctor [SpecProfessor])
+	(*professor [SpecProfessor])
 	([SpecStaff])
 	([SpecStudent])
 	([_you])
@@ -172,6 +164,13 @@ OFFICE
 [SpecLocation]
 	([SpecBuilding])
 	([SpecRoom])
+;
+
+[GenCourse]
+	(course)
+	(courses)
+	(class)
+	(classes)
 ;
 
 
@@ -211,6 +210,8 @@ OFFICE
 # SpecProf net now in SpecProfessor.gra
 # [SpecProfessor]
 
+# SpecCourse net now in SpecCourse.gra
+# [SpecCourse]
 
 [SpecBuilding]
 	(GATES)
@@ -237,6 +238,92 @@ RASHEED
 VONAHN
 	(von ahn *awesome [_room])
 	(aweseome [_room])
+;
+
+# Kade Queries -----------------------------------
+[KadeQuery]
+	([WhoMadeQuery])
+	([CapabilityQuery])
+	([AgeQuery])
+	([WhenBornQuery])
+	([WhereAmI])
+	([TellAJoke])
+	([WhosThere])
+	([Hello])
+	([Goodbye])
+	([ThankYou])
+	([FavoriteColorQuery])
+	([FavoriteFoodQuery])
+;
+
+[WhoMadeQuery]
+	(WHWORD MADE you)
+	(where did you come from)
+WHWORD
+	(what)
+	(who)
+MADE
+	(made)
+	(built)
+	(created)
+;
+
+[CapabilityQuery]
+	(what can you do)
+	(what are you capable of)
+	(what can I ask you)
+	(what do you know)
+;
+
+[AgeQuery]
+	(how old are you)
+;
+
+[WhenBornQuery]
+	(when were you born)
+;
+
+[WhereAmI]
+	(where am i)
+	(where is this)
+	(where are you)
+;
+
+[TellAJoke]
+	(tell *me a joke)
+	(do you know any jokes)
+;
+
+[WhosThere]
+	(who *'s there)
+;
+
+[Hello]
+	(hello *there)
+	(hi *there)
+	(good morning)
+	(good afternoon)
+	(good evening)
+	(good night)
+;
+
+[Goodbye]
+	(goodbye)
+	(see ya)
+	(bye *bye)
+;
+
+[ThankYou]
+	(thank you)
+	(thanks)
+;
+
+[FavoriteColorQuery]
+	(what *is *'s your favorite color)
+;
+
+[FavoriteFoodQuery]
+	(what *is *'s your favorite food)
 ;
 
 # Terminals --------------------------------------
