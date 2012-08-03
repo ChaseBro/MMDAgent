@@ -13,6 +13,7 @@ private :
    char *m_acousticModel;
    char *m_configFile;
    char *m_logFolder;
+   char *m_uttLogFolder;
 
    ad_rec_t *m_ad;
    cont_ad_t *m_cont;

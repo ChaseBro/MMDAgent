@@ -22,6 +22,7 @@ void Sphinx::initialize()
    m_acousticModel = NULL;
    m_configFile = NULL;
    m_logFolder = NULL;
+   m_uttLogFolder = NULL;
 
    m_callbackRecogBeginData = NULL; /* data for callback function for beginning of recognition */
    m_callbackRecogResultData = NULL; /* data for callback function for end of recognition */
@@ -41,6 +42,8 @@ void Sphinx::clear()
       free(m_configFile);
    if(m_logFolder != NULL)
       free(m_logFolder);
+   if(m_uttLogFolder != NULL)
+      free(m_uttLogFolder);
 
    if(m_ps)
      ps_free(m_ps);
@@ -102,16 +105,27 @@ void Sphinx::start()
    }
 
    char logFolderPath[MMDAGENT_MAXBUFLEN];
-   sprintf(logFolderPath, "%s%ld/", m_logFolder, time(NULL));
-   printf("log path: %s\n", MMDAgent_pathdup(logFolderPath));
-   if (mkdir(MMDAgent_pathdup(logFolderPath), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0) {
+   sprintf(logFolderPath, "%s%ld%c", m_logFolder, time(NULL), MMDAGENT_DIRSEPARATOR);
+   free(m_logFolder);
+   m_logFolder = MMDAgent_strdup(logFolderPath);
+   printf("Sphinx log path: %s\n", MMDAgent_pathdup(m_logFolder));
+   if (mkdir(MMDAgent_pathdup(m_logFolder), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0) {
+      printf("mkdir failed.\n");
+      return;
+   }
+
+   char uttLogPath[MMDAGENT_MAXBUFLEN];
+   sprintf(uttLogPath, "%sutts%c", m_logFolder, MMDAGENT_DIRSEPARATOR);
+   m_uttLogFolder = MMDAgent_strdup(uttLogPath);
+   printf("Sphinx utterance log path: %s\n", uttLogPath);
+   if (mkdir(MMDAgent_pathdup(uttLogPath), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0) {
       printf("mkdir failed.\n");
       return;
    }
 
    FILE *logFile;
    char logFilePath[MMDAGENT_MAXBUFLEN];
-   sprintf(logFilePath, "%s%s", logFolderPath, "sphinxlog.log");
+   sprintf(logFilePath, "%s%s", m_logFolder, "sphinxlog.log");
    logFile = fopen(MMDAgent_pathdup(logFilePath), "w");
    if (logFile == NULL) {
       printf("Failed to open log file.\n");
@@ -126,7 +140,7 @@ void Sphinx::start()
 
    FILE *rawLogFile;
    char audioLogFilePath[MMDAGENT_MAXBUFLEN];
-   sprintf(audioLogFilePath, "%s%s", logFolderPath, "sphinxaudio.raw");
+   sprintf(audioLogFilePath, "%s%s", m_logFolder, "sphinxaudio.raw");
    rawLogFile = fopen(MMDAgent_pathdup(audioLogFilePath), "w");
    if (rawLogFile == NULL) {
       printf("Failed to open audio log file.\n");
@@ -190,6 +204,14 @@ void Sphinx::run()
       /* Note timestamp for this first block of data */
       ts = m_cont->read_ts;
 
+      FILE *uttFile;
+      char uttFilePath[MMDAGENT_MAXBUFLEN];
+      uttid = ps_get_uttid(m_ps);
+      sprintf(uttFilePath, "%s%s.raw", m_uttLogFolder, uttid);
+      uttFile = fopen(uttFilePath, "w");
+      fwrite(adbuf, sizeof(int16), k, uttFile);
+      fflush(uttFile);
+
       /* Decode utterance until end (marked by a "long" silence, >1sec) or told to pause */
       while (true) {
          /* Read non-silence audio data, if any, from continuous listening module */
@@ -210,6 +232,9 @@ void Sphinx::run()
                ts = m_cont->read_ts;
          }
 
+         fwrite(adbuf, sizeof(int16), k, uttFile);
+         fflush(uttFile);
+
          /*
           * Decode whatever data was read above.
           */
@@ -220,6 +245,7 @@ void Sphinx::run()
             glfwSleep(0.02);
       }
 
+      fclose(uttFile);
       /*
       * Utterance ended; flush any accumulated, unprocessed A/D data and stop
       * listening until current utterance completely decoded
