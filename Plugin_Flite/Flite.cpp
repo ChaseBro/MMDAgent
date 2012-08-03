@@ -106,6 +106,9 @@ void Flite::getPhonemeSequence(char *lip)
 
    start = 0.0;
 
+   // Empty the lipsync buffer before each synthesis
+   sprintf(lip, "");
+
    for (seg=utt_rel_head(m_utt,"Segment"); seg; seg=item_next(seg))
    {
       name = item_feat_string(seg,"name");
