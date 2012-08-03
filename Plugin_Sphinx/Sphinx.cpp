@@ -4,6 +4,7 @@
 #include <MMDAgent.h>
 #include "Sphinx.h"
 #include "err.h"
+#include <sys/stat.h>
 
 
 void Sphinx::initialize()
@@ -100,9 +101,17 @@ void Sphinx::start()
       return;
    }
 
+   char logFolderPath[MMDAGENT_MAXBUFLEN];
+   sprintf(logFolderPath, "%s%ld/", m_logFolder, time(NULL));
+   printf("log path: %s\n", MMDAgent_pathdup(logFolderPath));
+   if (mkdir(MMDAgent_pathdup(logFolderPath), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) != 0) {
+      printf("mkdir failed.\n");
+      return;
+   }
+
    FILE *logFile;
    char logFilePath[MMDAGENT_MAXBUFLEN];
-   sprintf(logFilePath, "%s%s", m_logFolder, "sphinxlog.log");
+   sprintf(logFilePath, "%s%s", logFolderPath, "sphinxlog.log");
    logFile = fopen(MMDAgent_pathdup(logFilePath), "w");
    if (logFile == NULL) {
       printf("Failed to open log file.\n");
@@ -117,7 +126,7 @@ void Sphinx::start()
 
    FILE *rawLogFile;
    char audioLogFilePath[MMDAGENT_MAXBUFLEN];
-   sprintf(audioLogFilePath, "%s%s", m_logFolder, "sphinxaudio.raw");
+   sprintf(audioLogFilePath, "%s%s", logFolderPath, "sphinxaudio.raw");
    rawLogFile = fopen(MMDAgent_pathdup(audioLogFilePath), "w");
    if (rawLogFile == NULL) {
       printf("Failed to open audio log file.\n");

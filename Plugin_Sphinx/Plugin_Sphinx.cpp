@@ -53,7 +53,7 @@
 #define PLUGINSPHINX_DICTIONARY    MMDAGENT_DIRSEPARATOR, LOGIOS, MMDAGENT_DIRSEPARATOR, "Grammar", MMDAGENT_DIRSEPARATOR, "Kade.dict"
 #define PLUGINSPHINX_ACOUSTICMODEL MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "model", MMDAGENT_DIRSEPARATOR, "hmm", MMDAGENT_DIRSEPARATOR, "en_US", MMDAGENT_DIRSEPARATOR, "hub4wsj_sc_8k", MMDAGENT_DIRSEPARATOR, "mdef"
 #define PLUGINSPHINX_CONFIGFILE    MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, "jconf.txt"
-#define PLUGINSPHINX_LOGFOLDER     MMDAGENT_DIRSEPARATOR, "Logs", MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR, 
+#define PLUGINSPHINX_LOGFOLDER     MMDAGENT_DIRSEPARATOR, "Logs", MMDAGENT_DIRSEPARATOR, PLUGINSPHINX_NAME, MMDAGENT_DIRSEPARATOR
 
 
 /* headers */
@@ -85,7 +85,7 @@ EXPORT void extAppStart(MMDAgent *mmdagent)
    sprintf(dictionary, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
    sprintf(acousticModel, "%s%c%s%c%s%c%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_ACOUSTICMODEL);
    sprintf(configFile, "%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_CONFIGFILE);
-   sprintf(logFolder, "%s%c%s%c%s%c%s", mmdagent->getAppDirName(), PLUGINSPHINX_DICTIONARY);
+   sprintf(logFolder, "%s%c%s%c%s%c", mmdagent->getAppDirName(), PLUGINSPHINX_LOGFOLDER);
 
    /* load models and start thread */
    sphinx_thread.loadAndStart(mmdagent, languageModel, dictionary, acousticModel, configFile, logFolder);
