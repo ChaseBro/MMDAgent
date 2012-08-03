@@ -10,10 +10,22 @@
 #
 ###################################################################
 
-# Querys
+# Queries
 [InfoQuery]
 	(what *[Linking] [SpecNode] *'s [Info])
 	(what *'s [SpecNode] *'s [Info])
+	(i WANT [SpecNode] *'s [Info])
+	(can you FIND *me [SpecNode] *'s [Info])
+FIND
+	(find)
+	(get)
+	(tell)
+	(search for)
+WANT
+	(want)
+	(need)
+	(require)
+	
 ;
 
 [NodeQuery]
