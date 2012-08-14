@@ -1,0 +1,48 @@
+# 5 digit course number recognizer
+[CourseNumber]
+	(*TWO_DIGIT *thousand THREE_DIGIT)
+  
+TWO_DIGIT
+	(TEEN)
+	(TEN *ONE)
+	(ONE *ONE)
+  
+THREE_DIGIT
+	(ONE *hundred TWO_DIGIT)
+	(ONE hundred)
+  
+ONE
+	(zero)
+	(oh)
+	(one)
+	(two)
+	(three)
+	(four)
+	(five)
+	(six)
+	(seven)
+	(eight)
+	(nine)
+  
+TEEN
+	(ten)
+	(eleven)
+	(twelve)
+	(thirteen)
+	(fourteen)
+	(fifteen)
+	(sixteen)
+	(seventeen)
+	(eighteen)
+	(nineteen)
+  
+TEN
+	(twenty)
+	(thirty)
+	(forty)
+	(fifty)
+	(sixty)
+	(seventy)
+	(eighty)
+	(ninety)
+;
