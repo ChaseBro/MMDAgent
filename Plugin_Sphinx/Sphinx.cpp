@@ -5,6 +5,7 @@
 #include "Sphinx.h"
 #include "err.h"
 #include <sys/stat.h>
+#include <time.h>
 
 
 void Sphinx::initialize()
