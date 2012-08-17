@@ -15,3 +15,4 @@ Release/AppData/Logios/Grammar
 *.pyc
 Library_libpng/src/pnglibconf.h
 Release/AppData/Logios/src/Kade.gra
+Release/AppData/Logs/
