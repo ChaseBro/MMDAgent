@@ -66,19 +66,24 @@ def procParse(plainText, inParse):
 
                 elif 'NodeQuery' in extract.keys():
                     nodeQuery = extract['NodeQuery']
-                    genNode = extractLeaves(nodeQuery['GenNode'])
+                    genNode = nodeQuery['GenNode']
                     specNode = nodeQuery['SpecNode']
-                    relVerb = nodeQuery['RelVerb']
 
+                    response = 'I think you want to know what ' + extractLeaves(genNode) + ' '
                     jsonQuery = jsonSpecNode(specNode)
 
-                    if 'AllLinking' in nodeQuery.keys() and ( 'Prep' not in nodeQuery.keys() or nodeQuery['Prep'][0] != 'BY' ):
-                        response = 'I think you want to know what ' + genNode + ' ' + extractLeaves(nodeQuery['AllLinking']) + ' ' + extractLeaves(specNode) + ' ' + extractLeaves(relVerb) + '.'
-                        # jsonQuery += (('Traverse', extractLeaves(relVerb)),)
-                        jsonQuery += (('Traverse', None),)
+                    if ('RelVerb' in nodeQuery.keys()):
+                        relVerb = nodeQuery['RelVerb']
+                        if 'Prep' not in nodeQuery.keys() or nodeQuery['Prep'][0] != 'BY':
+                            response += extractLeaves(specNode) + ' ' + extractLeaves(relVerb) + '.'
+                            jsonQuery += (('Traverse', extractLeaves(relVerb)),)
+                        else:
+                            response += extractLeaves(relVerb) + ' by ' + extractLeaves(specNode) + '.'
+                            jsonQuery += (('TraverseIn', extractLeaves(relVerb)),)
                     else:
-                        response = 'I think you want to know what ' + genNode + ' ' + extractLeaves(relVerb) + ' ' + extractLeaves(specNode) + '.'
-                        jsonQuery += (('TraverseIn', extractLeaves(relVerb)),)
+                        response += 'is associated with ' + extractLeaves(specNode) + '.'
+                        jsonQuery += (('Traverse', None),)
+
 
                     jsonQuery += getNodeType(nodeQuery['GenNode'])
 

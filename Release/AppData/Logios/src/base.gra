@@ -12,8 +12,8 @@
 
 # Queries
 [InfoQuery]
-	(START *the [Info] *of [SpecNode])
-	(START [SpecNode] *'s [Info])
+	(*START *the [Info] *of [SpecNode])
+	(*START [SpecNode] *'s [Info])
 START
 	(what *[Linking])
 	(what *'s )
@@ -32,12 +32,18 @@ WANT
 ;
 
 [NodeQuery]
-	(WHWORD [GenNode] [RelVerb] [SpecNode])
-	(WHWORD [GenNode] [AllLinking] [SpecNode] [RelVerb] *[Prep])
-	(WHWORD [GenNode] [AllLinking] [RelVerb] by [SpecNode])
+	(*WHWORD [GenNode] *[AllLinking] *RELVERBPHRASE [SpecNode])
+	(*WHWORD [GenNode] *[AllLinking] [SpecNode] *RELVERBPHRASE)
+	(*WHWORD *[AllLinking] [SpecNode] *'s [GenNode])
 WHWORD
 	(what)
 	(which)
+	(who)
+	(when)
+	(where)
+RELVERBPHRASE
+	([RelVerb] *by)
+	([RelVerb] *[Prep])
 ;
 
 [PersonQuery]
