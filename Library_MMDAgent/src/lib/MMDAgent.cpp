@@ -983,7 +983,7 @@ bool MMDAgent::setup(int argc, char **argv, const char *title)
    binaryDirName = MMDAgent_dirname(argv[0]);
 
    /* set local to japan */
-   setlocale(LC_CTYPE, "jpn");
+   //setlocale(LC_CTYPE, "jpn");
 
    /* get application directory */
    if(m_appDirName)
