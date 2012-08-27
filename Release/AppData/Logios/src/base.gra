@@ -139,6 +139,7 @@ RELVERBPHRASE
 [SpecNode]
 	([SpecLocation])
 	([SpecPerson])
+	([CourseNumber])
 ;
 
 [GenPerson]
