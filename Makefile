@@ -117,7 +117,7 @@ x11-utf-8:
 	cd Plugin_Sphinx          && make
 	cd Plugin_Flite           && make
 	cd Plugin_Phoenix         && make
-	cd Plugin_Kade            && make
+	cd Plugin_Diggs           && make
 
 x11-utf-8-clean:
 	cd Library_Bullet_Physics && make                       clean
@@ -138,7 +138,7 @@ x11-utf-8-clean:
 	cd Plugin_Sphinx          && make                       clean
 	cd Plugin_Flite           && make                       clean
 	cd Plugin_Phoenix         && make                       clean
-	cd Plugin_Kade            && make                       clean
+	cd Plugin_Diggs           && make                       clean
 
 carbon:
 	cd Library_Bullet_Physics && make
