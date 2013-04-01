@@ -17,11 +17,9 @@ Currently Kade is only officially supported on Ubuntu 12.04 although it should w
     apt-get install subversion git autoconf libtool automake bison g++ libftgl-dev libfreetype6-dev libxrandr-dev libasound2-dev python2.7-dev wine libpulse-dev
 
 #### CMU Sphinx
-1. Make a new directory to install cmusphinx, inside that directory checkout the following repos:
+1. Make a new directory to install cmusphinx, inside that directory checkout the following repo:
 
-        svn co https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/pocketsphinx
-        svn co https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/sphinxbase
-
+        svn checkout svn://svn.code.sf.net/p/cmusphinx/code/trunk cmusphinx-code
 
 2. First go into the sphinxbase directory and install sphinxbase
 
