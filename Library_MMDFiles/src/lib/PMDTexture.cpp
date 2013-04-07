@@ -109,8 +109,10 @@ bool PMDTexture::loadBMP(const char *fileName)
 
    /* open file and read whole data into buffer */
    fp = MMDFiles_fopen(fileName, "rb");
-   if (!fp)
+   if (!fp) {
+      printf("PDMTexture: failed to open bmp file: %s\n", fileName);
       return false;
+   }
    size = MMDFiles_getfsize(fileName);
    data = (unsigned char *) malloc(size);
    fread(data, 1, size, fp);
@@ -128,6 +130,7 @@ bool PMDTexture::loadBMP(const char *fileName)
    len = *((unsigned long *) head);
    if (len == 12) {
       free(data);
+      printf("PMDTexture: length is invalid\n");
       return false;
    }
    ih = (BMPInfo *) head;
@@ -143,6 +146,7 @@ bool PMDTexture::loadBMP(const char *fileName)
    bit = ih->biBitCount;
    if (ih->biCompression != 0) {
       free(data);
+      printf("PMDTexture: compression is invalid\n");
       return false;
    }
    if (bit <= 8) {
@@ -576,6 +580,7 @@ bool PMDTexture::load(const char *fileName)
          m_isSphereMapAdd = true;
       }
    } else if (MMDFiles_strtailmatch(fileName, ".bmp") || MMDFiles_strtailmatch(fileName, ".BMP")) {
+      printf("PMDTexture: attempting to load bmp: %s\n", fileName);
       ret = loadBMP(fileName);
    } else if (MMDFiles_strtailmatch(fileName, ".tga") || MMDFiles_strtailmatch(fileName, ".TGA")) {
       ret = loadTGA(fileName);
@@ -585,11 +590,13 @@ bool PMDTexture::load(const char *fileName)
       ret = loadJPG(fileName);
    } else {
       /* unknown file suffix */
+      printf("PMDTexture: unknown file suffix\n");
       return false;
    }
 
    if (ret == false) {
       /* failed to read and decode file */
+      printf("PMDTexture: failed to read and decode texture file\n");
       return false;
    }
 

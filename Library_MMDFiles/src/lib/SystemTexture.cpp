@@ -83,12 +83,17 @@ bool SystemTexture::load(const char *dir)
    char buff[MMDFILES_MAXBUFLEN];
 
    for (i = 0; i < SYSTEMTEXTURE_NUMFILES; i++) {
-      if (MMDFiles_strlen(dir) > 0)
+      if (MMDFiles_strlen(dir) > 0) {
          sprintf(buff, "%s%c%s", dir, MMDFILES_DIRSEPARATOR, files[i]);
+         printf("%s \n", buff);
+      }
       else
          strcpy(buff, files[i]);
-      if (m_toonTexture[i].load(buff) == false)
+
+      if (m_toonTexture[i].load(buff) == false) {
          ret = false;
+         printf("wiping\n");
+      }
       m_toonTextureID[i] = m_toonTexture[i].getID();
    }
 

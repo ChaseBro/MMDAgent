@@ -28,7 +28,7 @@ OBJECTS  = $(SOURCES:.cpp=.o)
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+CXXFLAGS = -Wall -g -fomit-frame-pointer -fPIC \
            -DMMDFILES_DONTUPDATEMATRICESFORIK \
            -DMMDFILES_CHARSET="\"UTF-8\""
 INCLUDE  = -I ../Library_Bullet_Physics/include \

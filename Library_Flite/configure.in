@@ -40,7 +40,7 @@ AC_CHECK_TOOL(AR, ar)
 AC_C_BIGENDIAN
 
 if test "x$GCC" = "xyes"; then
-	CFLAGS="$CFLAGS -Wall"
+	CFLAGS="$CFLAGS -Wall -fPIC"
 fi
 AC_ARG_ENABLE( shared, 
                [  --disable-shared     without shared library support],

@@ -21,7 +21,7 @@ OBJECTS  = $(SOURCES:.c=.o)
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer -fPIC
 INCLUDE  = -I ../Library_zlib/include \
            -I src
 

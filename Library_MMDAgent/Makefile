@@ -22,7 +22,7 @@ OBJECTS  = $(SOURCES:.cpp=.o)
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+CXXFLAGS = -Wall -fomit-frame-pointer -fPIC -g \
            -DMMDAGENT
 INCLUDE  = -I ../Library_Bullet_Physics/include \
            -I ../Library_GLee/include \

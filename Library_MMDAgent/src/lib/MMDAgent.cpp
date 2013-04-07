@@ -1033,30 +1033,38 @@ bool MMDAgent::setup(int argc, char **argv, const char *title)
       return false;
    }
 
+   printf("Making Messages\n");
    /* initialize message queue */
    m_message = new Message();
    m_message->setup();
 
+   printf("Making Physics\n");
    /* initialize BulletPhysics */
    m_bullet = new BulletPhysics();
    m_bullet->setup(m_option->getBulletFps());
 
+   printf("Making Plugins\n");
    /* load and start plugins */
    m_plugin = new Plugin();
    sprintf(buff, "%s%c%s", binaryDirName, MMDAGENT_DIRSEPARATOR, MMDAGENT_PLUGINDIR);
    m_plugin->load(buff);
 
+   printf("Making Stage\n");
    /* create stage */
    m_stage = new Stage();
    m_stage->setSize(m_option->getStageSize(), 1.0f, 1.0f);
 
+   printf("Making Textures\n");
    /* load toon textures from system directory */
    m_systex = new SystemTexture();
+   printf("Still going...\n");
    if (m_systex->load(m_appDirName) == false) {
+      printf("fuck\n");
       clear();
       return 0;
    }
 
+   printf("Making LipSync\n");
    /* setup lipsync */
    m_lipSync = new LipSync();
    sprintf(buff, "%s%c%s", m_appDirName, MMDAGENT_DIRSEPARATOR, LIPSYNC_CONFIGFILE);
@@ -1065,6 +1073,7 @@ bool MMDAgent::setup(int argc, char **argv, const char *title)
       return 0;
    }
 
+   printf("Making Render\n");
    /* setup render */
    m_render = new Render();
    if (m_render->setup(m_option->getWindowSize(), m_option->getCampusColor(), m_option->getCameraTransition(), m_option->getCameraRotation(), m_option->getCameraDistance(), m_option->getCameraFovy(), m_option->getUseShadowMapping(), m_option->getShadowMappingTextureSize(), m_option->getShadowMappingLightFirst(), m_option->getMaxNumModel()) == false) {
@@ -1072,6 +1081,7 @@ bool MMDAgent::setup(int argc, char **argv, const char *title)
       return 0;
    }
 
+   printf("Making Timer\n");
    /* setup timer */
    m_timer = new Timer();
    m_timer->setup();

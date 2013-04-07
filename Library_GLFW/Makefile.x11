@@ -27,7 +27,7 @@ OBJECTS  = $(SOURCES:.c=.o)
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer -fPIC \
            -pthread \
            -DMMDAGENT \
            -D_GLFW_USE_LINUX_JOYSTICKS \

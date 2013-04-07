@@ -19,7 +19,7 @@ AR       = ar
 CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
            -shared \
            -DMMDAGENT
-INCLUDE  = -I ../Library_Bullet_Physics/include \
+INCLUDE  = -I ../Library_Bullet_Physics/include -fPIC \
            -I ../Library_GLee/include \
            -I ../Library_GLFW/include \
            -I ../Library_MMDFiles/include \

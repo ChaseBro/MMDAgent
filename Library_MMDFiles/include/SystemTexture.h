@@ -39,7 +39,7 @@
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
 
-#define SYSTEMTEXTURE_FILENAMES "toon0.bmp","toon01.bmp","toon02.bmp","toon03.bmp","toon04.bmp","toon05.bmp","toon06.bmp","toon07.bmp","toon08.bmp","toon09.bmp","toon10.bmp"
+#define SYSTEMTEXTURE_FILENAMES "toon0.png","toon01.png","toon02.png","toon03.png","toon04.png","toon05.png","toon06.png","toon07.png","toon08.png","toon09.png","toon10.png"
 #define SYSTEMTEXTURE_NUMFILES  11
 
 /* SystemTexture: system default texture */

@@ -16,7 +16,7 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer -fPIC \
            -shared -g \
            -DMMDAGENT
 INCLUDE  = -I ../Library_Bullet_Physics/include \
@@ -31,7 +31,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS) $(LDADD)
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDADD) $(LADD) -o $(TARGET) \
-	-lGLU -lGL -lX11 -lasound -ldl -lrt -lm -lpthread -lpython2.7 -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
+	-lGLU -lGL -lX11 -lasound -ldl -lrt -lm -lpthread -lpython2.7 -Xlinker -lpulse-simple -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $(<:.cpp=.o) -c $<

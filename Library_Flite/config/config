@@ -4,12 +4,12 @@
 # Do not hand edit.
 
 TARGET_OS    = linux-gnu
-TARGET_CPU   = i386
+TARGET_CPU   = x86_64
 HOST_OS    = linux-gnu
-HOST_CPU   = i386
+HOST_CPU   = x86_64
 
 CC       = gcc
-CFLAGS   = -g -O2 -Wall
+CFLAGS   = -g -O2 -Wall -fPIC
 CPPFLAGS = 
 SHFLAGS  = 
 LDFLAGS  = 

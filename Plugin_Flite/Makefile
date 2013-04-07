@@ -16,13 +16,13 @@ LDADD    = ../Library_MMDAgent/lib/MMDAgent.a \
            ../Library_libpng/lib/libpng.a \
            ../Library_JPEG/lib/JPEG.a \
            ../Library_zlib/lib/zlib.a \
-           ../Library_Flite/build/i386-linux-gnu/lib/libflite_usenglish.a \
-           ../Library_Flite/build/i386-linux-gnu/lib/libflite_cmulex.a \
-           ../Library_Flite/build/i386-linux-gnu/lib/libflite.a
+           ../Library_Flite/build/x86_64-linux-gnu/lib/libflite_usenglish.a \
+           ../Library_Flite/build/x86_64-linux-gnu/lib/libflite_cmulex.a \
+           ../Library_Flite/build/x86_64-linux-gnu/lib/libflite.a
 
 CXX      = gcc
 AR       = ar
-CXXFLAGS = -Wall -O6 -fomit-frame-pointer \
+CXXFLAGS = -Wall -O6 -fomit-frame-pointer -fPIC \
            -shared -g\
            -DMMDAGENT \
            -DAUDIO_PLAY_PORTAUDIO

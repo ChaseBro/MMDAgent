@@ -4231,7 +4231,7 @@ $as_echo "$as_me: error: unknown endianness
 
 
 if test "x$GCC" = "xyes"; then
-	CFLAGS="$CFLAGS -Wall"
+	CFLAGS="$CFLAGS -Wall -fPIC"
 fi
 # Check whether --enable-shared was given.
 if test "${enable_shared+set}" = set; then

@@ -4,6 +4,6 @@
 # Do not hand edit.
 
 OSTYPE		:= linux-gnu
-MACHINETYPE	:= i686
-PLATFORM	:= i686-pc-linux-gnu
-FULLOSTYPE	:= pc-linux-gnu
+MACHINETYPE	:= x86_64
+PLATFORM	:= x86_64-unknown-linux-gnu
+FULLOSTYPE	:= unknown-linux-gnu
