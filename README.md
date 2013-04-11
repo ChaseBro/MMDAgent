@@ -42,6 +42,7 @@ Freetype2 is not very smart and doesn't make a symlink where it should so one ha
 
 #### LWP
 You need the LWP perl bundle to compile the grammar, so lets install that now
+
     perl -MCPAN -e 'install Bundle::LWP'
 
 ### Installing Kade
